@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
+import UmoorSection from './components/UmoorSection';
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
             <Navbar />
             <HeroSection />
             <AboutSection />
+            <UmoorSection />
         </div>
     );
 }
