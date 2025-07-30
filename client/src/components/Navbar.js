@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Show navbar only when at the top of the page
+            if (currentScrollY <= 50) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
             <div className="nav-container">
                 <div className="nav-left">
                     <a href="#home" className="nav-link">Home</a>
