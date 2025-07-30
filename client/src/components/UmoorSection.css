@@ -2,8 +2,9 @@
     padding: 80px 20px;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .umoor-content {
@@ -12,6 +13,7 @@
     background-color: white;
     padding: 60px 40px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
 }
 
 .umoor-title {
@@ -40,12 +42,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 60px;
     gap: 0;
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: #cccccc #f0f0f0;
     padding-bottom: 10px;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .umoor-navigation::-webkit-scrollbar {
@@ -105,13 +108,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: start;
+    align-items: center;
 }
 
 .umoor-image {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .umoor-image img {

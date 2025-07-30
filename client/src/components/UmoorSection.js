@@ -11,7 +11,7 @@ const UmoorSection = () => {
             lead: 'Khuzema Bs Zakavi',
             contact: '512-999-9999',
             website: 'Umoor Deeniyah Website',
-            image: '/images/umoor-deeniyah.jpg'
+            image: '/images/Umoor-deeniyah.jpeg'
         },
         'talimiyah': {
             title: 'Umoor Talimiyah',
@@ -59,7 +59,7 @@ const UmoorSection = () => {
             lead: 'Mustafa Bhai Vazir',
             contact: '512-333-2222',
             website: 'Umoor Kharejiyah Website',
-            image: '/images/umoor-kharejiyah.jpg'
+            image: '/images/Umoor-Kharejiyah.jpeg'
         },
         'qaza': {
             title: 'Umoor Qaza',
@@ -83,7 +83,7 @@ const UmoorSection = () => {
             lead: 'Jaffer Bhai Ali',
             contact: '512-000-9999',
             website: 'Umoor Iqtesadiyah Website',
-            image: '/images/umoor-iqtesadiyah.jpg'
+            image: '/images/Umoor-Iqtesadiyah.jpeg'
         },
         'amlaak': {
             title: 'Umoor Amlaak',
@@ -99,7 +99,7 @@ const UmoorSection = () => {
             lead: 'Dr. Zahra Bhen Patel',
             contact: '512-888-7777',
             website: 'Umoor Sehhat Website',
-            image: '/images/umoor-sehhat.jpg'
+            image: '/images/Umoor-Sehhat.jpeg'
         }
     };
 
@@ -129,33 +129,38 @@ const UmoorSection = () => {
                 backgroundAttachment: 'fixed'
             }}
         >
+            <h2 className="umoor-title">
+                12 UMOOR
+            </h2>
+
+            <div className="umoor-navigation">
+                {tabs.map((tab, index) => (
+                    <React.Fragment key={tab.id}>
+                        <button
+                            className={`nav-tab ${activeTab === tab.id ? 'active' : ''}`}
+                            onClick={() => setActiveTab(tab.id)}
+                        >
+                            {tab.label}
+                        </button>
+                        {index < tabs.length - 1 && <span className="nav-separator">|</span>}
+                    </React.Fragment>
+                ))}
+            </div>
+
             <div className="umoor-content">
-                <h2 className="umoor-title">
-                    12 UMOOR
-                </h2>
-
-                <div className="umoor-navigation">
-                    {tabs.map((tab, index) => (
-                        <React.Fragment key={tab.id}>
-                            <button
-                                className={`nav-tab ${activeTab === tab.id ? 'active' : ''}`}
-                                onClick={() => setActiveTab(tab.id)}
-                            >
-                                {tab.label}
-                            </button>
-                            {index < tabs.length - 1 && <span className="nav-separator">|</span>}
-                        </React.Fragment>
-                    ))}
-                </div>
-
                 <div className="umoor-main-content">
                     <div className="umoor-image">
                         <img
+                            key={activeTab}
                             src={umoorContent[activeTab].image}
                             alt={`${umoorContent[activeTab].title} - Community gathering`}
                             onError={(e) => {
                                 e.target.style.display = 'none';
                                 e.target.nextSibling.style.display = 'block';
+                            }}
+                            onLoad={(e) => {
+                                e.target.style.display = 'block';
+                                e.target.nextSibling.style.display = 'none';
                             }}
                         />
                         <div className="image-placeholder" style={{ display: 'none' }}>
