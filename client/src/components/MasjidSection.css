@@ -1,0 +1,232 @@
+.masjid-section {
+    background-color: #00203D;
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.masjid-content {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.masjid-title {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.title-underline {
+    width: 200px;
+    height: 3px;
+    background-color: #D4AF37;
+    margin: 0 auto 60px auto;
+}
+
+.masjid-carousel-container {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    background-color: white;
+    overflow: visible;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.masjid-carousel {
+    width: 100%;
+}
+
+.carousel-slide {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.masjid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.masjid-text-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.masjid-text-content p {
+    color: white;
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+
+.masjid-text-content p:last-child {
+    margin-bottom: 30px;
+}
+
+.read-more-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.read-more-link {
+    display: inline-block;
+    color: #D4AF37;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    text-decoration: none;
+    padding: 15px 30px 15px 25px;
+    border-left: 2px solid #D4AF37;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.read-more-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #D4AF37;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.read-more-link:hover {
+    color: #00203D;
+    background-color: #D4AF37;
+    transition: left 0.3s ease;
+}
+
+.read-more-link:hover::before {
+    left: 0;
+}
+
+/* Slick Carousel Custom Styles */
+.slick-dots {
+    bottom: 20px;
+    z-index: 10;
+}
+
+.slick-dots li button:before {
+    color: white;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #D4AF37;
+    opacity: 1;
+}
+
+.slick-prev,
+.slick-next {
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    border-radius: 50%;
+}
+
+.slick-prev {
+    left: 20px;
+}
+
+.slick-next {
+    right: 20px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+    color: #D4AF37 !important;
+    opacity: 1 !important;
+    font-weight: bold;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+    color: #D4AF37 !important;
+    opacity: 1 !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .masjid-section {
+        padding: 60px 15px;
+    }
+
+    .masjid-title {
+        font-size: 2rem;
+    }
+
+    .title-underline {
+        width: 150px;
+        margin-bottom: 40px;
+    }
+
+    .image-container {
+        height: 300px;
+    }
+
+    .masjid-text-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .read-more-link {
+        font-size: 18px;
+        padding: 12px 25px 12px 20px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .masjid-title {
+        font-size: 1.5rem;
+    }
+
+    .title-underline {
+        width: 120px;
+        margin-bottom: 30px;
+    }
+
+    .image-container {
+        height: 250px;
+    }
+
+    .masjid-text-content p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    .read-more-link {
+        font-size: 16px;
+        padding: 10px 20px 10px 15px;
+    }
+}
