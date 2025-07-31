@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import UmoorSection from './components/UmoorSection';
+import MasjidSection from './components/MasjidSection';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <HeroSection />
             <AboutSection />
             <UmoorSection />
+            <MasjidSection />
         </div>
     );
 }
