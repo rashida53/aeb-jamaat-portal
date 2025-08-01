@@ -19,5 +19,9 @@
     "license": "MIT",
     "devDependencies": {
         "concurrently": "^8.2.2"
+    },
+    "dependencies": {
+        "react-slick": "^0.30.3",
+        "slick-carousel": "^1.8.1"
     }
 }

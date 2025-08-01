@@ -26,21 +26,20 @@
 .title-underline {
     width: 200px;
     height: 3px;
-    background-color: #D4AF37;
+    background-color: #CE9C01;
     margin: 0 auto 60px auto;
 }
 
 .masjid-carousel-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 60px auto;
-    background-color: white;
     overflow: visible;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
 .masjid-carousel {
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 
 .carousel-slide {
@@ -87,13 +86,13 @@
 
 .read-more-link {
     display: inline-block;
-    color: #D4AF37;
+    color: #CE9C01;
     font-size: 20px;
     font-weight: bold;
     font-family: 'Merriweather', serif;
     text-decoration: none;
     padding: 15px 30px 15px 25px;
-    border-left: 2px solid #D4AF37;
+    border-left: 2px solid #CE9C01;
     position: relative;
     transition: all 0.3s ease;
     text-transform: uppercase;
@@ -107,14 +106,14 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: #D4AF37;
+    background-color: #CE9C01;
     transition: left 0.3s ease;
     z-index: -1;
 }
 
 .read-more-link:hover {
     color: #00203D;
-    background-color: #D4AF37;
+    background-color: #CE9C01;
     transition: left 0.3s ease;
 }
 
@@ -124,7 +123,7 @@
 
 /* Slick Carousel Custom Styles */
 .slick-dots {
-    bottom: 20px;
+    bottom: -30px;
     z-index: 10;
 }
 
@@ -135,7 +134,7 @@
 }
 
 .slick-dots li.slick-active button:before {
-    color: #D4AF37;
+    color: #CE9C01;
     opacity: 1;
 }
 
@@ -149,24 +148,24 @@
 }
 
 .slick-prev {
-    left: 20px;
+    left: -50px;
 }
 
 .slick-next {
-    right: 20px;
+    right: -50px;
 }
 
 .slick-prev:before,
 .slick-next:before {
     font-size: 30px;
-    color: #D4AF37 !important;
+    color: #CE9C01 !important;
     opacity: 1 !important;
     font-weight: bold;
 }
 
 .slick-prev:hover:before,
 .slick-next:hover:before {
-    color: #D4AF37 !important;
+    color: #CE9C01 !important;
     opacity: 1 !important;
 }
 

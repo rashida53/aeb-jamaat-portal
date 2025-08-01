@@ -49,7 +49,7 @@ const MasjidSection = () => {
     };
 
     return (
-        <section className="masjid-section">
+        <section id="masjid" className="masjid-section">
             <div className="masjid-content">
                 <h2 className="masjid-title">MASJID UPDATE</h2>
                 <div className="title-underline"></div>

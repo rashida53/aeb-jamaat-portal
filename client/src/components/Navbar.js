@@ -23,15 +23,40 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
 
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <nav className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
             <div className="nav-container">
                 <div className="nav-left">
-                    <a href="#home" className="nav-link">Home</a>
+                    <button
+                        onClick={() => scrollToSection('hero')}
+                        className="nav-link"
+                    >
+                        Home
+                    </button>
                     <span className="nav-separator">|</span>
-                    <a href="#about" className="nav-link">About</a>
+                    <button
+                        onClick={() => scrollToSection('about')}
+                        className="nav-link"
+                    >
+                        About
+                    </button>
                     <span className="nav-separator">|</span>
-                    <a href="#umoor" className="nav-link">12 Umoor</a>
+                    <button
+                        onClick={() => scrollToSection('umoor')}
+                        className="nav-link"
+                    >
+                        12 Umoor
+                    </button>
                 </div>
 
                 <div className="nav-center">
@@ -47,9 +72,19 @@ const Navbar = () => {
                 <div className="nav-right">
                     <a href="#news" className="nav-link">News</a>
                     <span className="nav-separator">|</span>
-                    <a href="#blog" className="nav-link">Blog</a>
+                    <button
+                        onClick={() => scrollToSection('masjid')}
+                        className="nav-link"
+                    >
+                        Blog
+                    </button>
                     <span className="nav-separator">|</span>
-                    <a href="#contact" className="nav-link">Contact</a>
+                    <button
+                        onClick={() => scrollToSection('contact')}
+                        className="nav-link"
+                    >
+                        Contact
+                    </button>
                 </div>
             </div>
         </nav>
