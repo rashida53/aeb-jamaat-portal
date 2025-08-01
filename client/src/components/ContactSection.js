@@ -1,0 +1,86 @@
+import React from 'react';
+import './ContactSection.css';
+
+const ContactSection = () => {
+    return (
+        <section
+            id="contact"
+            className="contact-section"
+            style={{
+                backgroundImage: 'url(/images/islamic-pattern.svg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundAttachment: 'fixed'
+            }}
+        >
+            <h2 className="contact-title">
+                CONTACT INFORMATION
+            </h2>
+
+            <div className="contact-content">
+                <div className="contact-main-content">
+                    <div className="contact-image">
+                        <img
+                            src="/images/markaz-img-5.jpg"
+                            alt="Anjuman-e-Burhani Markaz - Community gathering and activities"
+                            onError={(e) => {
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'block';
+                            }}
+                            onLoad={(e) => {
+                                e.target.style.display = 'block';
+                                e.target.nextSibling.style.display = 'none';
+                            }}
+                        />
+                        <div className="image-placeholder" style={{ display: 'none' }}>
+                            <div className="placeholder-content">
+                                <div className="placeholder-icon">🏛️</div>
+                                <p>Markaz Image</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="contact-text">
+                        <div className="contact-info-section">
+                            <h3 className="contact-subtitle">Address</h3>
+                            <div className="contact-details">
+                                <p>
+                                    <a
+                                        href="https://maps.app.goo.gl/BpEzks1iy8Z2tkPg9"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="address-link"
+                                    >
+                                        13209 Old Gregg Ln, Pflugerville TX
+                                    </a>
+                                </p>
+                                <p>78660</p>
+                            </div>
+                        </div>
+
+                        <div className="contact-info-section">
+                            <h3 className="contact-subtitle">Contact</h3>
+                            <div className="contact-details">
+                                <div className="contact-person">
+                                    <p className="person-title"><strong>Jamaat Aamil -</strong></p>
+                                    <p>Janab Shk. Saifuddin Zakir</p>
+                                    <p>650-309-7803</p>
+                                    <p>austinamil@alvazarat.org</p>
+                                </div>
+
+                                <div className="contact-person">
+                                    <p className="person-title"><strong>Jamaat Secretary -</strong></p>
+                                    <p>Shk. Murtaza bhai Rawat</p>
+                                    <p>832-526-8734</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default ContactSection; 

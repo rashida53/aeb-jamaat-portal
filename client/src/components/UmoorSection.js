@@ -120,6 +120,7 @@ const UmoorSection = () => {
 
     return (
         <section
+            id="umoor"
             className="umoor-section"
             style={{
                 backgroundImage: 'url(/images/islamic-pattern.svg)',
@@ -142,7 +143,7 @@ const UmoorSection = () => {
                         >
                             {tab.label}
                         </button>
-                        {index < tabs.length - 1 && <span className="nav-separator">|</span>}
+                        {index < tabs.length - 1 && <span className="umoor-nav-separator">|</span>}
                     </React.Fragment>
                 ))}
             </div>

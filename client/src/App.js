@@ -5,6 +5,8 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import UmoorSection from './components/UmoorSection';
 import MasjidSection from './components/MasjidSection';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 
 function App() {
     return (
@@ -14,6 +16,8 @@ function App() {
             <AboutSection />
             <UmoorSection />
             <MasjidSection />
+            <ContactSection />
+            <Footer />
         </div>
     );
 }

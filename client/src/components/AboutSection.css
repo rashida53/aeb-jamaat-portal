@@ -26,22 +26,27 @@
 .title-underline {
     width: 200px;
     height: 3px;
-    background-color: #D4AF37;
+    background-color: #CE9C01;
     margin: 0 auto 60px auto;
 }
 
-.about-text {
-    max-width: 1200px;
+.about-text-content {
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
 }
 
-.about-text p {
+.about-text-content p {
     color: white;
     font-size: 22px;
     line-height: 1.8;
-    margin: 0;
+    margin-bottom: 30px;
     font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+
+.about-text-content p:last-child {
+    margin-bottom: 30px;
 }
 
 /* Responsive design */
@@ -59,9 +64,10 @@
         margin-bottom: 40px;
     }
 
-    .about-text p {
+    .about-text-content p {
         font-size: 1rem;
         line-height: 1.6;
+        margin-bottom: 20px;
     }
 }
 
@@ -75,7 +81,8 @@
         margin-bottom: 30px;
     }
 
-    .about-text p {
+    .about-text-content p {
         font-size: 0.95rem;
+        margin-bottom: 15px;
     }
 }

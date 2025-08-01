@@ -41,6 +41,10 @@
     font-family: 'PT Sans', sans-serif;
     letter-spacing: 1px;
     transition: opacity 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
 .nav-link:hover {
@@ -48,7 +52,7 @@
 }
 
 .nav-separator {
-    color: #DCA766;
+    color: #CE9C01;
     font-weight: 500;
     font-size: 32px;
     font-family: 'PT Sans', sans-serif;
