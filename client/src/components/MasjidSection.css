@@ -202,6 +202,17 @@
     .slick-next {
         display: none !important;
     }
+
+    /* Ensure full width on mobile */
+    .masjid-carousel {
+        width: 100%;
+    }
+
+    .masjid-carousel-container {
+        max-width: 100%;
+        margin: 0 auto 60px auto;
+        padding: 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -226,5 +237,11 @@
     .read-more-link {
         font-size: 16px;
         padding: 10px 20px 10px 15px;
+    }
+
+    .masjid-carousel-container {
+        max-width: 100%;
+        margin: 0 auto 40px auto;
+        padding: 0;
     }
 }
