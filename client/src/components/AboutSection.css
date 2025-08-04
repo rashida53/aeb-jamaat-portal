@@ -1,7 +1,6 @@
 .about-section {
     background-color: #00203D;
     padding: 80px 20px;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,5 +83,11 @@
     .about-text-content p {
         font-size: 0.95rem;
         margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .about-section {
+        min-height: 100vh;
     }
 }

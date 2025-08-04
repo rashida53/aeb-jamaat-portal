@@ -16,9 +16,9 @@ const HeroSection = () => {
                 />
             </div>
 
-            <div className="hero-overlay">
+            {/* <div className="hero-overlay">
                 <h1 className="hero-title">MASJID PROJECT</h1>
-            </div>
+            </div> */}
         </section>
     );
 };
