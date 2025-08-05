@@ -40,10 +40,6 @@ const Navbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const closeMobileMenu = () => {
-        setIsMobileMenuOpen(false);
-    };
-
     return (
         <>
             <nav className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
