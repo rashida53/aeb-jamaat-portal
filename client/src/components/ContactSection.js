@@ -7,7 +7,7 @@ const ContactSection = () => {
             id="contact"
             className="contact-section"
             style={{
-                backgroundImage: 'url(/images/islamic-pattern.svg)',
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern.svg)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -22,7 +22,7 @@ const ContactSection = () => {
                 <div className="contact-main-content">
                     <div className="contact-image">
                         <img
-                            src="/images/markaz-img-5.jpg"
+                            src={`${process.env.PUBLIC_URL}/images/markaz-img-5.jpg`}
                             alt="Anjuman-e-Burhani Markaz - Community gathering and activities"
                             onError={(e) => {
                                 e.target.style.display = 'none';

@@ -13,7 +13,7 @@ const UmoorSection = () => {
             lead: 'Khuzema Bs Zakavi',
             contact: '512-999-9999',
             website: 'Umoor Deeniyah Website',
-            image: '/images/Umoor-deeniyah.jpeg'
+            image: `${process.env.PUBLIC_URL}/images/Umoor-deeniyah.jpeg`
         },
         'talimiyah': {
             title: 'Umoor Talimiyah',
@@ -21,7 +21,7 @@ const UmoorSection = () => {
             lead: 'Ahmed Bhai Patel',
             contact: '512-888-7777',
             website: 'Umoor Talimiyah Website',
-            image: '/images/umoor-talimiyah.jpg'
+            image: `${process.env.PUBLIC_URL}/images/umoor-talimiyah.jpg`
         },
         'marafiq-burhaniyah': {
             title: 'Umoor Marafiq Burhaniyah',
@@ -29,7 +29,7 @@ const UmoorSection = () => {
             lead: 'Husain Bhai Mulla',
             contact: '512-777-6666',
             website: 'Umoor Marafiq Website',
-            image: '/images/umoor-marafiq.jpg'
+            image: `${process.env.PUBLIC_URL}/images/umoor-marafiq.jpg`
         },
         'maliyah': {
             title: 'Umoor Maliyah',
@@ -37,7 +37,7 @@ const UmoorSection = () => {
             lead: 'Ali Bhai Merchant',
             contact: '512-666-5555',
             website: 'Umoor Maliyah Website',
-            image: '/images/umoor-maliyah.jpg'
+            image: `${process.env.PUBLIC_URL}/images/umoor-maliyah.jpg`
         },
         'mawarid-bashariyah': {
             title: 'Umoor Mawarid Bashariyah',
@@ -45,7 +45,7 @@ const UmoorSection = () => {
             lead: 'Fatema Bhen Jaffer',
             contact: '512-555-4444',
             website: 'Umoor Mawarid Website',
-            image: '/images/umoor-mawarid.jpg'
+            image: `${process.env.PUBLIC_URL}/images/umoor-mawarid.jpg`
         },
         'dakheliyah': {
             title: 'Umoor Dakheliyah',
@@ -53,7 +53,7 @@ const UmoorSection = () => {
             lead: 'Zainab Bhen Kermalli',
             contact: '512-444-3333',
             website: 'Umoor Dakheliyah Website',
-            image: '/images/umoor-dakheliyah.jpg'
+            image: `${process.env.PUBLIC_URL}/images/umoor-dakheliyah.jpg`
         },
         'kharejiyah': {
             title: 'Umoor Kharejiyah',
@@ -61,7 +61,7 @@ const UmoorSection = () => {
             lead: 'Mustafa Bhai Vazir',
             contact: '512-333-2222',
             website: 'Umoor Kharejiyah Website',
-            image: '/images/Umoor-Kharejiyah.jpeg'
+            image: `${process.env.PUBLIC_URL}/images/Umoor-Kharejiyah.jpeg`
         },
         'qaza': {
             title: 'Umoor Qaza',
@@ -69,7 +69,7 @@ const UmoorSection = () => {
             lead: 'Hasan Bhai Rizvi',
             contact: '512-222-1111',
             website: 'Umoor Qaza Website',
-            image: '/images/umoor-qaza.jpg'
+            image: `${process.env.PUBLIC_URL}/images/umoor-qaza.jpg`
         },
         'fmb': {
             title: 'Umoor FMB',
@@ -77,7 +77,7 @@ const UmoorSection = () => {
             lead: 'Amina Bhen Husain',
             contact: '512-111-0000',
             website: 'Umoor FMB Website',
-            image: '/images/umoor-fmb.jpg'
+            image: `${process.env.PUBLIC_URL}/images/umoor-fmb.jpg`
         },
         'iqtesadiyah': {
             title: 'Umoor Iqtesadiyah',
@@ -85,7 +85,7 @@ const UmoorSection = () => {
             lead: 'Jaffer Bhai Ali',
             contact: '512-000-9999',
             website: 'Umoor Iqtesadiyah Website',
-            image: '/images/Umoor-Iqtesadiyah.jpeg'
+            image: `${process.env.PUBLIC_URL}/images/Umoor-Iqtesadiyah.jpeg`
         },
         'amlaak': {
             title: 'Umoor Amlaak',
@@ -93,7 +93,7 @@ const UmoorSection = () => {
             lead: 'Sakina Bhen Merchant',
             contact: '512-999-8888',
             website: 'Umoor Amlaak Website',
-            image: '/images/umoor-amlaak.jpg'
+            image: `${process.env.PUBLIC_URL}/images/umoor-amlaak.jpg`
         },
         'sehhat': {
             title: 'Umoor Sehhat',
@@ -101,7 +101,7 @@ const UmoorSection = () => {
             lead: 'Dr. Zahra Bhen Patel',
             contact: '512-888-7777',
             website: 'Umoor Sehhat Website',
-            image: '/images/Umoor-Sehhat.jpeg'
+            image: `${process.env.PUBLIC_URL}/images/Umoor-Sehhat.jpeg`
         }
     };
 
@@ -130,7 +130,7 @@ const UmoorSection = () => {
             id="umoor"
             className="umoor-section"
             style={{
-                backgroundImage: 'url(/images/islamic-pattern.svg)',
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern.svg)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
