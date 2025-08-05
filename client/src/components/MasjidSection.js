@@ -8,22 +8,22 @@ const MasjidSection = () => {
     const masjidImages = [
         {
             id: 1,
-            src: '/images/masjid-carousel-1.jpeg',
+            src: `${process.env.PUBLIC_URL}/images/masjid-carousel-1.jpeg`,
             alt: 'Anjuman-e-Burhani Markaz - Community gathering and activities'
         },
         {
             id: 2,
-            src: '/images/masjid-carousel-2.jpeg',
+            src: `${process.env.PUBLIC_URL}/images/masjid-carousel-2.jpeg`,
             alt: 'Anjuman-e-Burhani Markaz - Prayer hall and religious ceremonies'
         },
         {
             id: 3,
-            src: '/images/masjid-carousel-3.jpeg',
+            src: `${process.env.PUBLIC_URL}/images/masjid-carousel-3.jpeg`,
             alt: 'Anjuman-e-Burhani Markaz - Community events and gatherings'
         },
         {
             id: 4,
-            src: '/images/masjid-carousel-4.jpeg',
+            src: `${process.env.PUBLIC_URL}/images/masjid-carousel-4.jpeg`,
             alt: 'Anjuman-e-Burhani Markaz - Religious ceremonies and celebrations'
         }
     ];

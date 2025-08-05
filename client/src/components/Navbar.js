@@ -80,12 +80,12 @@ const Navbar = () => {
                     <div className="nav-center">
                         <div className="nav-logo">
                             <img
-                                src="/images/jamaat-logo.png"
+                                src={`${process.env.PUBLIC_URL}/images/jamaat-logo.png`}
                                 alt="Jamaat Logo"
                                 className="logo-image desktop-logo"
                             />
                             <img
-                                src="/images/Dark-Logo.png"
+                                src={`${process.env.PUBLIC_URL}/images/Dark-Logo.png`}
                                 alt="Jamaat Logo"
                                 className="logo-image mobile-logo"
                             />

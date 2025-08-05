@@ -6,7 +6,7 @@ const HeroSection = () => {
         <section id="hero" className="hero-section">
             <div className="hero-background">
                 <img
-                    src="/images/mosque.jpg"
+                    src={`${process.env.PUBLIC_URL}/images/mosque.jpg`}
                     alt="Grand Mosque Architectural Rendering"
                     className="mosque-image"
                     onError={(e) => {
