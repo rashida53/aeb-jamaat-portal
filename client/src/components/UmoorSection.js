@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import './UmoorSection.css';
 
 const UmoorSection = () => {
     const [activeTab, setActiveTab] = useState('deeniyah');
+    const [openAccordion, setOpenAccordion] = useState('deeniyah'); // For mobile accordion
 
     const umoorContent = {
         'deeniyah': {
@@ -118,6 +120,11 @@ const UmoorSection = () => {
         { id: 'sehhat', label: 'Umoor Sehhat' }
     ];
 
+    const handleAccordionToggle = (tabId) => {
+        setOpenAccordion(openAccordion === tabId ? null : tabId);
+        setActiveTab(tabId);
+    };
+
     return (
         <section
             id="umoor"
@@ -134,7 +141,8 @@ const UmoorSection = () => {
                 12 UMOOR
             </h2>
 
-            <div className="umoor-navigation">
+            {/* Desktop Navigation */}
+            <div className="umoor-navigation desktop-nav">
                 {tabs.map((tab, index) => (
                     <React.Fragment key={tab.id}>
                         <button
@@ -148,7 +156,67 @@ const UmoorSection = () => {
                 ))}
             </div>
 
-            <div className="umoor-content">
+            {/* Mobile/Tablet Accordion Navigation */}
+            <div className="umoor-accordion mobile-nav">
+                {tabs.map((tab) => (
+                    <div key={tab.id} className="accordion-item">
+                        <button
+                            className={`accordion-header ${openAccordion === tab.id ? 'active' : ''}`}
+                            onClick={() => handleAccordionToggle(tab.id)}
+                        >
+                            <div className="umoor-nav-label"><span>{tab.label}</span></div>
+                            <span className="accordion-icon">
+                                {openAccordion === tab.id ?
+                                    <RiArrowDropUpLine color="#ffffff" size={28} /> :
+                                    <RiArrowDropDownLine color="#00203D" size={28} />
+                                }
+                            </span>
+                        </button>
+                        {openAccordion === tab.id && (
+                            <div className="accordion-content">
+                                <div className="umoor-main-content">
+                                    <div className="umoor-image">
+                                        <img
+                                            key={activeTab}
+                                            src={umoorContent[activeTab].image}
+                                            alt={`${umoorContent[activeTab].title} - Community gathering`}
+                                            onError={(e) => {
+                                                e.target.style.display = 'none';
+                                                e.target.nextSibling.style.display = 'block';
+                                            }}
+                                            onLoad={(e) => {
+                                                e.target.style.display = 'block';
+                                                e.target.nextSibling.style.display = 'none';
+                                            }}
+                                        />
+                                        <div className="image-placeholder" style={{ display: 'none' }}>
+                                            <div className="placeholder-content">
+                                                <div className="placeholder-icon">📖</div>
+                                                <p>{umoorContent[activeTab].title} Image</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="umoor-text">
+                                        <p>
+                                            {umoorContent[activeTab].description}
+                                        </p>
+
+                                        <div className="contact-info">
+                                            <p><strong>Umoor Lead-</strong> {umoorContent[activeTab].lead}</p>
+                                            <p><strong>Contact-</strong> {umoorContent[activeTab].contact}</p>
+                                            <p><strong>Umoor Website-</strong> <a href="#" className="website-link">{umoorContent[activeTab].website}</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+
+            {/* Desktop Content */}
+            <div className="umoor-content desktop-content">
                 <div className="umoor-main-content">
                     <div className="umoor-image">
                         <img
