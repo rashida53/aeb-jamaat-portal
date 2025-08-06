@@ -5,6 +5,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .contact-content {
@@ -179,6 +183,7 @@
 @media (max-width: 768px) {
     .contact-section {
         padding: 60px 15px;
+        background-attachment: scroll;
     }
 
     .contact-title {
@@ -217,6 +222,10 @@
 }
 
 @media (max-width: 480px) {
+    .contact-section {
+        background-attachment: scroll;
+    }
+
     .contact-title {
         font-size: 1.5rem;
     }

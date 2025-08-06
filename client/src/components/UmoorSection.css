@@ -5,6 +5,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .umoor-content {
@@ -328,6 +332,7 @@
 @media (max-width: 768px) {
     .umoor-section {
         padding: 40px 10px;
+        background-attachment: scroll;
     }
 
     .umoor-title {
@@ -385,6 +390,10 @@
 @media (max-width: 480px) {
     .umoor-title {
         font-size: 1.5rem;
+    }
+
+    .umoor-section {
+        background-attachment: scroll;
     }
 
     .accordion-header {
