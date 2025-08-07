@@ -50,8 +50,7 @@ const ContactSection = () => {
                                     >
                                         13209 Old Gregg Ln, Pflugerville TX
                                     </a>
-                                </p>
-                                <p>78660</p>
+                                    <br></br>78660</p>
                             </div>
                         </div>
 
@@ -60,15 +59,15 @@ const ContactSection = () => {
                             <div className="contact-details">
                                 <div className="contact-person">
                                     <p className="person-title"><strong>Jamaat Aamil -</strong></p>
-                                    <p>Janab Shk. Saifuddin Zakir</p>
-                                    <p>650-309-7803</p>
-                                    <p>austinamil@alvazarat.org</p>
+                                    <p>Janab Shk. Saifuddin Zakir<br></br>
+                                        650-309-7803<br></br>
+                                        austinamil@alvazarat.org</p>
                                 </div>
 
                                 <div className="contact-person">
                                     <p className="person-title"><strong>Jamaat Secretary -</strong></p>
-                                    <p>Shk. Murtaza bhai Rawat</p>
-                                    <p>832-526-8734</p>
+                                    <p>Shk. Murtaza bhai Rawat<br></br>
+                                        832-526-8734</p>
                                 </div>
                             </div>
                         </div>

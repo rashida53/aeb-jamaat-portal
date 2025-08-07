@@ -21,7 +21,7 @@ const UmoorSection = () => {
             lead: 'Ahmed Bhai Patel',
             contact: '512-888-7777',
             website: 'Umoor Talimiyah Website',
-            image: `${process.env.PUBLIC_URL}/images/umoor-talimiyah.jpg`
+            image: `${process.env.PUBLIC_URL}/images/Umoor-Talimiyah.jpeg`
         },
         'marafiq-burhaniyah': {
             title: 'Umoor Marafiq Burhaniyah',
@@ -77,7 +77,7 @@ const UmoorSection = () => {
             lead: 'Amina Bhen Husain',
             contact: '512-111-0000',
             website: 'Umoor FMB Website',
-            image: `${process.env.PUBLIC_URL}/images/umoor-fmb.jpg`
+            image: `${process.env.PUBLIC_URL}/images/Umoor-FMB.jpg`
         },
         'iqtesadiyah': {
             title: 'Umoor Iqtesadiyah',
