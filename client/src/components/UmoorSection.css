@@ -25,7 +25,7 @@
     font-size: 36px;
     font-weight: bold;
     font-family: 'Merriweather', serif;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #CE9C01;
@@ -49,7 +49,6 @@
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: #cccccc #f0f0f0;
-    padding-bottom: 10px;
     max-width: 1200px;
     width: 100%;
 }
@@ -110,7 +109,6 @@
     flex-direction: column;
     width: 100%;
     max-width: 1200px;
-    margin-top: 20px;
 }
 
 .accordion-item {
@@ -279,6 +277,11 @@
 
     .umoor-title {
         font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .umoor-title::after {
+        margin: 10px auto 40px auto;
     }
 
     .accordion-header {
@@ -331,12 +334,17 @@
 
 @media (max-width: 768px) {
     .umoor-section {
-        padding: 40px 10px;
+        padding: 60px 15px;
         background-attachment: scroll;
     }
 
     .umoor-title {
         font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .umoor-title::after {
+        margin: 10px auto 40px auto;
     }
 
     .accordion-header {
@@ -390,6 +398,11 @@
 @media (max-width: 480px) {
     .umoor-title {
         font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .umoor-title::after {
+        margin: 10px auto 40px auto;
     }
 
     .umoor-section {

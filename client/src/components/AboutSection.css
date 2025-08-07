@@ -56,11 +56,12 @@
 
     .about-title {
         font-size: 2rem;
+        margin-bottom: 20px;
     }
 
     .title-underline {
         width: 150px;
-        margin-bottom: 40px;
+        margin: 10px auto 40px auto;
     }
 
     .about-text-content p {
@@ -73,11 +74,12 @@
 @media (max-width: 480px) {
     .about-title {
         font-size: 1.5rem;
+        margin-bottom: 20px;
     }
 
     .title-underline {
         width: 120px;
-        margin-bottom: 30px;
+        margin: 10px auto 40px auto;
     }
 
     .about-text-content p {

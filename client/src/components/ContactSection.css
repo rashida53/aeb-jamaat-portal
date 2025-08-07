@@ -1,6 +1,5 @@
 .contact-section {
     padding: 80px 20px;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +16,6 @@
     background-color: white;
     padding: 60px 40px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
 }
 
 .contact-title {
@@ -25,7 +23,7 @@
     font-size: 36px;
     font-weight: bold;
     font-family: 'Merriweather', serif;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #CE9C01;
@@ -188,6 +186,11 @@
 
     .contact-title {
         font-size: 2rem;
+        margin-bottom: 0px;
+    }
+
+    .contact-title::after {
+        margin: 10px auto 40px auto;
     }
 
     .contact-main-content {
@@ -228,6 +231,11 @@
 
     .contact-title {
         font-size: 1.5rem;
+        margin-bottom: 0px;
+    }
+
+    .contact-title::after {
+        margin: 10px auto 40px auto;
     }
 
     .contact-content {
