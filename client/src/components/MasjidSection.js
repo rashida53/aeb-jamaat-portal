@@ -92,7 +92,7 @@ const MasjidSection = () => {
                     </p>
 
                     <div className="read-more-container">
-                        <a href="#" className="read-more-link">Read More</a>
+                        <a href="/blog" className="read-more-link">Read More</a>
                     </div>
                 </div>
             </div>
