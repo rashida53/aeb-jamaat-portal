@@ -18,88 +18,88 @@ const UmoorSection = () => {
         'talimiyah': {
             title: 'Umoor Talimiyah',
             description: 'The Umoor Talimiyah Committees focus on educational initiatives and learning programs within the community. They work to promote Islamic education, organize study circles, and facilitate religious learning opportunities for all age groups. These committees ensure that knowledge of our faith is accessible and properly disseminated.',
-            lead: 'Ahmed Bhai Patel',
-            contact: '512-888-7777',
+            lead: 'M Murtaza bhai Malbari',
+            contact: '631-838-1740',
             website: 'Umoor Talimiyah Website',
             image: `${process.env.PUBLIC_URL}/images/Umoor-Talimiyah.jpeg`
         },
         'marafiq-burhaniyah': {
             title: 'Umoor Marafiq Burhaniyah',
             description: 'The Marafiq Burhaniyah Committees handle community infrastructure and facilities management. They oversee the maintenance and development of community centers, mosques, and other religious facilities. Their work ensures that our community spaces are well-maintained and conducive to spiritual activities.',
-            lead: 'Husain Bhai Mulla',
-            contact: '512-777-6666',
+            lead: 'M Mustafa Bhai Shakir',
+            contact: '512-348-3844',
             website: 'Umoor Marafiq Website',
-            image: `${process.env.PUBLIC_URL}/images/umoor-marafiq.jpg`
+            image: `${process.env.PUBLIC_URL}/images/Umoor-Marafiq-Burhaniyah.jpeg`
         },
         'maliyah': {
             title: 'Umoor Maliyah',
             description: 'The Umoor Maliyah Committees manage financial matters and community funds. They oversee budgeting, fundraising activities, and financial planning for community projects. These committees ensure transparent and responsible financial management for the benefit of the entire community.',
-            lead: 'Ali Bhai Merchant',
-            contact: '512-666-5555',
+            lead: 'M Taaha bhai Bhora',
+            contact: '682-365-3910',
             website: 'Umoor Maliyah Website',
-            image: `${process.env.PUBLIC_URL}/images/umoor-maliyah.jpg`
+            image: `${process.env.PUBLIC_URL}/images/Umoor-Maliyah.jpeg`
         },
         'mawarid-bashariyah': {
             title: 'Umoor Mawarid Bashariyah',
             description: 'The Mawarid Bashariyah Committees focus on human resources and community development. They work on recruitment, training, and development of community volunteers and leaders. These committees ensure that our community has capable and dedicated individuals serving in various capacities.',
-            lead: 'Fatema Bhen Jaffer',
-            contact: '512-555-4444',
+            lead: 'Shk Murtaza bhai Rawat',
+            contact: '832-526-8734',
             website: 'Umoor Mawarid Website',
             image: `${process.env.PUBLIC_URL}/images/umoor-mawarid.jpg`
         },
         'dakheliyah': {
             title: 'Umoor Dakheliyah',
             description: 'The Umoor Dakheliyah Committees handle internal community affairs and domestic matters. They address family issues, provide counseling services, and support community members in their personal and family life. These committees work to strengthen family bonds and community harmony.',
-            lead: 'Zainab Bhen Kermalli',
-            contact: '512-444-3333',
+            lead: 'M Aliakber bhai Amijee',
+            contact: '832-373-0944',
             website: 'Umoor Dakheliyah Website',
-            image: `${process.env.PUBLIC_URL}/images/umoor-dakheliyah.jpg`
+            image: `${process.env.PUBLIC_URL}/images/Umoor-Dakheliyah.jpeg`
         },
         'kharejiyah': {
             title: 'Umoor Kharejiyah',
             description: 'The Umoor Kharejiyah Committees manage external relations and community outreach. They coordinate with other communities, organize interfaith dialogues, and represent our community in broader social initiatives. These committees help build bridges with the wider society.',
-            lead: 'Mustafa Bhai Vazir',
-            contact: '512-333-2222',
+            lead: 'Ammar bhai Jamali',
+            contact: '512-920-8652',
             website: 'Umoor Kharejiyah Website',
             image: `${process.env.PUBLIC_URL}/images/Umoor-Kharejiyah.jpeg`
         },
         'qaza': {
             title: 'Umoor Qaza',
             description: 'The Umoor Qaza Committees handle community justice and dispute resolution. They provide mediation services, resolve conflicts within the community, and ensure fair treatment for all members. These committees work to maintain peace and harmony through just and equitable solutions.',
-            lead: 'Hasan Bhai Rizvi',
-            contact: '512-222-1111',
+            lead: 'Shk Hakimuddin bhai Dhilla',
+            contact: '978-884-3152',
             website: 'Umoor Qaza Website',
             image: `${process.env.PUBLIC_URL}/images/umoor-qaza.jpg`
         },
         'fmb': {
             title: 'Umoor FMB',
             description: 'The Umoor FMB Committees focus on family and marriage bureau services. They assist in matchmaking, organize marriage ceremonies, and provide support for newly married couples. These committees help strengthen family foundations and promote healthy marital relationships.',
-            lead: 'Amina Bhen Husain',
-            contact: '512-111-0000',
+            lead: 'M Hamza bhai Karachiwala',
+            contact: '614-377-6967',
             website: 'Umoor FMB Website',
             image: `${process.env.PUBLIC_URL}/images/Umoor-FMB.jpg`
         },
         'iqtesadiyah': {
             title: 'Umoor Iqtesadiyah',
             description: 'The Umoor Iqtesadiyah Committees handle economic development and business networking. They support community entrepreneurs, organize business networking events, and promote economic self-sufficiency. These committees work to strengthen the economic foundation of our community.',
-            lead: 'Jaffer Bhai Ali',
-            contact: '512-000-9999',
+            lead: 'M Mustafa bhai Shakir',
+            contact: '512-348-3844',
             website: 'Umoor Iqtesadiyah Website',
             image: `${process.env.PUBLIC_URL}/images/Umoor-Iqtesadiyah.jpeg`
         },
         'amlaak': {
             title: 'Umoor Amlaak',
             description: 'The Umoor Amlaak Committees manage property and real estate matters for the community. They oversee community property acquisitions, maintenance of community buildings, and real estate investments. These committees ensure proper management of community assets.',
-            lead: 'Sakina Bhen Merchant',
-            contact: '512-999-8888',
+            lead: 'M Murtaza bhai Hirani',
+            contact: '512-413-5284',
             website: 'Umoor Amlaak Website',
-            image: `${process.env.PUBLIC_URL}/images/umoor-amlaak.jpg`
+            image: `${process.env.PUBLIC_URL}/images/Umoor-Amlaak.jpeg`
         },
         'sehhat': {
             title: 'Umoor Sehhat',
             description: 'The Umoor Sehhat Committees focus on health and wellness initiatives within the community. They organize health awareness programs, coordinate medical camps, and promote healthy lifestyle practices. These committees work to ensure the physical and mental well-being of community members.',
-            lead: 'Dr. Zahra Bhen Patel',
-            contact: '512-888-7777',
+            lead: 'M Hussain bhai Malbari',
+            contact: '512-696-7268',
             website: 'Umoor Sehhat Website',
             image: `${process.env.PUBLIC_URL}/images/Umoor-Sehhat.jpeg`
         }
