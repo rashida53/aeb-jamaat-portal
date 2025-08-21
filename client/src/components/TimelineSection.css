@@ -1,0 +1,300 @@
+.timeline-section {
+    background-color: #00203D;
+    padding: 80px 20px;
+    min-height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-title {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    letter-spacing: 2px;
+}
+
+.timeline {
+    position: relative;
+    padding: 40px 20px;
+}
+
+/* Central timeline line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #CE9C01, #B58901);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Left positioned items (even indices: 0, 2, 4...) */
+.timeline-item.left {
+    flex-direction: row;
+}
+
+.timeline-item.left .timeline-content {
+    margin-right: 0;
+    text-align: left;
+    /* flex: 1; */
+    display: flex;
+    /* justify-content: flex-end; */
+    margin-left: calc(50% + 150px + 10px);
+    /* Start after connector ends */
+}
+
+.timeline-item.left .milestone-date {
+    margin-right: 0;
+    text-align: right;
+    position: absolute;
+    left: calc(50% - 80px);
+    /* Position to the left of the node circle */
+    top: calc(50% + 6px);
+    /* Positioned below the connector line */
+    transform: none;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+/* Right positioned items (odd indices: 1, 3, 5...) */
+.timeline-item.right {
+    flex-direction: row-reverse;
+}
+
+.timeline-item.right .timeline-content {
+    margin-left: 0;
+    text-align: right;
+    /* flex: 1; */
+    display: flex;
+    /* justify-content: flex-start; */
+    margin-right: calc(50% + 150px + 10px);
+    /* Start after connector ends */
+}
+
+.timeline-item.right .milestone-date {
+    margin-left: 0;
+    text-align: left;
+    position: absolute;
+    left: calc(50% + 80px);
+    /* Position to the right of the node circle */
+    top: calc(50% + 6px);
+    /* Positioned below the connector line */
+    transform: none;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+/* Timeline node */
+.timeline-node {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.node-circle {
+    width: 20px;
+    height: 20px;
+    background: #CE9C01;
+    border-radius: 50%;
+    border: 4px solid #00203D;
+    box-shadow: 0 0 0 4px #CE9C01;
+}
+
+.node-connector {
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    /* Tripled from 30px */
+    height: 2px;
+    background: #CE9C01;
+    transform: translateY(-50%);
+}
+
+.timeline-item.left .node-connector {
+    right: -150px;
+    /* Adjusted for new width */
+}
+
+.timeline-item.right .node-connector {
+    left: -150px;
+    /* Adjusted for new width */
+}
+
+/* Content boxes */
+.content-box {
+    background-color: #00203D;
+    padding: 25px;
+    max-width: 400px;
+    position: relative;
+}
+
+/* Border only on timeline-facing side */
+.timeline-item.left .content-box {
+    border-left: 2px solid #CE9C01;
+}
+
+.timeline-item.right .content-box {
+    border-right: 2px solid #CE9C01;
+}
+
+.content-box.highlighted {
+    background-color: #CE9C01;
+}
+
+.content-box.highlighted.timeline-item.left {
+    border-right-color: #B58901;
+}
+
+.content-box.highlighted.timeline-item.right {
+    border-left-color: #B58901;
+}
+
+.milestone-heading {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+}
+
+.content-box.highlighted .milestone-heading {
+    color: #00203D;
+}
+
+.milestone-content {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.content-box.highlighted .milestone-content {
+    color: #00203D;
+}
+
+.milestone-date {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-section {
+        padding: 60px 15px;
+    }
+
+    .timeline-title {
+        font-size: 28px;
+        margin-bottom: 60px;
+    }
+
+    .timeline::before {
+        left: 30px;
+        transform: none;
+    }
+
+    .timeline-item {
+        flex-direction: row !important;
+        margin-bottom: 60px;
+    }
+
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+        margin-left: 60px;
+        margin-right: 0;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .timeline-item.left .milestone-date,
+    .timeline-item.right .milestone-date {
+        margin-left: 60px;
+        margin-right: 0;
+        text-align: left;
+        position: static;
+        margin-top: 15px;
+        left: auto;
+        right: auto;
+        transform: none;
+    }
+
+    .timeline-item.left .node-connector,
+    .timeline-item.right .node-connector {
+        left: -150px;
+        /* Adjusted for new width */
+        right: auto;
+    }
+
+    .content-box {
+        max-width: 100%;
+    }
+
+    .timeline-item.left .content-box {
+        border-left: none;
+        border-right: 2px solid #CE9C01;
+    }
+
+    .timeline-item.right .content-box {
+        border-right: none;
+        border-left: 2px solid #CE9C01;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-section {
+        padding: 40px 10px;
+    }
+
+    .timeline-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .timeline-item {
+        margin-bottom: 40px;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+
+    .milestone-heading {
+        font-size: 16px;
+    }
+
+    .milestone-content {
+        font-size: 14px;
+    }
+
+    .milestone-date {
+        font-size: 18px;
+    }
+}

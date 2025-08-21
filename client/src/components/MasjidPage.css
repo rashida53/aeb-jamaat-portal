@@ -1,0 +1,68 @@
+.masjid-page {
+    min-height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+}
+
+/* Override navbar background for this page */
+.masjid-page .navbar {
+    background-color: #00203D !important;
+    position: relative !important;
+}
+
+/* Banner Section */
+.masjid-banner {
+    background: linear-gradient(135deg, #CE9C01 0%, #B58901 100%);
+    height: 200px;
+    /* Double the navbar height (80px * 2) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 0;
+    /* Ensure it starts right after navbar */
+}
+
+.banner-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.banner-title {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: 'PT Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    .masjid-banner {
+        height: 120px;
+        /* Double the mobile navbar height (60px * 2) */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .banner-content {
+        padding: 15px;
+    }
+
+    .masjid-banner {
+        height: 100px;
+        /* Double the small mobile navbar height (50px * 2) */
+    }
+}

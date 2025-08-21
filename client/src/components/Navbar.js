@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ useDarkLogo = false }) => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -80,7 +80,7 @@ const Navbar = () => {
                     <div className="nav-center">
                         <div className="nav-logo">
                             <img
-                                src={`${process.env.PUBLIC_URL}/images/jamaat-logo.png`}
+                                src={`${process.env.PUBLIC_URL}/images/${useDarkLogo ? 'Dark-Logo.png' : 'jamaat-logo.png'}`}
                                 alt="Jamaat Logo"
                                 className="logo-image desktop-logo"
                             />
