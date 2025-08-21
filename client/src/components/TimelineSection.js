@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import MilestoneModal from './MilestoneModal';
 import './TimelineSection.css';
 
 const TimelineSection = ({ milestones = [] }) => {
+    const [selectedMilestone, setSelectedMilestone] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleMilestoneClick = (milestone) => {
+        setSelectedMilestone(milestone);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedMilestone(null);
+    };
+
     return (
         <section className="timeline-section">
             <div className="timeline-container">
@@ -16,7 +30,11 @@ const TimelineSection = ({ milestones = [] }) => {
                             </div>
 
                             <div className="timeline-content">
-                                <div className={`content-box ${milestone.isHighlighted ? 'highlighted' : ''}`}>
+                                <div
+                                    className={`content-box ${milestone.isHighlighted ? 'highlighted' : ''}`}
+                                    onClick={() => handleMilestoneClick(milestone)}
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     <h3 className="milestone-heading">{milestone.heading}</h3>
                                     <p className="milestone-content">{milestone.content}</p>
                                 </div>
@@ -27,6 +45,12 @@ const TimelineSection = ({ milestones = [] }) => {
                     ))}
                 </div>
             </div>
+
+            <MilestoneModal
+                milestone={selectedMilestone}
+                isOpen={isModalOpen}
+                onClose={closeModal}
+            />
         </section>
     );
 };

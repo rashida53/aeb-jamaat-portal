@@ -68,8 +68,8 @@
     margin-right: 0;
     text-align: right;
     position: absolute;
-    left: calc(50% - 80px);
-    /* Position to the left of the node circle */
+    left: calc(50% + 40px);
+    /* Position right after the left edge of the timeline */
     top: calc(50% + 6px);
     /* Positioned below the connector line */
     transform: none;
@@ -96,8 +96,8 @@
     margin-left: 0;
     text-align: left;
     position: absolute;
-    left: calc(50% + 80px);
-    /* Position to the right of the node circle */
+    left: calc(50% - 130px);
+    /* Position right after the right edge of the timeline */
     top: calc(50% + 6px);
     /* Positioned below the connector line */
     transform: none;
@@ -149,6 +149,8 @@
     padding: 25px;
     max-width: 400px;
     position: relative;
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
 }
 
 /* Border only on timeline-facing side */
@@ -160,16 +162,24 @@
     border-right: 2px solid #CE9C01;
 }
 
-.content-box.highlighted {
+/* Hover effect for all content boxes */
+.content-box:hover {
     background-color: #CE9C01;
 }
 
-.content-box.highlighted.timeline-item.left {
-    border-right-color: #B58901;
+.content-box:hover .milestone-heading,
+.content-box:hover .milestone-content {
+    color: #00203D;
 }
 
-.content-box.highlighted.timeline-item.right {
-    border-left-color: #B58901;
+/* Remove the highlighted class styling */
+.content-box.highlighted {
+    background-color: #00203D;
+}
+
+.content-box.highlighted .milestone-heading,
+.content-box.highlighted .milestone-content {
+    color: white;
 }
 
 .milestone-heading {
