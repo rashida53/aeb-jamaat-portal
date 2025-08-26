@@ -3,6 +3,7 @@
     padding: 80px 20px;
     min-height: 100vh;
     font-family: 'PT Sans', sans-serif;
+    color: white;
 }
 
 .timeline-container {
@@ -12,6 +13,7 @@
 }
 
 .timeline-title {
+    font-family: 'Merriweather', serif;
     color: white;
     font-size: 36px;
     font-weight: bold;
@@ -78,7 +80,7 @@
     text-align: right;
     position: absolute;
     left: calc(50% + 40px);
-    /* Position right after the left edge of the timeline */
+    /* Position to the left of the node circle */
     top: calc(50% + 6px);
     /* Positioned below the connector line */
     transform: none;
@@ -106,7 +108,7 @@
     text-align: left;
     position: absolute;
     left: calc(50% - 130px);
-    /* Position right after the right edge of the timeline */
+    /* Position to the right of the node circle */
     top: calc(50% + 6px);
     /* Positioned below the connector line */
     transform: none;
@@ -155,78 +157,43 @@
 /* Content boxes */
 .content-box {
     background-color: #00203D;
-    padding: 25px;
+    padding: 10px 25px;
     max-width: 400px;
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
+.content-box:hover {
+    cursor: pointer;
+}
+
 /* Border only on timeline-facing side */
 .timeline-item.left .content-box {
     border-left: 2px solid #CE9C01;
+    background: linear-gradient(to left, #00203D 50%, #CE9C01 50%) right;
+    background-size: 200%;
+    transition: background-position 0.5s, color 0.5s;
+}
+
+.timeline-item.left .content-box:hover {
+    background-position: left;
+    color: #00203D !important;
 }
 
 .timeline-item.right .content-box {
     border-right: 2px solid #CE9C01;
+    background: linear-gradient(to right, #00203D 50%, #CE9C01 50%) left;
+    background-size: 200%;
+    transition: background-position 0.5s, color 0.5s;
 }
 
-/* Hover effect base */
-.content-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    background-color: #CE9C01;
-    transition: width 0.3s ease;
-    z-index: -1;
-    width: 0;
-}
-
-/* Left to right hover effect for left items */
-.timeline-item.left .content-box::before {
-    left: 0;
-    right: auto;
-}
-
-.timeline-item.left .content-box:hover::before {
-    width: 100%;
-}
-
-/* Right to left hover effect for right items */
-.timeline-item.right .content-box::before {
-    right: 0;
-    left: auto;
-}
-
-.timeline-item.right .content-box:hover::before {
-    width: 100%;
-}
-
-.content-box .milestone-heading,
-.content-box .milestone-content {
-    position: relative;
-    z-index: 1;
-    transition: color 0.3s ease;
-}
-
-.content-box:hover .milestone-heading,
-.content-box:hover .milestone-content {
+.timeline-item.right .content-box:hover {
+    background-position: right;
     color: #00203D;
 }
 
-/* Remove the highlighted class styling */
-.content-box.highlighted {
-    background-color: #00203D;
-}
-
-.content-box.highlighted .milestone-heading,
-.content-box.highlighted .milestone-content {
-    color: white;
-}
-
 .milestone-heading {
-    color: white;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
@@ -234,19 +201,10 @@
     letter-spacing: 1px;
 }
 
-.content-box.highlighted .milestone-heading {
-    color: #00203D;
-}
-
 .milestone-content {
-    color: white;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     margin: 0;
-}
-
-.content-box.highlighted .milestone-content {
-    color: #00203D;
 }
 
 .milestone-date {

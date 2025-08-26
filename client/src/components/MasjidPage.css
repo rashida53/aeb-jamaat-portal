@@ -5,6 +5,7 @@
 
 /* Override navbar background for this page */
 .masjid-page .navbar {
+    background: none !important;
     background-color: #00203D !important;
     position: relative !important;
 }
@@ -29,7 +30,7 @@
 
 .banner-title {
     color: white;
-    font-size: 48px;
+    /* font-size: 36px; */
     font-weight: bold;
     font-family: 'PT Sans', sans-serif;
     text-transform: uppercase;

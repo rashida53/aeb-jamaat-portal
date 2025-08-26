@@ -31,7 +31,7 @@ const TimelineSection = ({ milestones = [] }) => {
 
                             <div className="timeline-content">
                                 <div
-                                    className={`content-box ${milestone.isHighlighted ? 'highlighted' : ''}`}
+                                    className="content-box"
                                     onClick={() => handleMilestoneClick(milestone)}
                                     style={{ cursor: 'pointer' }}
                                 >

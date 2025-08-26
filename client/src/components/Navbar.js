@@ -11,10 +11,12 @@ const Navbar = ({ useDarkLogo = false }) => {
             const currentScrollY = window.scrollY;
 
             // Show navbar only when at the top of the page
-            if (currentScrollY <= 50) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
+            if (window.location.pathname === '/') { // only on the homepage
+                if (currentScrollY <= 50) {
+                    setIsVisible(true);
+                } else {
+                    setIsVisible(false);
+                }
             }
 
             setLastScrollY(currentScrollY);
