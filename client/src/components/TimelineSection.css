@@ -261,63 +261,129 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .timeline-section {
-        padding: 60px 15px;
+        padding: 60px 0;
+        background-color: #00203D;
     }
 
     .timeline-title {
         font-size: 28px;
         margin-bottom: 60px;
+        padding: 0 20px;
     }
 
+    .timeline {
+        position: relative;
+        padding: 0;
+    }
+
+    /* Vertical line */
     .timeline::before {
-        left: 30px;
+        content: '';
+        position: absolute;
+        left: 40px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #CE9C01;
         transform: none;
     }
 
     .timeline-item {
-        flex-direction: row !important;
-        margin-bottom: 60px;
+        position: relative;
+        margin: 0;
+        padding: 30px 20px 30px 80px;
+        display: block;
     }
 
-    .timeline-item.left .timeline-content,
-    .timeline-item.right .timeline-content {
-        margin-left: 60px;
-        margin-right: 0;
-        text-align: left;
-        justify-content: flex-start;
+    /* Adjust node and connector for mobile */
+    .timeline-node {
+        position: absolute;
+        left: 40px;
+        top: 110px;
+        display: block;
     }
 
-    .timeline-item.left .milestone-date,
-    .timeline-item.right .milestone-date {
-        margin-left: 60px;
-        margin-right: 0;
-        text-align: left;
-        position: static;
-        margin-top: 15px;
-        left: auto;
-        right: auto;
-        transform: none;
+    .node-circle {
+        width: 20px;
+        height: 20px;
+        background: #CE9C01;
+        border-radius: 50%;
+        border: none;
+        box-shadow: none;
     }
 
-    .timeline-item.left .node-connector,
-    .timeline-item.right .node-connector {
-        left: -150px;
-        /* Adjusted for new width */
-        right: auto;
+    .node-connector {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        width: 60px;
+        height: 2px;
+        background: #CE9C01;
+        transform: translateY(-50%);
+    }
+
+    .timeline-content {
+        margin: 0 0 0 80px !important;
+        text-align: left !important;
     }
 
     .content-box {
+        background: transparent;
+        padding: 0;
         max-width: 100%;
+        position: relative;
+        overflow: hidden;
+        border: none !important;
     }
 
-    .timeline-item.left .content-box {
-        border-left: none;
-        border-right: 2px solid #CE9C01;
+    /* Keep hover effect consistent with desktop */
+    .content-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #CE9C01;
+        transition: width 0.3s ease;
+        z-index: -1;
     }
 
-    .timeline-item.right .content-box {
-        border-right: none;
-        border-left: 2px solid #CE9C01;
+    .content-box:hover::before {
+        width: 100%;
+    }
+
+    .milestone-date {
+        color: #CE9C01;
+        font-size: 18px;
+        font-weight: bold;
+        position: absolute !important;
+        left: 31px !important;
+        top: 70px !important;
+        transform: none !important;
+        text-align: left !important;
+    }
+
+    .milestone-heading {
+        color: white;
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+    }
+
+    .milestone-content {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        line-height: 1.5;
+        position: relative;
+        z-index: 1;
+    }
+
+    .content-box:hover .milestone-heading,
+    .content-box:hover .milestone-content {
+        color: #00203D;
     }
 }
 
