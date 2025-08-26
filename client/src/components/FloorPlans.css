@@ -13,7 +13,7 @@
     padding: 0 20px;
 }
 
-.section-title {
+.floor-plans-section-title {
     text-align: center;
     color: #CE9C01;
     font-size: 2.5rem;
@@ -21,6 +21,15 @@
     margin-bottom: 60px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.floor-plans-section-title::after {
+    content: '';
+    display: block;
+    width: 250px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
 }
 
 .floor-plan-container {

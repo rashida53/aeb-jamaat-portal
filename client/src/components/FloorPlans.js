@@ -10,7 +10,7 @@ const FloorPlans = () => {
             }}
         >
             <div className="container">
-                <h2 className="section-title">ARCHITECTURAL DESIGNS & FLOOR PLANS</h2>
+                <h2 className="floor-plans-section-title">ARCHITECTURAL DESIGNS & FLOOR PLANS</h2>
 
                 {/* First Floor */}
                 <div className="floor-plan-container">

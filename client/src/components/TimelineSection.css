@@ -21,6 +21,15 @@
     letter-spacing: 2px;
 }
 
+.timeline-title::after {
+    content: '';
+    display: block;
+    width: 250px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
 .timeline {
     position: relative;
     padding: 40px 20px;
