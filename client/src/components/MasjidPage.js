@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import TimelineSection from './TimelineSection';
+import FloorPlans from './FloorPlans';
 import './MasjidPage.css';
 
 const MasjidPage = () => {
@@ -101,6 +102,7 @@ const MasjidPage = () => {
                 </div>
             </div>
             <TimelineSection milestones={milestones} />
+            <FloorPlans />
         </div>
     );
 };
