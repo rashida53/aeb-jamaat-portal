@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import TimelineSection from './TimelineSection';
 import FloorPlans from './FloorPlans';
 import MasjidGallery from './MasjidGallery';
+import Reflections from './Reflections';
 import './MasjidPage.css';
 
 const MasjidPage = () => {
@@ -105,6 +106,7 @@ const MasjidPage = () => {
             <TimelineSection milestones={milestones} />
             <FloorPlans />
             <MasjidGallery />
+            <Reflections />
         </div>
     );
 };
