@@ -33,7 +33,7 @@
     background: none;
     border: none;
     color: #00203D;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
     padding: 8px 12px;
@@ -70,14 +70,14 @@
 
 .title-separator-vertical {
     width: 2px;
-    height: 40px;
+    height: 30px;
     background-color: #CE9C01;
     margin: 0 15px;
 }
 
 .modal-title {
     color: #00203D;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 2px;
     font-weight: bold;
     text-transform: uppercase;
@@ -91,6 +91,7 @@
     font-size: 20px;
     margin: 0;
     font-family: 'PT Sans', sans-serif;
+    letter-spacing: 1px;
 }
 
 .title-separator {
@@ -102,7 +103,7 @@
 
 /* Content */
 .modal-content {
-    padding: 0 30px 30px 30px;
+    padding: 0 60px 30px 60px;
 }
 
 .modal-images {
@@ -125,7 +126,7 @@
 
 .modal-text-content {
     color: #00203D;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     font-family: 'PT Sans', sans-serif;
 }
@@ -137,7 +138,7 @@
 /* Footer */
 .modal-footer {
     text-align: center;
-    padding: 20px 0px 30px 0px;
+    padding: 20px 0px 60px 0px;
 }
 
 .footer-line-circle {
