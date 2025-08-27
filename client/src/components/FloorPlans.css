@@ -35,16 +35,17 @@
 
 .floor-plan-container {
     background: #ffffff;
-    padding: 60px;
     margin-bottom: 40px;
+    padding: 60px 0;
 }
 
 .floor-title {
     color: #00203D;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 40px;
+    letter-spacing: 2px;
 }
 
 .plan-content {
@@ -55,12 +56,11 @@
 .floor-plan-image {
     width: 100%;
     height: auto;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 /* Specifications */
 .specifications {
-    max-width: 600px;
     margin: 0 auto;
     position: relative;
     padding: 0 20px;
@@ -73,9 +73,9 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 1px;
+    width: 2px;
     height: 100%;
-    background-color: #00203D;
+    background-color: #779287;
 }
 
 .spec-row {
@@ -91,7 +91,8 @@
 .spec-label {
     text-align: right;
     padding-right: 40px;
-    font-weight: 500;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .spec-divider {
@@ -102,6 +103,7 @@
 .spec-value {
     text-align: left;
     padding-left: 40px;
+    letter-spacing: 1px;
 }
 
 /* Separator - now inside the floor plan container */
@@ -109,20 +111,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px auto;
+    margin: 30px auto;
+    margin-top: 70px;
     width: 100%;
 }
 
 .line {
     height: 2px;
-    background-color: #C4A962;
+    background-color: #CE9C01;
     flex: 1;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
-    background-color: #C4A962;
+    width: 20px;
+    height: 20px;
+    background-color: #CE9C01;
     border-radius: 50%;
 }
 

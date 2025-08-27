@@ -223,8 +223,4 @@
     .modal-text-content {
         font-size: 14px;
     }
-
-    .footer-line {
-        /* Removed max-width constraint */
-    }
 }
