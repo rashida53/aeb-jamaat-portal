@@ -228,6 +228,8 @@
     }
 
     .timeline {
+        max-width: 600px;
+        margin: auto;
         position: relative;
         padding: 0;
     }
@@ -247,7 +249,7 @@
     .timeline-item {
         position: relative;
         margin: 0;
-        padding: 30px 20px 30px 80px;
+        padding: 50px 20px 30px 80px;
         display: block;
     }
 
@@ -291,7 +293,7 @@
         max-width: 100%;
         position: relative;
         overflow: hidden;
-
+        padding: 20px;
     }
 
     .milestone-date {
@@ -361,7 +363,7 @@
     .timeline-item {
         position: relative;
         margin: 0;
-        padding: 30px 20px 30px 80px;
+        padding: 50px 20px 30px 80px;
         display: block;
     }
 
@@ -405,7 +407,7 @@
         max-width: 100%;
         position: relative;
         overflow: hidden;
-
+        padding: 20px;
     }
 
     .milestone-date {
