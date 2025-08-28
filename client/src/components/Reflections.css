@@ -12,20 +12,22 @@
     margin: 0 auto;
 }
 
-.section-title {
+.reflections-section-title {
     text-align: center;
     color: #CE9C01;
-    font-size: 2.5rem;
+    font-size: 36px;
     font-weight: bold;
     margin-bottom: 60px;
     text-transform: uppercase;
     position: relative;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 2px;
 }
 
-.section-title::after {
+.reflections-section-title::after {
     content: '';
     display: block;
-    width: 250px;
+    width: 200px;
     height: 2px;
     background-color: #CE9C01;
     margin: 15px auto 0;
@@ -40,11 +42,10 @@
 .blog-post {
     display: flex;
     background: #ffffff;
-    margin-bottom: 30px;
 }
 
 .post-accent {
-    width: 6px;
+    width: 4px;
     background-color: #CE9C01;
 }
 
@@ -80,11 +81,12 @@
     font-weight: bold;
     margin-bottom: 15px;
     text-align: left;
+    letter-spacing: 1px;
 }
 
 .post-text {
     color: #333;
-    font-size: 1rem;
+    font-size: 18px;
     line-height: 1.6;
     margin-bottom: 15px;
     flex-grow: 1;
@@ -108,6 +110,7 @@
     color: #CE9C01;
     text-decoration: none;
     font-weight: 600;
+    letter-spacing: 1px;
     padding: 8px 16px;
     border-left: 2px solid #CE9C01;
     position: relative;
@@ -132,6 +135,44 @@
 }
 
 .read-more:hover::before {
+    width: 100%;
+}
+
+/* View All Reflections button */
+.view-all-reflections-btn {
+    display: inline-block;
+    color: #fff;
+    background: #CE9C01;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding: 12px 32px;
+    border-left: 2px solid #CE9C01;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.view-all-reflections-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.view-all-reflections-btn:hover {
+    color: #CE9C01;
+}
+
+.view-all-reflections-btn:hover::before {
     width: 100%;
 }
 

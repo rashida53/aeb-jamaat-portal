@@ -27,7 +27,7 @@
 .floor-plans-section-title::after {
     content: '';
     display: block;
-    width: 250px;
+    width: 350px;
     height: 2px;
     background-color: #CE9C01;
     margin: 15px auto 0;

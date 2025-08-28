@@ -9,6 +9,7 @@ import MasjidSection from './components/MasjidSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import MasjidPage from './components/MasjidPage';
+import AllReflections from './components/AllReflections';
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                         </>
                     } />
                     <Route path="/masjid" element={<MasjidPage />} />
+                    <Route path="/reflections/all" element={<AllReflections />} />
                 </Routes>
             </div>
         </Router>

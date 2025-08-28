@@ -51,7 +51,7 @@ const MasjidGallery = () => {
     return (
         <section className="building-progress-section">
             <div className="container">
-                <h2 className="section-title">BUILDING TOGETHER: A COMMUNITY EFFORT</h2>
+                <h2 className="gallery-section-title">BUILDING TOGETHER: A COMMUNITY EFFORT</h2>
 
                 <div className="carousel-container">
                     <Slider {...settings} className="progress-carousel">

@@ -4,7 +4,8 @@
 }
 
 /* Override navbar background for this page */
-.masjid-page .navbar {
+.masjid-page .navbar,
+.all-reflections .navbar {
     background: none !important;
     background-color: #00203D !important;
     position: relative !important;
