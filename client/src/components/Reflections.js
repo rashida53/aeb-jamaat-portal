@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Reflections.css';
 import { createClient } from 'contentful';
 
@@ -63,7 +64,7 @@ const Reflections = () => {
                                             </p>
                                             <div className="post-bottom">
                                                 <p className="post-author">{authorName}</p>
-                                                <a href={`/reflections/${slug}`} className="read-more">READ MORE</a>
+                                                <Link to={`/blog/${post.sys.id}`} className="read-more">READ MORE</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +74,7 @@ const Reflections = () => {
                     </div>
                 )}
                 <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                    <a href="/reflections/all" className="view-all-reflections-btn">VIEW ALL REFLECTIONS</a>
+                    <Link to="/reflections/all" className="view-all-reflections-btn">VIEW ALL REFLECTIONS</Link>
                 </div>
             </div>
         </section>

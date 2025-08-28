@@ -5,7 +5,8 @@
 
 /* Override navbar background for this page */
 .masjid-page .navbar,
-.all-reflections .navbar {
+.all-reflections .navbar,
+.blog-post-page .navbar {
     background: none !important;
     background-color: #00203D !important;
     position: relative !important;

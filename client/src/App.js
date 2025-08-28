@@ -10,6 +10,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import MasjidPage from './components/MasjidPage';
 import AllReflections from './components/AllReflections';
+import BlogPost from './components/BlogPost';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                     } />
                     <Route path="/masjid" element={<MasjidPage />} />
                     <Route path="/reflections/all" element={<AllReflections />} />
+                    <Route path="/blog/:id" element={<BlogPost />} />
                 </Routes>
             </div>
         </Router>
