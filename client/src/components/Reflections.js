@@ -16,6 +16,7 @@ const Reflections = () => {
     useEffect(() => {
         client.getEntries({
             content_type: 'pageBlogPost',
+            'fields.category': 'masjid',
             order: '-fields.publishedDate',
             limit: 4
         })
