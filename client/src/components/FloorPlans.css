@@ -131,6 +131,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .floor-plans-section {
+        background-attachment: scroll;
+    }
+
     .section-title {
         font-size: 2rem;
     }
@@ -162,6 +166,10 @@
 }
 
 @media (max-width: 480px) {
+    .floor-plans-section {
+        background-attachment: scroll;
+    }
+
     .section-title {
         font-size: 1.6rem;
     }

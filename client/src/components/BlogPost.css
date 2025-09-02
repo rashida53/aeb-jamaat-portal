@@ -1,14 +1,14 @@
 .blog-post-section {
     padding: 80px 20px;
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container {
@@ -94,6 +94,7 @@
 @media (max-width: 768px) {
     .blog-post-section {
         padding: 60px 15px;
+        background-attachment: scroll;
     }
 
     .blog-post-title {
@@ -115,6 +116,10 @@
 }
 
 @media (max-width: 480px) {
+    .blog-post-section {
+        background-attachment: scroll;
+    }
+
     .blog-post-title {
         font-size: 1.8rem;
     }
