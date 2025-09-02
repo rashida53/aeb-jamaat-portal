@@ -11,7 +11,7 @@ const Navbar = ({ useDarkLogo = false }) => {
             const currentScrollY = window.scrollY;
 
             // Show navbar only when at the top of the page
-            if (window.location.pathname === '/') { // only on the homepage
+            if (window.location.pathname === '/aeb-jamaat-portal') { // only on the homepage
                 if (currentScrollY <= 50) {
                     setIsVisible(true);
                 } else {
