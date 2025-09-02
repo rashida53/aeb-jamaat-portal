@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './MasjidSection.css';
 
 const MasjidSection = () => {
+    const navigate = useNavigate();
+
     const masjidImages = [
         {
             id: 1,
@@ -46,6 +49,10 @@ const MasjidSection = () => {
                 }
             }
         ]
+    };
+
+    const handleReadMore = () => {
+        navigate('/masjid');
     };
 
     return (
@@ -92,7 +99,7 @@ const MasjidSection = () => {
                     </p>
 
                     <div className="read-more-container">
-                        <a href="#" className="read-more-link">Read More</a>
+                        <button onClick={handleReadMore} className="read-more-link">Read More</button>
                     </div>
                 </div>
             </div>

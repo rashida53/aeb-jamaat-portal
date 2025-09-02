@@ -1,0 +1,176 @@
+.floor-plans-section {
+    padding: 80px 20px;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.floor-plans-section-title {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    color: #CE9C01;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.floor-plans-section-title::after {
+    content: '';
+    display: block;
+    width: 350px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
+.floor-plan-container {
+    background: #ffffff;
+    margin-bottom: 40px;
+    padding: 60px 0;
+}
+
+.floor-title {
+    color: #00203D;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.plan-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.floor-plan-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+/* Specifications */
+.specifications {
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Vertical line */
+.specifications::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #779287;
+}
+
+.spec-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    color: #00203D;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 8px 0;
+}
+
+.spec-label {
+    text-align: right;
+    padding-right: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.spec-divider {
+    display: none;
+    /* Hide individual dividers */
+}
+
+.spec-value {
+    text-align: left;
+    padding-left: 40px;
+    letter-spacing: 1px;
+}
+
+/* Separator - now inside the floor plan container */
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    margin-top: 70px;
+    width: 100%;
+}
+
+.line {
+    height: 2px;
+    background-color: #CE9C01;
+    flex: 1;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #CE9C01;
+    border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .floor-plan-container {
+        padding: 30px;
+    }
+
+    .specifications::before {
+        display: none;
+        /* Hide vertical line on mobile */
+    }
+
+    .spec-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .spec-label {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .spec-value {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .floor-title {
+        font-size: 1.4rem;
+    }
+
+    .floor-plan-container {
+        padding: 20px;
+    }
+}

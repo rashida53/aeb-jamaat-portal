@@ -1,0 +1,136 @@
+.building-progress-section {
+    background-color: #00203D;
+    padding: 80px 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-section-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    position: relative;
+    text-transform: uppercase;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 2px;
+}
+
+.gallery-section-title::after {
+    content: '';
+    display: block;
+    width: 350px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
+.carousel-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Carousel Styling */
+.progress-carousel {
+    margin-bottom: 30px;
+}
+
+.carousel-slide {
+    padding: 0 10px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Slick Carousel Custom Styling */
+.slick-dots {
+    bottom: -30px;
+}
+
+.slick-dots li button:before {
+    color: #ffffff;
+    opacity: 0.5;
+    font-size: 8px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #C4A962;
+    opacity: 1;
+}
+
+.slick-prev,
+.slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+}
+
+.slick-prev {
+    left: -50px;
+}
+
+.slick-next {
+    right: -50px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 40px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .slick-prev {
+        left: -30px;
+    }
+
+    .slick-next {
+        right: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .carousel-container {
+        padding: 0 10px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .building-progress-section {
+        padding: 60px 0;
+    }
+}
