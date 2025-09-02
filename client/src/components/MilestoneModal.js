@@ -43,7 +43,7 @@ const MilestoneModal = ({ milestone, isOpen, onClose }) => {
 
                     {/* Detailed Content */}
                     <div className="modal-text-content">
-                        <p>{milestone.detailedContent || milestone.content}</p>
+                        <p className="modal-description">{milestone.detailedContent || milestone.content}</p>
                     </div>
                 </div>
 
