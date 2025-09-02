@@ -54,14 +54,15 @@
 }
 
 .single-post-author {
-    color: #666;
+    color: #779287;
     font-style: italic;
     margin-bottom: 30px;
     font-size: 1.1rem;
 }
 
 .single-post-body {
-    color: #333;
+    color: #00203D;
+    font-family: 'PT Sans', sans-serif;
     font-size: 1.1rem;
     line-height: 1.8;
 }
