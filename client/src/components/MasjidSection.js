@@ -53,6 +53,7 @@ const MasjidSection = () => {
 
     const handleReadMore = () => {
         navigate('/masjid');
+        window.scrollTo(0, 0);
     };
 
     return (

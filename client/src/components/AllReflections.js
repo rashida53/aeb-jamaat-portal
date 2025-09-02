@@ -14,6 +14,7 @@ const AllReflections = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         client.getEntries({
             content_type: 'pageBlogPost',
             order: '-fields.publishedDate'

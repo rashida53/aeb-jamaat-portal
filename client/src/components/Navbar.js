@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import './Navbar.css';
 
 const Navbar = ({ useDarkLogo = false }) => {
@@ -11,7 +12,7 @@ const Navbar = ({ useDarkLogo = false }) => {
             const currentScrollY = window.scrollY;
 
             // Show navbar only when at the top of the page
-            if (window.location.pathname === '/aeb-jamaat-portal') { // only on the homepage
+            if ((window.location.hash === '' || window.location.pathname === '/aeb-jamaat-portal') && (window.location.hash != '#/masjid')) { // only on the homepage
                 if (currentScrollY <= 50) {
                     setIsVisible(true);
                 } else {
@@ -25,18 +26,6 @@ const Navbar = ({ useDarkLogo = false }) => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
-
-    const scrollToSection = (sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-        // Close mobile menu after navigation
-        setIsMobileMenuOpen(false);
-    };
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -57,26 +46,17 @@ const Navbar = ({ useDarkLogo = false }) => {
 
                     {/* Desktop Navigation */}
                     <div className="nav-left desktop-nav">
-                        <button
-                            onClick={() => scrollToSection('hero')}
-                            className="nav-link"
-                        >
+                        <HashLink smooth to="/#hero" className="nav-link">
                             Home
-                        </button>
+                        </HashLink>
                         <span className="nav-separator">|</span>
-                        <button
-                            onClick={() => scrollToSection('about')}
-                            className="nav-link"
-                        >
+                        <HashLink smooth to="/#about" className="nav-link">
                             About
-                        </button>
+                        </HashLink>
                         <span className="nav-separator">|</span>
-                        <button
-                            onClick={() => scrollToSection('umoor')}
-                            className="nav-link"
-                        >
+                        <HashLink smooth to="/#umoor" className="nav-link">
                             12 Umoor
-                        </button>
+                        </HashLink>
                     </div>
 
                     <div className="nav-center">
@@ -95,21 +75,15 @@ const Navbar = ({ useDarkLogo = false }) => {
                     </div>
 
                     <div className="nav-right desktop-nav">
-                        <a href="#news" className="nav-link">News</a>
+                        <HashLink smooth to="/#news" className="nav-link">News</HashLink>
                         <span className="nav-separator">|</span>
-                        <button
-                            onClick={() => scrollToSection('masjid')}
-                            className="nav-link"
-                        >
+                        <HashLink smooth to="/#masjid" className="nav-link">
                             Blog
-                        </button>
+                        </HashLink>
                         <span className="nav-separator">|</span>
-                        <button
-                            onClick={() => scrollToSection('contact')}
-                            className="nav-link"
-                        >
+                        <HashLink smooth to="/#contact" className="nav-link">
                             Contact
-                        </button>
+                        </HashLink>
                     </div>
                 </div>
             </nav>
@@ -117,42 +91,29 @@ const Navbar = ({ useDarkLogo = false }) => {
             {/* Mobile Menu Overlay */}
             <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
                 <div className="mobile-menu-links">
-                    <button
-                        onClick={() => scrollToSection('hero')}
-                        className="mobile-nav-link"
-                    >
+                    <HashLink smooth to="/#hero" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                         Home
-                    </button>
+                    </HashLink>
                     <div className="mobile-link-divider"></div>
-                    <button
-                        onClick={() => scrollToSection('about')}
-                        className="mobile-nav-link"
-                    >
+                    <HashLink smooth to="/#about" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                         About
-                    </button>
+                    </HashLink>
                     <div className="mobile-link-divider"></div>
-                    <button
-                        onClick={() => scrollToSection('umoor')}
-                        className="mobile-nav-link"
-                    >
+                    <HashLink smooth to="/#umoor" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                         12 Umoor
-                    </button>
+                    </HashLink>
                     <div className="mobile-link-divider"></div>
-                    <a href="#news" className="mobile-nav-link">News</a>
+                    <HashLink smooth to="/#news" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                        News
+                    </HashLink>
                     <div className="mobile-link-divider"></div>
-                    <button
-                        onClick={() => scrollToSection('masjid')}
-                        className="mobile-nav-link"
-                    >
+                    <HashLink smooth to="/#masjid" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                         Blog
-                    </button>
+                    </HashLink>
                     <div className="mobile-link-divider"></div>
-                    <button
-                        onClick={() => scrollToSection('contact')}
-                        className="mobile-nav-link"
-                    >
+                    <HashLink smooth to="/#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                         Contact
-                    </button>
+                    </HashLink>
                 </div>
             </div>
         </>
