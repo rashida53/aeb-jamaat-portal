@@ -1,9 +1,9 @@
 .reflections-section {
     padding: 80px 20px;
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top;
+    background-repeat: repeat-y;
     background-attachment: fixed;
 }
 
