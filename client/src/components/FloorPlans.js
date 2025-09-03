@@ -6,7 +6,7 @@ const FloorPlans = () => {
         <section
             className="floor-plans-section"
             style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern.svg)`,
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern-corrected.png)`,
             }}
         >
             <div className="container">

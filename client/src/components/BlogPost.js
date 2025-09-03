@@ -86,7 +86,7 @@ const BlogPost = () => {
                 id="blog-post"
                 className="blog-post-section"
                 style={{
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern.svg)`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern-corrected.png)`,
                 }}
             >
 

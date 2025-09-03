@@ -3,7 +3,7 @@
     min-height: 100vh;
     background-size: auto;
     background-position: top;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     background-attachment: fixed;
 }
 

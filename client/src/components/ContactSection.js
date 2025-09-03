@@ -7,7 +7,7 @@ const ContactSection = () => {
             id="contact"
             className="contact-section"
             style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern.svg)`,
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern-corrected.png)`,
             }}
         >
             <h2 className="contact-title">
