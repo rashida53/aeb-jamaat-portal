@@ -1,6 +1,5 @@
 .reflections-section {
     padding: 80px 20px;
-    min-height: 100vh;
     background-size: auto;
     background-position: top;
     background-repeat: repeat;
@@ -144,7 +143,7 @@
     color: #fff;
     background: #CE9C01;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 18px;
     letter-spacing: 1px;
     padding: 12px 32px;
     border-left: 2px solid #CE9C01;
@@ -182,6 +181,10 @@
         background-attachment: scroll;
     }
 
+    .reflections-section-title {
+        font-size: 28px;
+    }
+
     .post-content {
         flex-direction: column;
         padding: 20px;
@@ -202,8 +205,8 @@
         background-attachment: scroll;
     }
 
-    .section-title {
-        font-size: 2rem;
+    .reflections-section-title {
+        font-size: 24px;
     }
 
     .post-title {
@@ -212,5 +215,9 @@
 
     .post-content {
         padding: 15px;
+    }
+
+    .view-all-reflections-btn {
+        font-size: 14px;
     }
 }

@@ -47,7 +47,7 @@
     padding: 0 10px;
 }
 
-.image-container {
+.gallery-image-container {
     position: relative;
     width: 100%;
     height: 600px;
@@ -105,18 +105,27 @@
         left: -30px;
     }
 
+    .gallery-image-container {
+        height: 400px;
+    }
+
     .slick-next {
         right: -30px;
     }
 }
 
 @media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
+
+    .gallery-section-title {
+        font-size: 28px;
     }
 
     .carousel-container {
         padding: 0 10px;
+    }
+
+    .gallery-image-container {
+        height: 300px;
     }
 
     .slick-prev,
@@ -126,8 +135,12 @@
 }
 
 @media (max-width: 480px) {
-    .section-title {
-        font-size: 1.8rem;
+    .gallery-section-title {
+        font-size: 24px;
+    }
+
+    .gallery-image-container {
+        height: 200px;
     }
 
     .building-progress-section {

@@ -1,7 +1,6 @@
 .timeline-section {
     background-color: #00203D;
     padding: 80px 20px;
-    min-height: 100vh;
     font-family: 'PT Sans', sans-serif;
     color: white;
 }
@@ -222,7 +221,6 @@
     }
 
     .timeline-title {
-        font-size: 28px;
         margin-bottom: 60px;
         padding: 0 20px;
     }

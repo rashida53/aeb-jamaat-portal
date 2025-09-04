@@ -1,7 +1,6 @@
 .masjid-section {
     background-color: #00203D;
     padding: 80px 20px;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,7 +162,7 @@
     }
 
     .masjid-title {
-        font-size: 2rem;
+        font-size: 28px;
         margin-bottom: 20px;
     }
 
@@ -216,8 +215,12 @@
     }
 
     .image-container {
-        height: 250px;
+        height: 200px !important;
     }
+
+    /* .masjid-image {
+        height: 200px;
+    } */
 
     .masjid-text-content p {
         font-size: 0.95rem;
@@ -231,7 +234,7 @@
 
     .masjid-carousel-container {
         max-width: 100%;
-        margin: 0 auto 40px auto;
+        margin: 0 auto 60px auto;
         padding: 0;
     }
 }

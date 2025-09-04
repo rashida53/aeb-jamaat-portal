@@ -1,6 +1,5 @@
 .blog-post-section {
     padding: 80px 20px;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,12 +97,12 @@
     }
 
     .blog-post-title {
-        font-size: 2rem;
+        font-size: 28px;
         margin-bottom: 30px;
     }
 
     .single-post-image {
-        height: 300px;
+        height: 400px;
     }
 
     .single-post-details {
@@ -125,7 +124,7 @@
     }
 
     .single-post-image {
-        height: 200px;
+        height: 300px;
     }
 
     .single-post-details {

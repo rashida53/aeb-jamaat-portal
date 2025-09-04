@@ -1,6 +1,5 @@
 .umoor-section {
     padding: 80px 20px;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -276,7 +275,6 @@
     }
 
     .umoor-title {
-        font-size: 2.5rem;
         margin-bottom: 20px;
     }
 
@@ -339,7 +337,7 @@
     }
 
     .umoor-title {
-        font-size: 2rem;
+        font-size: 28px;
         margin-bottom: 20px;
     }
 

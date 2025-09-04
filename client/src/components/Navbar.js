@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ useDarkLogo = false }) => {
@@ -75,7 +76,10 @@ const Navbar = ({ useDarkLogo = false }) => {
                     </div>
 
                     <div className="nav-right desktop-nav">
-                        <HashLink smooth to="/#news" className="nav-link">News</HashLink>
+                        {/* <HashLink smooth to="/#news" className="nav-link">News</HashLink> */}
+                        <Link to="/masjid" className="nav-link">
+                            Masjid
+                        </Link>
                         <span className="nav-separator">|</span>
                         <HashLink smooth to="/#masjid" className="nav-link">
                             Blog
@@ -103,9 +107,9 @@ const Navbar = ({ useDarkLogo = false }) => {
                         12 Umoor
                     </HashLink>
                     <div className="mobile-link-divider"></div>
-                    <HashLink smooth to="/#news" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
-                        News
-                    </HashLink>
+                    <Link to="/masjid" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                        Masjid
+                    </Link>
                     <div className="mobile-link-divider"></div>
                     <HashLink smooth to="/#masjid" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                         Blog

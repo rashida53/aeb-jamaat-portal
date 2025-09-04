@@ -57,7 +57,7 @@ const MasjidGallery = () => {
                     <Slider {...settings} className="progress-carousel">
                         {masjidImages.map((image) => (
                             <div key={image.id} className="carousel-slide">
-                                <div className="image-container">
+                                <div className="gallery-image-container">
                                     <img
                                         src={image.src}
                                         alt={image.alt}
