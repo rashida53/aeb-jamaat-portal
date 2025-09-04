@@ -114,14 +114,19 @@
 }
 
 .modal-image-container {
-    flex: 1;
-    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 .modal-image {
-    width: 100%;
-    height: 200px;
+    width: 350px;
+    height: 250px;
     object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .modal-text-content {
@@ -186,13 +191,9 @@
         font-size: 18px;
     }
 
-    .modal-images {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .modal-image-container {
+    .modal-image {
         max-width: 100%;
+        height: 250px;
     }
 
     .modal-header,

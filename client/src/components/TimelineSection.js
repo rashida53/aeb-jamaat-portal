@@ -26,25 +26,20 @@ const TimelineSection = () => {
                     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
                     const formattedDate = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
-                    // Default images if none from Contentful
-                    const defaultImages = [
-                        {
-                            src: `${process.env.PUBLIC_URL}/images/MasjidZameen1.jpg`,
-                            alt: "Masjid Zameen View 1"
-                        },
-                        {
-                            src: `${process.env.PUBLIC_URL}/images/MasjidZameen2.jpg`,
-                            alt: "Masjid Zameen View 2"
-                        }
-                    ];
+                    // Default image if none from Contentful
+                    const defaultImage = {
+                        src: `${process.env.PUBLIC_URL}/images/MasjidZameen1.jpg`,
+                        alt: "Masjid Zameen View"
+                    };
 
-                    // Try to get images from Contentful if they exist
-                    let images = defaultImages;
+                    // Try to get image from Contentful if it exists
+                    let images = [defaultImage];
                     if (item.fields.images && Array.isArray(item.fields.images) && item.fields.images.length > 0) {
-                        images = item.fields.images.map(image => ({
-                            src: image.fields?.file?.url ? `https:${image.fields.file.url}` : defaultImages[0].src,
-                            alt: image.fields?.title || image.fields?.description || "Milestone Image"
-                        }));
+                        const contentfulImage = item.fields.images[0];
+                        images = [{
+                            src: contentfulImage.fields?.file?.url ? `https:${contentfulImage.fields.file.url}` : defaultImage.src,
+                            alt: contentfulImage.fields?.title || contentfulImage.fields?.description || "Milestone Image"
+                        }];
                     }
 
                     return {

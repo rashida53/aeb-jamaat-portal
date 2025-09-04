@@ -26,18 +26,14 @@ const MilestoneModal = ({ milestone, isOpen, onClose }) => {
 
                 {/* Content */}
                 <div className="modal-content">
-                    {/* Images Section */}
+                    {/* Image Section */}
                     {milestone.images && milestone.images.length > 0 && (
-                        <div className="modal-images">
-                            {milestone.images.map((image, index) => (
-                                <div key={index} className="modal-image-container">
-                                    <img
-                                        src={image.src}
-                                        alt={image.alt}
-                                        className="modal-image"
-                                    />
-                                </div>
-                            ))}
+                        <div className="modal-image-container">
+                            <img
+                                src={milestone.images[0].src}
+                                alt={milestone.images[0].alt}
+                                className="modal-image"
+                            />
                         </div>
                     )}
 

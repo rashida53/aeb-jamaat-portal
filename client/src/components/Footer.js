@@ -11,7 +11,7 @@ const Footer = () => {
                     <p className="footer-text">13209 Old Gregg Ln, Pflugerville</p>
                 </div>
                 <div className="footer-right">
-                    <p className="footer-copyright">Copyright @ Aeb-Austin</p>
+                    <p className="footer-copyright">Copyright @ KapsLok</p>
                 </div>
             </div>
         </footer>

@@ -139,6 +139,10 @@
         font-size: 24px;
     }
 
+    .gallery-section-title::after {
+        width: 200px;
+    }
+
     .gallery-image-container {
         height: 200px;
     }

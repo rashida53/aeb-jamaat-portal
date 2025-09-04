@@ -181,6 +181,10 @@
         font-size: 24px;
     }
 
+    .floor-plans-section-title::after {
+        width: 200px;
+    }
+
     .floor-title {
         font-size: 18px;
     }

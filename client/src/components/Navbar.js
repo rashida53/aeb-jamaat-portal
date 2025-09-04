@@ -81,9 +81,14 @@ const Navbar = ({ useDarkLogo = false }) => {
                             Masjid
                         </Link>
                         <span className="nav-separator">|</span>
-                        <HashLink smooth to="/#masjid" className="nav-link">
-                            Blog
-                        </HashLink>
+                        <a
+                            href="https://us14.campaign-archive.com/home/?u=b6ab8f303315d93cd2a01a661&id=f6d73734f9"
+                            className="nav-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            News
+                        </a>
                         <span className="nav-separator">|</span>
                         <HashLink smooth to="/#contact" className="nav-link">
                             Contact
@@ -111,9 +116,15 @@ const Navbar = ({ useDarkLogo = false }) => {
                         Masjid
                     </Link>
                     <div className="mobile-link-divider"></div>
-                    <HashLink smooth to="/#masjid" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
-                        Blog
-                    </HashLink>
+                    <a
+                        href="https://us14.campaign-archive.com/home/?u=b6ab8f303315d93cd2a01a661&id=f6d73734f9"
+                        className="mobile-nav-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        News
+                    </a>
                     <div className="mobile-link-divider"></div>
                     <HashLink smooth to="/#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                         Contact
