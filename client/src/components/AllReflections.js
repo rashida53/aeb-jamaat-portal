@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import './Reflections.css';
+import Footer from './Footer';
 import { createClient } from 'contentful';
 
 const client = createClient({
@@ -27,6 +28,7 @@ const AllReflections = () => {
     }, []);
 
     return (
+
         <div className='all-reflections'>
             <Navbar useDarkLogo={true} />
             <section
@@ -76,6 +78,7 @@ const AllReflections = () => {
                     )}
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };

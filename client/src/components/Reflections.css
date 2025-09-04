@@ -81,6 +81,7 @@
     margin-bottom: 15px;
     text-align: left;
     letter-spacing: 1px;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .post-text {
@@ -90,6 +91,7 @@
     margin-bottom: 15px;
     flex-grow: 1;
     text-align: left;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .post-bottom {
@@ -97,6 +99,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .post-author {
