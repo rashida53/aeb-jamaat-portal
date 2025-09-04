@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ useDarkLogo = false }) => {
-    const [isVisible, setIsVisible] = useState(true);
+    // const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -13,13 +13,13 @@ const Navbar = ({ useDarkLogo = false }) => {
             const currentScrollY = window.scrollY;
 
             // Show navbar only when at the top of the page
-            if ((window.location.hash === '' || window.location.pathname === '/aeb-jamaat-portal') && (window.location.hash != '#/masjid')) { // only on the homepage
-                if (currentScrollY <= 50) {
-                    setIsVisible(true);
-                } else {
-                    setIsVisible(false);
-                }
-            }
+            // if ((window.location.hash === '' || window.location.pathname === '/aeb-jamaat-portal') && (window.location.hash != '#/masjid')) { // only on the homepage
+            //     if (currentScrollY <= 50) {
+            //         setIsVisible(true);
+            //     } else {
+            //         setIsVisible(false);
+            //     }
+            // }
 
             setLastScrollY(currentScrollY);
         };
@@ -34,7 +34,7 @@ const Navbar = ({ useDarkLogo = false }) => {
 
     return (
         <>
-            <nav className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+            <nav className={`navbar  ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}> {/* ${isVisible ? 'navbar-visible' : 'navbar-hidden'} */}
                 <div className="nav-container">
                     {/* Mobile Hamburger Menu */}
                     <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
@@ -76,7 +76,6 @@ const Navbar = ({ useDarkLogo = false }) => {
                     </div>
 
                     <div className="nav-right desktop-nav">
-                        {/* <HashLink smooth to="/#news" className="nav-link">News</HashLink> */}
                         <Link to="/masjid" className="nav-link">
                             Masjid
                         </Link>
