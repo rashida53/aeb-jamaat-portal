@@ -1,124 +1,227 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { createClient } from 'contentful';
 import './UmoorSection.css';
 
+const client = createClient({
+    space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN
+});
+
 const UmoorSection = () => {
-    const [activeTab, setActiveTab] = useState('deeniyah');
-    const [openAccordion, setOpenAccordion] = useState('deeniyah'); // For mobile accordion
+    const [activeTab, setActiveTab] = useState('');
+    const [openAccordion, setOpenAccordion] = useState(''); // For mobile accordion
+    const [umoorContent, setUmoorContent] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const [tabs, setTabs] = useState([]);
 
-    const umoorContent = {
-        'deeniyah': {
-            title: 'Umoor Deeniyah',
-            description: 'For centuries, Awliyaullah AS have ensured that Mumineen remain steadfast in their faith and loyal towards their Maula TUS. They have strived to create an ideal Imani environment for Mumineen to allow them to prosper in both their worldly and spiritual affairs. The Umoor Deeniyah Committees will help create and maintain a suitable Imani environment for the adherence to the tenets of Islam and the Teachings of Awliyaullah AS.',
-            lead: 'Khuzema Bs Zakavi',
-            contact: '512-999-9999',
-            website: 'Umoor Deeniyah Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-deeniyah.jpeg`
-        },
-        'talimiyah': {
-            title: 'Umoor Talimiyah',
-            description: 'The Umoor Talimiyah Committees focus on educational initiatives and learning programs within the community. They work to promote Islamic education, organize study circles, and facilitate religious learning opportunities for all age groups. These committees ensure that knowledge of our faith is accessible and properly disseminated.',
-            lead: 'M Murtaza bhai Malbari',
-            contact: '631-838-1740',
-            website: 'Umoor Talimiyah Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-Talimiyah.jpeg`
-        },
-        'marafiq-burhaniyah': {
-            title: 'Umoor Marafiq Burhaniyah',
-            description: 'The Marafiq Burhaniyah Committees handle community infrastructure and facilities management. They oversee the maintenance and development of community centers, mosques, and other religious facilities. Their work ensures that our community spaces are well-maintained and conducive to spiritual activities.',
-            lead: 'M Mustafa Bhai Shakir',
-            contact: '512-348-3844',
-            website: 'Umoor Marafiq Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-Marafiq-Burhaniyah.jpeg`
-        },
-        'maliyah': {
-            title: 'Umoor Maliyah',
-            description: 'The Umoor Maliyah Committees manage financial matters and community funds. They oversee budgeting, fundraising activities, and financial planning for community projects. These committees ensure transparent and responsible financial management for the benefit of the entire community.',
-            lead: 'M Taaha bhai Bhora',
-            contact: '682-365-3910',
-            website: 'Umoor Maliyah Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-Maliyah.jpeg`
-        },
-        'mawarid-bashariyah': {
-            title: 'Umoor Mawarid Bashariyah',
-            description: 'The Mawarid Bashariyah Committees focus on human resources and community development. They work on recruitment, training, and development of community volunteers and leaders. These committees ensure that our community has capable and dedicated individuals serving in various capacities.',
-            lead: 'Shk Murtaza bhai Rawat',
-            contact: '832-526-8734',
-            website: 'Umoor Mawarid Website',
-            image: `${process.env.PUBLIC_URL}/images/umoor-mawarid.jpg`
-        },
-        'dakheliyah': {
-            title: 'Umoor Dakheliyah',
-            description: 'The Umoor Dakheliyah Committees handle internal community affairs and domestic matters. They address family issues, provide counseling services, and support community members in their personal and family life. These committees work to strengthen family bonds and community harmony.',
-            lead: 'M Aliakber bhai Amijee',
-            contact: '832-373-0944',
-            website: 'Umoor Dakheliyah Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-Dakheliyah.jpeg`
-        },
-        'kharejiyah': {
-            title: 'Umoor Kharejiyah',
-            description: 'The Umoor Kharejiyah Committees manage external relations and community outreach. They coordinate with other communities, organize interfaith dialogues, and represent our community in broader social initiatives. These committees help build bridges with the wider society.',
-            lead: 'Ammar bhai Jamali',
-            contact: '512-920-8652',
-            website: 'Umoor Kharejiyah Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-Kharejiyah.jpeg`
-        },
-        'qaza': {
-            title: 'Umoor Qaza',
-            description: 'The Umoor Qaza Committees handle community justice and dispute resolution. They provide mediation services, resolve conflicts within the community, and ensure fair treatment for all members. These committees work to maintain peace and harmony through just and equitable solutions.',
-            lead: 'Shk Hakimuddin bhai Dhilla',
-            contact: '978-884-3152',
-            website: 'Umoor Qaza Website',
-            image: `${process.env.PUBLIC_URL}/images/umoor-qaza.jpg`
-        },
-        'fmb': {
-            title: 'Umoor FMB',
-            description: 'The Umoor FMB Committees focus on family and marriage bureau services. They assist in matchmaking, organize marriage ceremonies, and provide support for newly married couples. These committees help strengthen family foundations and promote healthy marital relationships.',
-            lead: 'M Hamza bhai Karachiwala',
-            contact: '614-377-6967',
-            website: 'Umoor FMB Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-FMB.jpg`
-        },
-        'iqtesadiyah': {
-            title: 'Umoor Iqtesadiyah',
-            description: 'The Umoor Iqtesadiyah Committees handle economic development and business networking. They support community entrepreneurs, organize business networking events, and promote economic self-sufficiency. These committees work to strengthen the economic foundation of our community.',
-            lead: 'M Mustafa bhai Shakir',
-            contact: '512-348-3844',
-            website: 'Umoor Iqtesadiyah Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-Iqtesadiyah.jpeg`
-        },
-        'amlaak': {
-            title: 'Umoor Amlaak',
-            description: 'The Umoor Amlaak Committees manage property and real estate matters for the community. They oversee community property acquisitions, maintenance of community buildings, and real estate investments. These committees ensure proper management of community assets.',
-            lead: 'M Murtaza bhai Hirani',
-            contact: '512-413-5284',
-            website: 'Umoor Amlaak Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-Amlaak.jpeg`
-        },
-        'sehhat': {
-            title: 'Umoor Sehhat',
-            description: 'The Umoor Sehhat Committees focus on health and wellness initiatives within the community. They organize health awareness programs, coordinate medical camps, and promote healthy lifestyle practices. These committees work to ensure the physical and mental well-being of community members.',
-            lead: 'M Hussain bhai Malbari',
-            contact: '512-696-7268',
-            website: 'Umoor Sehhat Website',
-            image: `${process.env.PUBLIC_URL}/images/Umoor-Sehhat.jpeg`
-        }
+    useEffect(() => {
+        const fetchUmoorContent = async () => {
+            try {
+                const response = await client.getEntries({
+                    content_type: '12umoor'
+                });
+
+                const content = {};
+                const tabsList = [];
+
+                response.items.forEach(item => {
+                    const umoorId = item.fields.umoorName.toLowerCase().replace(/\s+/g, '-');
+                    content[umoorId] = {
+                        title: item.fields.umoorFullName,
+                        description: item.fields.umoorContent,
+                        lead: item.fields.umoorLeadName,
+                        contact: item.fields.umoorLeadContact || '',
+                        website: item.fields.umoorWebsite || '',
+                        image: item.fields.umoorImage?.fields?.file?.url || ''
+                    };
+
+                    tabsList.push({
+                        id: umoorId,
+                        label: item.fields.umoorFullName
+                    });
+                });
+
+                setUmoorContent(content);
+                setTabs(tabsList);
+                // Set initial active tab
+                if (tabsList.length > 0) {
+                    setActiveTab(tabsList[0].id);
+                    setOpenAccordion(tabsList[0].id);
+                }
+                setIsLoading(false);
+            } catch (error) {
+                console.error('Error fetching Umoor content:', error);
+                setIsLoading(false);
+            }
+        };
+
+        fetchUmoorContent();
+    }, []);
+
+    const renderDescription = (richTextContent) => {
+        return documentToReactComponents(richTextContent);
     };
+    // const [isLoading, setIsLoading] = useState(true);
+    // const [tabs, setTabs] = useState([]);
 
-    const tabs = [
-        { id: 'deeniyah', label: 'Umoor Deeniyah' },
-        { id: 'talimiyah', label: 'Umoor Talimiyah' },
-        { id: 'marafiq-burhaniyah', label: 'Umoor Marafiq Burhaniyah' },
-        { id: 'maliyah', label: 'Umoor Maliyah' },
-        { id: 'mawarid-bashariyah', label: 'Umoor Mawarid Bashariyah' },
-        { id: 'dakheliyah', label: 'Umoor Dakheliyah' },
-        { id: 'kharejiyah', label: 'Umoor Kharejiyah' },
-        { id: 'qaza', label: 'Umoor Qaza' },
-        { id: 'fmb', label: 'Umoor FMB' },
-        { id: 'iqtesadiyah', label: 'Umoor Iqtesadiyah' },
-        { id: 'amlaak', label: 'Umoor Amlaak' },
-        { id: 'sehhat', label: 'Umoor Sehhat' }
-    ];
+    // useEffect(() => {
+    //     const fetchUmoorContent = async () => {
+    //         try {
+    //             const response = await client.getEntries({
+    //                 content_type: '12umoor'
+    //             });
+
+    //             const content = {};
+    //             const tabsList = [];
+
+    //             response.items.forEach(item => {
+    //                 const umoorId = item.fields.umoorName.toLowerCase().replace(/\s+/g, '-');
+    //                 content[umoorId] = {
+    //                     title: item.fields.umoorFullName,
+    //                     description: item.fields.umoorContent,
+    //                     lead: item.fields.umoorLeadName,
+    //                     contact: item.fields.umoorLeadContact || '',
+    //                     website: item.fields.umoorWebsite || '',
+    //                     image: item.fields.umoorImage?.fields?.file?.url || ''
+    //                 };
+
+    //                 tabsList.push({
+    //                     id: umoorId,
+    //                     label: item.fields.umoorFullName
+    //                 });
+    //             });
+
+    //             setUmoorContent(content);
+    //             setTabs(tabsList);
+    //             // Set initial active tab
+    //             if (tabsList.length > 0) {
+    //                 setActiveTab(tabsList[0].id);
+    //                 setOpenAccordion(tabsList[0].id);
+    //             }
+    //             setIsLoading(false);
+    //         } catch (error) {
+    //             console.error('Error fetching Umoor content:', error);
+    //             setIsLoading(false);
+    //         }
+    //     };
+
+    //     fetchUmoorContent();
+    // }, []);
+
+    // const renderDescription = (richTextContent) => {
+    //     return documentToReactComponents(richTextContent);
+    // };
+
+    if (isLoading) {
+        return <div className="loading">Loading...</div>;
+    }
+
+    const umoorData = umoorContent[activeTab] || {};
+    //     'deeniyah': {
+    //         title: 'Umoor Deeniyah',
+    //         description: 'For centuries, Awliyaullah AS have ensured that Mumineen remain steadfast in their faith and loyal towards their Maula TUS. They have strived to create an ideal Imani environment for Mumineen to allow them to prosper in both their worldly and spiritual affairs. The Umoor Deeniyah Committees will help create and maintain a suitable Imani environment for the adherence to the tenets of Islam and the Teachings of Awliyaullah AS.',
+    //         lead: 'Khuzema Bs Zakavi',
+    //         contact: '512-999-9999',
+    //         website: 'Umoor Deeniyah Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-deeniyah.jpeg`
+    //     },
+    //     'talimiyah': {
+    //         title: 'Umoor Talimiyah',
+    //         description: 'The Umoor Talimiyah Committees focus on educational initiatives and learning programs within the community. They work to promote Islamic education, organize study circles, and facilitate religious learning opportunities for all age groups. These committees ensure that knowledge of our faith is accessible and properly disseminated.',
+    //         lead: 'M Murtaza bhai Malbari',
+    //         contact: '631-838-1740',
+    //         website: 'Umoor Talimiyah Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-Talimiyah.jpeg`
+    //     },
+    //     'marafiq-burhaniyah': {
+    //         title: 'Umoor Marafiq Burhaniyah',
+    //         description: 'The Marafiq Burhaniyah Committees handle community infrastructure and facilities management. They oversee the maintenance and development of community centers, mosques, and other religious facilities. Their work ensures that our community spaces are well-maintained and conducive to spiritual activities.',
+    //         lead: 'M Mustafa Bhai Shakir',
+    //         contact: '512-348-3844',
+    //         website: 'Umoor Marafiq Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-Marafiq-Burhaniyah.jpeg`
+    //     },
+    //     'maliyah': {
+    //         title: 'Umoor Maliyah',
+    //         description: 'The Umoor Maliyah Committees manage financial matters and community funds. They oversee budgeting, fundraising activities, and financial planning for community projects. These committees ensure transparent and responsible financial management for the benefit of the entire community.',
+    //         lead: 'M Taaha bhai Bhora',
+    //         contact: '682-365-3910',
+    //         website: 'Umoor Maliyah Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-Maliyah.jpeg`
+    //     },
+    //     'mawarid-bashariyah': {
+    //         title: 'Umoor Mawarid Bashariyah',
+    //         description: 'The Mawarid Bashariyah Committees focus on human resources and community development. They work on recruitment, training, and development of community volunteers and leaders. These committees ensure that our community has capable and dedicated individuals serving in various capacities.',
+    //         lead: 'Shk Murtaza bhai Rawat',
+    //         contact: '832-526-8734',
+    //         website: 'Umoor Mawarid Website',
+    //         image: `${process.env.PUBLIC_URL}/images/umoor-mawarid.jpg`
+    //     },
+    //     'dakheliyah': {
+    //         title: 'Umoor Dakheliyah',
+    //         description: 'The Umoor Dakheliyah Committees handle internal community affairs and domestic matters. They address family issues, provide counseling services, and support community members in their personal and family life. These committees work to strengthen family bonds and community harmony.',
+    //         lead: 'M Aliakber bhai Amijee',
+    //         contact: '832-373-0944',
+    //         website: 'Umoor Dakheliyah Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-Dakheliyah.jpeg`
+    //     },
+    //     'kharejiyah': {
+    //         title: 'Umoor Kharejiyah',
+    //         description: 'The Umoor Kharejiyah Committees manage external relations and community outreach. They coordinate with other communities, organize interfaith dialogues, and represent our community in broader social initiatives. These committees help build bridges with the wider society.',
+    //         lead: 'Ammar bhai Jamali',
+    //         contact: '512-920-8652',
+    //         website: 'Umoor Kharejiyah Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-Kharejiyah.jpeg`
+    //     },
+    //     'qaza': {
+    //         title: 'Umoor Qaza',
+    //         description: 'The Umoor Qaza Committees handle community justice and dispute resolution. They provide mediation services, resolve conflicts within the community, and ensure fair treatment for all members. These committees work to maintain peace and harmony through just and equitable solutions.',
+    //         lead: 'Shk Hakimuddin bhai Dhilla',
+    //         contact: '978-884-3152',
+    //         website: 'Umoor Qaza Website',
+    //         image: `${process.env.PUBLIC_URL}/images/umoor-qaza.jpg`
+    //     },
+    //     'fmb': {
+    //         title: 'Umoor FMB',
+    //         description: 'The Umoor FMB Committees focus on family and marriage bureau services. They assist in matchmaking, organize marriage ceremonies, and provide support for newly married couples. These committees help strengthen family foundations and promote healthy marital relationships.',
+    //         lead: 'M Hamza bhai Karachiwala',
+    //         contact: '614-377-6967',
+    //         website: 'Umoor FMB Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-FMB.jpg`
+    //     },
+    //     'iqtesadiyah': {
+    //         title: 'Umoor Iqtesadiyah',
+    //         description: 'The Umoor Iqtesadiyah Committees handle economic development and business networking. They support community entrepreneurs, organize business networking events, and promote economic self-sufficiency. These committees work to strengthen the economic foundation of our community.',
+    //         lead: 'M Mustafa bhai Shakir',
+    //         contact: '512-348-3844',
+    //         website: 'Umoor Iqtesadiyah Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-Iqtesadiyah.jpeg`
+    //     },
+    //     'amlaak': {
+    //         title: 'Umoor Amlaak',
+    //         description: 'The Umoor Amlaak Committees manage property and real estate matters for the community. They oversee community property acquisitions, maintenance of community buildings, and real estate investments. These committees ensure proper management of community assets.',
+    //         lead: 'M Murtaza bhai Hirani',
+    //         contact: '512-413-5284',
+    //         website: 'Umoor Amlaak Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-Amlaak.jpeg`
+    //     },
+    //     'sehhat': {
+    //         title: 'Umoor Sehhat',
+    //         description: 'The Umoor Sehhat Committees focus on health and wellness initiatives within the community. They organize health awareness programs, coordinate medical camps, and promote healthy lifestyle practices. These committees work to ensure the physical and mental well-being of community members.',
+    //         lead: 'M Hussain bhai Malbari',
+    //         contact: '512-696-7268',
+    //         website: 'Umoor Sehhat Website',
+    //         image: `${process.env.PUBLIC_URL}/images/Umoor-Sehhat.jpeg`
+    //     }
+    // };
+
+    if (isLoading) {
+        return <div className="loading">Loading...</div>;
+    }
+
+    // const umoorData = umoorContent[activeTab] || {};
 
     const handleAccordionToggle = (tabId) => {
         setOpenAccordion(openAccordion === tabId ? null : tabId);
@@ -174,8 +277,8 @@ const UmoorSection = () => {
                                     <div className="umoor-image">
                                         <img
                                             key={activeTab}
-                                            src={umoorContent[activeTab].image}
-                                            alt={`${umoorContent[activeTab].title} - Community gathering`}
+                                            src={umoorData.image ? `https:${umoorData.image}` : ''}
+                                            alt={`${umoorData.title} - Community gathering`}
                                             onError={(e) => {
                                                 e.target.style.display = 'none';
                                                 e.target.nextSibling.style.display = 'block';
@@ -188,20 +291,27 @@ const UmoorSection = () => {
                                         <div className="image-placeholder" style={{ display: 'none' }}>
                                             <div className="placeholder-content">
                                                 <div className="placeholder-icon">📖</div>
-                                                <p>{umoorContent[activeTab].title} Image</p>
+                                                <p>{umoorData.title} Image</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="umoor-text">
-                                        <p>
-                                            {umoorContent[activeTab].description}
-                                        </p>
+                                        <div className="umoor-description">
+                                            {renderDescription(umoorData.description)}
+                                        </div>
 
                                         <div className="contact-info">
-                                            <p><strong>Umoor Lead-</strong> {umoorContent[activeTab].lead}</p>
-                                            <p><strong>Contact-</strong> {umoorContent[activeTab].contact}</p>
-                                            <p><strong>Umoor Website-</strong> <a href="#" className="website-link">{umoorContent[activeTab].website}</a></p>
+                                            <p><strong>Umoor Lead-</strong> {umoorData.lead}</p>
+                                            {umoorData.contact && <p><strong>Contact-</strong> {umoorData.contact}</p>}
+                                            {umoorData.website && (
+                                                <p>
+                                                    <strong>Umoor Website-</strong>
+                                                    <a href={umoorData.website} target="_blank" rel="noopener noreferrer" className="website-link">
+                                                        &nbsp;Visit Website
+                                                    </a>
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -237,14 +347,21 @@ const UmoorSection = () => {
                     </div>
 
                     <div className="umoor-text">
-                        <p>
-                            {umoorContent[activeTab].description}
-                        </p>
+                        <div className="umoor-description">
+                            {renderDescription(umoorData.description)}
+                        </div>
 
                         <div className="contact-info">
-                            <p><strong>Umoor Lead-</strong> {umoorContent[activeTab].lead}</p>
-                            <p><strong>Contact-</strong> {umoorContent[activeTab].contact}</p>
-                            <p><strong>Umoor Website-</strong> <a href="#" className="website-link">{umoorContent[activeTab].website}</a></p>
+                            <p><strong>Umoor Lead-</strong> {umoorData.lead}</p>
+                            {umoorData.contact && <p><strong>Contact-</strong> {umoorData.contact}</p>}
+                            {umoorData.website && (
+                                <p>
+                                    <strong>Umoor Website-</strong>
+                                    <a href={umoorData.website} target="_blank" rel="noopener noreferrer" className="website-link">
+                                        Visit Website
+                                    </a>
+                                </p>
+                            )}
                         </div>
                     </div>
                 </div>

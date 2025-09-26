@@ -252,6 +252,7 @@
     color: #0066cc;
     text-decoration: underline;
     transition: color 0.3s ease;
+    padding-left: 4px;
 }
 
 .website-link:hover {
@@ -391,6 +392,10 @@
         font-size: 14px;
         text-align: left;
     }
+
+    .website-link {
+        padding-left: 2px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -447,5 +452,9 @@
     .contact-info p {
         font-size: 13px;
         text-align: left;
+    }
+
+    .website-link {
+        padding-left: 2px;
     }
 }
