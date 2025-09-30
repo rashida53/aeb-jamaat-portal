@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/aeb-jamaat-portal/static/css/main.e4d3cb71.css",
-    "main.js": "/aeb-jamaat-portal/static/js/main.3f48f099.js",
+    "main.css": "/aeb-jamaat-portal/static/css/main.90621ac4.css",
+    "main.js": "/aeb-jamaat-portal/static/js/main.43ddf1a5.js",
     "static/media/slick.svg": "/aeb-jamaat-portal/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/aeb-jamaat-portal/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/aeb-jamaat-portal/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/aeb-jamaat-portal/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/aeb-jamaat-portal/index.html",
-    "main.e4d3cb71.css.map": "/aeb-jamaat-portal/static/css/main.e4d3cb71.css.map",
-    "main.3f48f099.js.map": "/aeb-jamaat-portal/static/js/main.3f48f099.js.map"
+    "main.90621ac4.css.map": "/aeb-jamaat-portal/static/css/main.90621ac4.css.map",
+    "main.43ddf1a5.js.map": "/aeb-jamaat-portal/static/js/main.43ddf1a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4d3cb71.css",
-    "static/js/main.3f48f099.js"
+    "static/css/main.90621ac4.css",
+    "static/js/main.43ddf1a5.js"
   ]
 }
