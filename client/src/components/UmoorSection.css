@@ -45,29 +45,44 @@
     justify-content: flex-start;
     align-items: center;
     gap: 0;
-    overflow-x: auto;
+    overflow-x: scroll;
+    /* Changed from auto to scroll */
     scrollbar-width: thin;
-    scrollbar-color: #cccccc #f0f0f0;
+    scrollbar-color: #CE9C01 #f0f0f0;
+    /* Using the gold color from your theme */
     max-width: 1200px;
     width: 100%;
+    padding-bottom: 5px;
+    /* Added padding to always show scrollbar */
 }
 
 .umoor-navigation::-webkit-scrollbar {
-    height: 3px;
+    height: 8px;
+    /* Increased height */
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    /* Ensure it's always displayed */
 }
 
 .umoor-navigation::-webkit-scrollbar-track {
     background: #f0f0f0;
-    border-radius: 3px;
+    border-radius: 4px;
+    margin: 0 10px;
+    /* Added margin for better visual */
 }
 
 .umoor-navigation::-webkit-scrollbar-thumb {
-    background: #cccccc;
-    border-radius: 3px;
+    background: #CE9C01;
+    /* Using the gold color from your theme */
+    border-radius: 4px;
+    border: 2px solid #f0f0f0;
+    /* Added border for better visual */
 }
 
 .umoor-navigation::-webkit-scrollbar-thumb:hover {
-    background: #aaaaaa;
+    background: #b88a01;
+    /* Slightly darker on hover */
 }
 
 .nav-tab {
