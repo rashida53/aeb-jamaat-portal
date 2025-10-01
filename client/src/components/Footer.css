@@ -8,13 +8,52 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .footer-left {
+    flex: 1;
+    align-items: flex-start;
+}
+
+.footer-center {
+    flex: 1;
+}
+
+.footer-right {
+    flex: 0.5;
+}
+
+.footer-right-content {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer-spacer {
+    flex-grow: 1;
+}
+
+.footer-section-title {
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: left;
 }
 
 .footer-text {
@@ -26,9 +65,19 @@
     text-align: left;
 }
 
-.footer-right {
-    display: flex;
-    align-items: flex-end;
+.footer-link {
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+    text-decoration: underline;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+    letter-spacing: 1px;
+    text-align: left;
+    width: fit-content;
+}
+
+.footer-link:hover {
+    opacity: 0.8;
 }
 
 .footer-copyright {
@@ -48,25 +97,35 @@
 
     .footer-content {
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
         align-items: center;
         text-align: center;
     }
 
-    .footer-left {
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
         align-items: center;
     }
 
-    .footer-text {
+    .footer-text,
+    .footer-link,
+    .footer-copyright {
         text-align: center;
+    }
+
+    .footer-section-title {
+        text-align: center;
+        margin-bottom: 16px;
     }
 
     .footer-right {
-        align-items: center;
+        margin-top: 20px;
     }
 
-    .footer-copyright {
-        text-align: center;
+    .footer-right-content {
+        align-items: center;
     }
 }
 
