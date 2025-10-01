@@ -2,7 +2,7 @@
     "name": "aeb-jamaat-portal-client",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://austinjamaat.org",
+    "homepage": "./",
     "dependencies": {
         "@contentful/rich-text-react-renderer": "^16.1.5",
         "@testing-library/jest-dom": "^5.17.0",
