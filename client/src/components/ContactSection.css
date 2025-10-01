@@ -165,16 +165,57 @@
     letter-spacing: 0.5px;
 }
 
+.address-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.address-item:last-child {
+    margin-bottom: 0;
+}
+
+.address-title {
+    color: #00203D;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'PT Sans', sans-serif;
+    margin: 0;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
 .address-link {
     color: #00203D;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     letter-spacing: 0.5px;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.address-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #CE9C01;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
 }
 
 .address-link:hover {
     color: #CE9C01;
-    text-decoration: underline;
+}
+
+.address-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* Responsive design */

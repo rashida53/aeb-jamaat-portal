@@ -41,16 +41,33 @@ const ContactSection = () => {
                         <div className="contact-info-section">
                             <h3 className="contact-subtitle">Address</h3>
                             <div className="contact-details">
-                                <p>
-                                    <a
-                                        href="https://maps.app.goo.gl/BpEzks1iy8Z2tkPg9"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="address-link"
-                                    >
-                                        13209 Old Gregg Ln, Pflugerville TX
-                                    </a>
-                                    <br></br>78660</p>
+                                <div className="address-item">
+                                    <p className="address-title"><strong>Markaz -</strong></p>
+                                    <p>
+                                        <a
+                                            href="https://maps.app.goo.gl/PCEohsqyhapbL8Yi6?g_st=aw"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="address-link"
+                                        >
+                                            13209 Old Gregg Ln, Pflugerville, TX 78660
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div className="address-item">
+                                    <p className="address-title"><strong>Masjid Zameen -</strong></p>
+                                    <p>
+                                        <a
+                                            href="https://maps.app.goo.gl/xkkBroX6zaJq5p4n8?g_st=aw"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="address-link"
+                                        >
+                                            800 N Heatherwilde Blvd, Pflugerville, TX 78660
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
