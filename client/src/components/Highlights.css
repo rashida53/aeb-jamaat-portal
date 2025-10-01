@@ -25,35 +25,21 @@
     opacity: 1;
 }
 
-.highlights-container .slick-prev,
-.highlights-container .slick-next {
-    display: none !important;
-}
-
 .highlight-card {
     background: white;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     padding: 15px;
-    height: 450px;
-    /* Fixed height for all cards */
-    display: flex;
-    flex-direction: column;
-}
-
-.highlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    height: 500px;
+    /* Fixed height for desktop */
 }
 
 .highlight-image {
     width: 100%;
-    height: 200px;
-    /* Fixed height for images */
+    height: 250px;
+    /* Taller image for desktop */
     overflow: hidden;
-    flex-shrink: 0;
-    /* Prevent image from shrinking */
 }
 
 .highlight-image img {
@@ -63,16 +49,8 @@
     transition: transform 0.3s ease;
 }
 
-.highlight-card:hover .highlight-image img {
-    transform: scale(1.05);
-}
-
 .highlight-content {
     padding: 20px 0 0 0;
-    flex-grow: 1;
-    /* Allow content to take remaining space */
-    display: flex;
-    flex-direction: column;
 }
 
 .highlight-title {
@@ -84,8 +62,6 @@
     position: relative;
     padding-bottom: 10px;
     text-align: center;
-    flex-shrink: 0;
-    /* Prevent title from shrinking */
 }
 
 .highlight-title::after {
@@ -105,11 +81,8 @@
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
-    flex-grow: 1;
-    /* Allow description to take remaining space */
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .highlights-container {
         padding: 0 20px;
@@ -119,42 +92,45 @@
 @media (max-width: 768px) {
     .highlights-container {
         margin-top: 40px;
+        padding: 0 20px;
+    }
+
+    .slick-slider {
+        margin: 0;
         padding: 0;
-        width: 100%;
+    }
+
+    .slick-list {
+        overflow: hidden;
     }
 
     .highlight-card {
-        height: 400px;
+        height: 350px;
+        /* Smaller fixed height for mobile */
         margin: 0;
-        opacity: 0.3;
-        transform: scale(0.85);
-        transition: all 0.3s ease;
-        position: relative;
-        width: 100%;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+        /* Slightly smaller padding for mobile */
     }
 
-    /* Fix center alignment */
-    .slick-slider {
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .slick-track {
-        display: flex;
-        align-items: center;
-    }
-
+    /* Fade transition styles */
     .slick-slide {
-        width: 100% !important;
-        padding: 0 5px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
     }
 
-    .slick-slide>div {
-        width: 100%;
+    .slick-slide.slick-active {
+        opacity: 1;
     }
 
     .highlight-image {
-        height: 180px;
+        height: 160px;
+        /* Smaller image height for mobile */
+    }
+
+    .highlight-content {
+        padding: 15px 0 0 0;
+        /* Adjusted padding for mobile */
     }
 
     .highlight-title {
@@ -165,50 +141,8 @@
         font-size: 14px;
     }
 
-    /* Style for the center slide */
-    .slick-center .highlight-card {
-        opacity: 1;
-        transform: scale(1);
-        z-index: 2;
-    }
-
-    /* Ensure proper slide positioning */
-    .slick-slide {
-        transition: all 0.3s ease;
-        position: relative;
-        transform-origin: center center;
-    }
-
-    .slick-slide:not(.slick-center) {
-        z-index: 1;
-        filter: brightness(0.7);
-        transform: scale(0.85);
-    }
-
-    /* Adjust spacing for mobile view */
-    .slick-list {
-        overflow: visible !important;
-        padding: 30px 0 !important;
-    }
-
-    /* Ensure proper centering on mobile */
-    .slick-track {
-        margin-left: 0 !important;
-    }
-
-    /* Add shadow to center card */
-    .slick-center .highlight-card {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Adjust dots position for mobile */
     .highlights-container .slick-dots {
         bottom: -30px;
-    }
-
-    /* Make sure side cards are visible */
-    .slick-list {
-        overflow: visible !important;
-        padding: 0 !important;
+        z-index: 3;
     }
 }

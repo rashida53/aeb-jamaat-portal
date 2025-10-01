@@ -27,11 +27,11 @@ const Highlights = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    centerMode: true,
-                    centerPadding: '50px',
+                    centerMode: false,
                     infinite: true,
-                    swipeToSlide: true,
-                    initialSlide: 0
+                    speed: 100,
+                    arrows: false,
+                    fade: true
                 }
             }
         ]
