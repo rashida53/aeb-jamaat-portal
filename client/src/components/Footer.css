@@ -13,7 +13,6 @@
 }
 
 .footer-left,
-.footer-center,
 .footer-right {
     display: flex;
     flex-direction: column;
@@ -21,12 +20,8 @@
 }
 
 .footer-left {
-    flex: 1;
+    flex: 0.5;
     align-items: flex-start;
-}
-
-.footer-center {
-    flex: 1;
 }
 
 .footer-right {
