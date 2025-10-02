@@ -240,22 +240,69 @@ const UmoorSection = () => {
                 12 UMOOR
             </h2>
 
-            {/* Desktop Navigation */}
-            <div className="umoor-navigation desktop-nav">
-                {tabs.map((tab, index) => (
-                    <React.Fragment key={tab.id}>
+            {/* Desktop Layout */}
+            <div className="umoor-desktop-layout">
+                {/* Side Menu */}
+                <div className="umoor-side-menu">
+                    {tabs.map((tab) => (
                         <button
-                            className={`nav-tab ${activeTab === tab.id ? 'active' : ''}`}
+                            key={tab.id}
+                            className={`side-menu-item ${activeTab === tab.id ? 'active' : ''}`}
                             onClick={() => setActiveTab(tab.id)}
                         >
                             {tab.label}
                         </button>
-                        {index < tabs.length - 1 && <span className="umoor-nav-separator">|</span>}
-                    </React.Fragment>
-                ))}
+                    ))}
+                </div>
+
+                {/* Content Area */}
+                <div className="umoor-content-area">
+                    <div className="umoor-main-content">
+                        <div className="umoor-image">
+                            <img
+                                key={activeTab}
+                                src={umoorData.image ? `https:${umoorData.image}` : ''}
+                                alt={`${umoorData.title} - Community gathering`}
+                                onError={(e) => {
+                                    e.target.style.display = 'none';
+                                    e.target.nextSibling.style.display = 'block';
+                                }}
+                                onLoad={(e) => {
+                                    e.target.style.display = 'block';
+                                    e.target.nextSibling.style.display = 'none';
+                                }}
+                            />
+                            <div className="image-placeholder" style={{ display: 'none' }}>
+                                <div className="placeholder-content">
+                                    <div className="placeholder-icon">📖</div>
+                                    <p>{umoorData.title} Image</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="umoor-text">
+                            <div className="umoor-description">
+                                {renderDescription(umoorData.description)}
+                            </div>
+
+                            <div className="contact-info">
+                                <p><strong>Umoor Lead-</strong> {umoorData.lead}</p>
+                                {umoorData.contact && <p><strong>Contact-</strong> {umoorData.contact}</p>}
+                                {umoorData.website && (
+                                    <p>
+                                        <strong>Umoor Website-</strong>
+                                        <a href={umoorData.website} target="_blank" rel="noopener noreferrer" className="website-link">
+                                            Visit Website
+                                        </a>
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            {/* Mobile/Tablet Accordion Navigation */}
+            {/* Mobile Accordion */}
             <div className="umoor-accordion mobile-nav">
                 {tabs.map((tab) => (
                     <div key={tab.id} className="accordion-item">
@@ -308,7 +355,7 @@ const UmoorSection = () => {
                                                 <p>
                                                     <strong>Umoor Website-</strong>
                                                     <a href={umoorData.website} target="_blank" rel="noopener noreferrer" className="website-link">
-                                                        &nbsp;Visit Website
+                                                        Visit Website
                                                     </a>
                                                 </p>
                                             )}
@@ -319,52 +366,6 @@ const UmoorSection = () => {
                         )}
                     </div>
                 ))}
-            </div>
-
-            {/* Desktop Content */}
-            <div className="umoor-content desktop-content">
-                <div className="umoor-main-content">
-                    <div className="umoor-image">
-                        <img
-                            key={activeTab}
-                            src={umoorContent[activeTab].image}
-                            alt={`${umoorContent[activeTab].title} - Community gathering`}
-                            onError={(e) => {
-                                e.target.style.display = 'none';
-                                e.target.nextSibling.style.display = 'block';
-                            }}
-                            onLoad={(e) => {
-                                e.target.style.display = 'block';
-                                e.target.nextSibling.style.display = 'none';
-                            }}
-                        />
-                        <div className="image-placeholder" style={{ display: 'none' }}>
-                            <div className="placeholder-content">
-                                <div className="placeholder-icon">📖</div>
-                                <p>{umoorContent[activeTab].title} Image</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="umoor-text">
-                        <div className="umoor-description">
-                            {renderDescription(umoorData.description)}
-                        </div>
-
-                        <div className="contact-info">
-                            <p><strong>Umoor Lead-</strong> {umoorData.lead}</p>
-                            {umoorData.contact && <p><strong>Contact-</strong> {umoorData.contact}</p>}
-                            {umoorData.website && (
-                                <p>
-                                    <strong>Umoor Website-</strong>
-                                    <a href={umoorData.website} target="_blank" rel="noopener noreferrer" className="website-link">
-                                        Visit Website
-                                    </a>
-                                </p>
-                            )}
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     );

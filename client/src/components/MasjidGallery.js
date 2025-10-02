@@ -25,6 +25,11 @@ const MasjidGallery = () => {
             id: 4,
             src: `${process.env.PUBLIC_URL}/images/masjid-carousel-4.jpeg`,
             alt: 'Anjuman-e-Burhani Markaz - Religious ceremonies and celebrations'
+        },
+        {
+            id: 5,
+            src: `${process.env.PUBLIC_URL}/images/masjid-carousel-5.jpg`,
+            alt: 'Anjuman-e-Burhani Markaz - Community development and progress'
         }
     ];
 

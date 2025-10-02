@@ -10,15 +10,6 @@
     background-attachment: fixed;
 }
 
-.umoor-content {
-    max-width: 1200px;
-    width: 100%;
-    background-color: white;
-    padding: 60px 40px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-}
-
 .umoor-title {
     text-align: center;
     font-size: 36px;
@@ -39,117 +30,73 @@
     margin: 10px auto 0 auto;
 }
 
-/* Desktop Navigation */
-.umoor-navigation {
+/* Desktop Layout */
+.umoor-desktop-layout {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0;
-    overflow-x: scroll;
-    /* Changed from auto to scroll */
-    scrollbar-width: thin;
-    scrollbar-color: #CE9C01 #f0f0f0;
-    /* Using the gold color from your theme */
-    max-width: 1200px;
-    width: 100%;
-    padding-bottom: 5px;
-    /* Added padding to always show scrollbar */
-}
-
-.umoor-navigation::-webkit-scrollbar {
-    height: 8px;
-    /* Increased height */
-    background-color: #f0f0f0;
-    border-radius: 4px;
-    display: block;
-    /* Ensure it's always displayed */
-}
-
-.umoor-navigation::-webkit-scrollbar-track {
-    background: #f0f0f0;
-    border-radius: 4px;
-    margin: 0 10px;
-    /* Added margin for better visual */
-}
-
-.umoor-navigation::-webkit-scrollbar-thumb {
-    background: #CE9C01;
-    /* Using the gold color from your theme */
-    border-radius: 4px;
-    border: 2px solid #f0f0f0;
-    /* Added border for better visual */
-}
-
-.umoor-navigation::-webkit-scrollbar-thumb:hover {
-    background: #b88a01;
-    /* Slightly darker on hover */
-}
-
-.nav-tab {
-    background: none;
-    border: none;
-    padding: 20px 25px;
-    font-size: 20px;
-    font-family: 'PT Sans', sans-serif;
-    color: #00203D;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    position: relative;
-    font-weight: 500;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.nav-tab:hover {
-    color: #CE9C01;
-}
-
-.nav-tab.active {
-    color: #CE9C01;
-    font-weight: 600;
-}
-
-.umoor-nav-separator {
-    color: #CE9C01;
-    font-weight: 500;
-    font-size: 32px;
-    font-family: 'PT Sans', sans-serif;
-    margin: 0 10px;
-}
-
-/* Mobile/Tablet Accordion Navigation */
-.umoor-accordion {
-    display: none;
-    flex-direction: column;
     width: 100%;
     max-width: 1200px;
+    background: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
 }
 
-.accordion-item {
-    border-bottom: 2px solid #CE9C01;
+.umoor-side-menu {
+    width: 25%;
     background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
 }
 
-.accordion-header {
-    width: 100%;
-    background: none;
+.side-menu-item {
+    background: white;
     border: none;
-    padding: 20px 25px;
+    padding: 25px 25px;
+    text-align: center;
     font-size: 18px;
     font-family: 'PT Sans', sans-serif;
     color: #00203D;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid #CE9C01;
+    font-weight: 600;
+}
+
+.side-menu-item:first-child {
+    border-top: 2px solid #CE9C01;
+}
+
+.side-menu-item:hover {
+    background-color: #f8f9fa;
+    color: #CE9C01;
+}
+
+.side-menu-item.active {
+    background-color: #CE9C01;
+    color: white;
     font-weight: 700;
-    text-align: center;
-    letter-spacing: 1px;
-    min-height: 60px;
+}
+
+.umoor-content-area {
+    width: 75%;
+    padding: 40px;
+    background: white;
+}
+
+.umoor-content-area .umoor-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.umoor-content-area .umoor-image {
+    width: 100%;
+    height: 400px;
+}
+
+.umoor-content-area .umoor-text {
+    width: 100%;
 }
 
 .accordion-header:hover {
@@ -163,30 +110,58 @@
     font-weight: 700;
 }
 
-.accordion-icon {
+/* Mobile Accordion */
+.mobile-nav {
+    display: none;
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.umoor-nav-label {
+    flex: 1;
+    text-align: center;
+}
+
+.accordion-item {
+    background: white;
+    border-bottom: 2px solid #CE9C01;
+    margin: 0;
+}
+
+.accordion-item:first-child {
+    border-top: 2px solid #CE9C01;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
     font-size: 16px;
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
+    font-family: 'PT Sans', sans-serif;
+    color: #00203D;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+
+.accordion-header.active {
+    background-color: #CE9C01;
+    color: white;
 }
 
 .accordion-content {
+    padding: 30px 20px;
     background-color: white;
-    padding: 0;
-    animation: slideDown 0.3s ease-out;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Common Content Styles */
 .umoor-main-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -234,29 +209,26 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    text-align: left;
 }
 
-.umoor-text p {
+.umoor-description {
     color: #00203D;
     font-size: 20px;
     line-height: 1.8;
     font-family: 'PT Sans', sans-serif;
-    text-align: left;
-    margin: 0;
 }
 
 .contact-info {
     background-color: #f8f9fa;
     padding: 25px;
     border-left: 4px solid #CE9C01;
-    text-align: left;
 }
 
 .contact-info p {
     margin: 0 0 10px 0;
     font-size: 16px;
-    text-align: left;
+    color: #00203D;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .contact-info p:last-child {
@@ -265,84 +237,38 @@
 
 .website-link {
     color: #0066cc;
-    text-decoration: underline;
+    text-decoration: none;
     transition: color 0.3s ease;
-    padding-left: 4px;
+    margin-left: 5px;
 }
 
 .website-link:hover {
     color: #CE9C01;
+    text-decoration: underline;
 }
 
-/* Responsive design */
+/* Responsive Design */
 @media (max-width: 1024px) {
-
-    .desktop-nav,
-    .desktop-content {
+    .umoor-desktop-layout {
         display: none;
     }
 
     .mobile-nav {
-        display: flex;
-    }
-
-    .umoor-section {
-        padding: 60px 15px;
-    }
-
-    .umoor-title {
-        margin-bottom: 20px;
-    }
-
-    .umoor-title::after {
-        margin: 10px auto 40px auto;
-    }
-
-    .accordion-header {
-        font-size: 18px;
-        padding: 18px 20px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-align: center;
-        min-height: 60px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .umoor-nav-label {
-        width: 100%;
-    }
-
-    .accordion-icon {
-        font-size: 20px;
-        flex-shrink: 0;
-        margin-top: 2px;
+        display: block;
     }
 
     .umoor-main-content {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding: 20px;
     }
 
     .umoor-image img,
     .image-placeholder {
-        height: 250px;
+        height: 300px;
     }
 
-    .umoor-text p {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .contact-info {
-        padding: 20px;
-        text-align: left;
-    }
-
-    .contact-info p {
-        text-align: left;
+    .umoor-description {
+        font-size: 18px;
     }
 }
 
@@ -414,6 +340,18 @@
 }
 
 @media (max-width: 480px) {
+    .accordion-header {
+        font-size: 16px;
+        padding: 12px 15px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-align: center;
+        min-height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .umoor-title {
         font-size: 1.5rem;
         margin-bottom: 20px;
@@ -426,18 +364,6 @@
 
     .umoor-section {
         background-attachment: scroll;
-    }
-
-    .accordion-header {
-        font-size: 16px;
-        padding: 12px 15px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-align: center;
-        min-height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 
     .umoor-nav-label {
@@ -472,4 +398,10 @@
     .website-link {
         padding-left: 2px;
     }
+
+    .umoor-image img,
+    .image-placeholder {
+        height: 200px;
+    }
+
 }
