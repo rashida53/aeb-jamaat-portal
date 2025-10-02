@@ -5,7 +5,7 @@ import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import './Navbar.css';
 
 const Navbar = ({ useDarkLogo = false }) => {
-    // const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isResourcesExpanded, setIsResourcesExpanded] = useState(false);
@@ -14,21 +14,19 @@ const Navbar = ({ useDarkLogo = false }) => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
-            // Show navbar only when at the top of the page
-            // if ((window.location.hash === '' || window.location.pathname === '/aeb-jamaat-portal') && (window.location.hash != '#/masjid')) { // only on the homepage
-            //     if (currentScrollY <= 50) {
-            //         setIsVisible(true);
-            //     } else {
-            //         setIsVisible(false);
-            //     }
-            // }
+            // Only show navbar when at the very top
+            if (currentScrollY <= 50) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
 
             setLastScrollY(currentScrollY);
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
+    }, []);
 
     const toggleMobileMenu = () => {
         const newState = !isMobileMenuOpen;
@@ -45,7 +43,7 @@ const Navbar = ({ useDarkLogo = false }) => {
 
     return (
         <>
-            <nav className={`navbar  ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}> {/* ${isVisible ? 'navbar-visible' : 'navbar-hidden'} */}
+            <nav className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
                 <div className="nav-container">
                     {/* Mobile Hamburger Menu */}
                     <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>

@@ -119,7 +119,8 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
     padding: 0;
     height: 100px;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    will-change: transform;
 }
 
 .navbar-visible {
@@ -321,15 +322,9 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
     .navbar {
-        position: static;
+        position: fixed;
         background: #00203D;
         height: 100px;
-        transform: none;
-    }
-
-    .navbar-visible,
-    .navbar-hidden {
-        transform: none;
     }
 
     .mobile-menu-overlay {
