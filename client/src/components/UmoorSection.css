@@ -38,6 +38,7 @@
     background: white;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     margin-top: 40px;
+    max-height: 886px;
 }
 
 .umoor-side-menu {
@@ -51,7 +52,8 @@
 .side-menu-item {
     background: white;
     border: none;
-    padding: 25px 25px;
+    border-right: 2px solid #CE9C01;
+    padding: 25px 20px;
     text-align: center;
     font-size: 18px;
     font-family: 'PT Sans', sans-serif;
@@ -59,12 +61,8 @@
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
-    border-bottom: 2px solid #CE9C01;
+    border-bottom: 1px solid lightgrey;
     font-weight: 600;
-}
-
-.side-menu-item:first-child {
-    border-top: 2px solid #CE9C01;
 }
 
 .side-menu-item:hover {
@@ -87,7 +85,9 @@
 .umoor-content-area .umoor-main-content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    width: 90%;
+    margin: auto;
 }
 
 .umoor-content-area .umoor-image {
@@ -208,7 +208,7 @@
 .umoor-text {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .umoor-description {
@@ -219,9 +219,7 @@
 }
 
 .contact-info {
-    background-color: #f8f9fa;
-    padding: 25px;
-    border-left: 4px solid #CE9C01;
+    padding-bottom: 15px;
 }
 
 .contact-info p {
@@ -236,7 +234,7 @@
 }
 
 .website-link {
-    color: #0066cc;
+    color: #779287;
     text-decoration: none;
     transition: color 0.3s ease;
     margin-left: 5px;
