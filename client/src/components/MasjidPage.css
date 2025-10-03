@@ -8,7 +8,7 @@
 .blog-post-page .navbar {
     background: none !important;
     background-color: #00203D !important;
-    position: relative !important;
+    position: fixed !important;
 }
 
 /* Banner Section */
@@ -20,8 +20,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 0;
-    /* Ensure it starts right after navbar */
+    margin-top: 100px;
 }
 
 .banner-content {

@@ -6,25 +6,26 @@ import './Navbar.css';
 
 const Navbar = ({ useDarkLogo = false }) => {
     const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isPastHero, setIsPastHero] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isResourcesExpanded, setIsResourcesExpanded] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
+            const heroSection = document.getElementById('hero');
+            const heroHeight = heroSection ? heroSection.offsetHeight : 0;
 
-            // Only show navbar when at the very top
-            if (currentScrollY <= 50) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
+            // Check if we're past the hero section
+            setIsPastHero(currentScrollY > heroHeight - 100); // -100 for smooth transition
 
-            setLastScrollY(currentScrollY);
+            // Always keep navbar visible on desktop
+            setIsVisible(true);
         };
 
         window.addEventListener('scroll', handleScroll);
+        // Run once to set initial state
+        handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -43,7 +44,7 @@ const Navbar = ({ useDarkLogo = false }) => {
 
     return (
         <>
-            <nav className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+            <nav className={`navbar ${isVisible ? 'navbar-visible' : 'navbar-hidden'} ${isMobileMenuOpen ? 'mobile-menu-open' : ''} ${isPastHero ? 'solid-bg' : ''}`}>
                 <div className="nav-container">
                     {/* Mobile Hamburger Menu */}
                     <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>

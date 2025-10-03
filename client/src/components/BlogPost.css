@@ -1,3 +1,7 @@
+.blog-post-page {
+    padding-top: 100px; /* Height of the fixed navbar */
+}
+
 .blog-post-section {
     padding: 80px 20px;
     display: flex;
