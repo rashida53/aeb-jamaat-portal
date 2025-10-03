@@ -42,7 +42,7 @@ const ContactSection = () => {
                             <h3 className="contact-subtitle">Address</h3>
                             <div className="contact-details">
                                 <div className="address-item">
-                                    <p className="address-title"><strong>Markaz -</strong></p>
+                                    <p className="address-title"><strong>Markaz</strong></p>
                                     <p>
                                         <a
                                             href="https://maps.app.goo.gl/PCEohsqyhapbL8Yi6?g_st=aw"
@@ -56,7 +56,7 @@ const ContactSection = () => {
                                 </div>
 
                                 <div className="address-item">
-                                    <p className="address-title"><strong>Masjid Zameen -</strong></p>
+                                    <p className="address-title"><strong>Masjid Zameen</strong></p>
                                     <p>
                                         <a
                                             href="https://maps.app.goo.gl/xkkBroX6zaJq5p4n8?g_st=aw"
@@ -75,14 +75,14 @@ const ContactSection = () => {
                             <h3 className="contact-subtitle">Contact</h3>
                             <div className="contact-details">
                                 <div className="contact-person">
-                                    <p className="person-title"><strong>Jamaat Aamil -</strong></p>
+                                    <p className="person-title"><strong>Aamil Saheb</strong></p>
                                     <p>Janab Shk. Saifuddin Zakir<br></br>
                                         650-309-7803<br></br>
                                         austinamil@alvazarat.org</p>
                                 </div>
 
                                 <div className="contact-person">
-                                    <p className="person-title"><strong>Jamaat Secretary -</strong></p>
+                                    <p className="person-title"><strong>Secretary</strong></p>
                                     <p>Shk. Murtaza bhai Rawat<br></br>
                                         832-526-8734</p>
                                 </div>
