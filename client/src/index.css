@@ -16,3 +16,16 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
+
+/* Offset in-page anchor scrolling to account for fixed navbar height */
+:root {
+    --navbar-height: 100px;
+}
+
+/* Ensure sections scrolled to by hash are not hidden under the fixed navbar */
+#hero,
+#about,
+#umoor,
+#contact {
+    scroll-margin-top: var(--navbar-height);
+}

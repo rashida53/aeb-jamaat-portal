@@ -1,3 +1,10 @@
+/* Fixed navbar spacing for pages that use Reflections component */
+.all-reflections,
+.blog-post-page {
+    padding-top: 100px;
+    /* Height of the fixed navbar */
+}
+
 .reflections-section {
     padding: 80px 20px;
     background-size: auto;

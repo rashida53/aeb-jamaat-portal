@@ -35,6 +35,13 @@
     letter-spacing: 2px;
 }
 
+@media (max-width: 1024px) {
+    .hero-section {
+        margin-top: 100px;
+        /* Height of the fixed navbar */
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 18px;
