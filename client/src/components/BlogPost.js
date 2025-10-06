@@ -58,6 +58,11 @@ const BlogPost = () => {
 
     // Rich text rendering options
     const renderOptions = {
+        renderMark: {
+            bold: text => <strong className="blog-bold">{text}</strong>,
+            italic: text => <em className="blog-italic">{text}</em>,
+            underline: text => <u className="blog-underline">{text}</u>,
+        },
         renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => <p className="blog-paragraph">{children}</p>,
             [BLOCKS.HEADING_4]: (node, children) => <h4 className="blog-heading-4">{children}</h4>,
