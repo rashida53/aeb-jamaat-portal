@@ -60,6 +60,42 @@ const UmoorSection = () => {
         fetchUmoorContent();
     }, []);
 
+    // Effect to match content area height to side menu height
+    useEffect(() => {
+        const matchHeights = () => {
+            const sideMenu = document.querySelector('.umoor-side-menu');
+            const contentArea = document.querySelector('.umoor-content-area');
+
+            if (sideMenu && contentArea) {
+                // Wait for DOM to be fully rendered
+                setTimeout(() => {
+                    const sideMenuHeight = sideMenu.offsetHeight;
+                    const sideMenuRect = sideMenu.getBoundingClientRect();
+                    const contentAreaRect = contentArea.getBoundingClientRect();
+
+                    // Set the content area height to exactly match the side menu
+                    contentArea.style.height = `${sideMenuHeight}px`;
+                    contentArea.style.maxHeight = `${sideMenuHeight}px`;
+                    contentArea.style.overflowY = 'auto';
+
+                    console.log('Side menu height:', sideMenuHeight);
+                }, 100);
+            }
+        };
+
+        // Run on initial load and when content changes
+        if (!isLoading) {
+            matchHeights();
+        }
+
+        // Also run when window resizes
+        window.addEventListener('resize', matchHeights);
+
+        return () => {
+            window.removeEventListener('resize', matchHeights);
+        };
+    }, [activeTab, umoorContent, isLoading]);
+
     const renderDescription = (richTextContent) => {
         return documentToReactComponents(richTextContent);
     };

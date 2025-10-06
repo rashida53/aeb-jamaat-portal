@@ -1,38 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import './Navbar.css';
 
 const Navbar = ({ useDarkLogo = false }) => {
+    const navigate = useNavigate();
     const [isVisible, setIsVisible] = useState(true);
     const [isPastHero, setIsPastHero] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isResourcesExpanded, setIsResourcesExpanded] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            const heroSection = document.getElementById('hero');
-            const heroHeight = heroSection ? heroSection.offsetHeight : 0;
+        const heroSection = document.getElementById('hero');
 
-            // Check if we're past the hero section
-            setIsPastHero(currentScrollY > heroHeight - 100); // -100 for smooth transition
+        // Always keep navbar mounted/visible; we only toggle background
+        setIsVisible(true);
 
-            // Always keep navbar visible on desktop
-            setIsVisible(true);
+        if (!heroSection) {
+            // No hero on this page → solid background
+            setIsPastHero(true);
+            return undefined;
+        }
+
+        // Use IntersectionObserver to detect when hero leaves the viewport
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                // When hero is intersecting (visible), keep transparent; when not, make solid
+                setIsPastHero(!entry.isIntersecting);
+            },
+            {
+                root: null,
+                threshold: 0.01, // treat as out of view when almost gone
+            }
+        );
+
+        observer.observe(heroSection);
+
+        return () => {
+            observer.disconnect();
         };
-
-        window.addEventListener('scroll', handleScroll);
-        // Run once to set initial state
-        handleScroll();
-        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const toggleMobileMenu = () => {
         const newState = !isMobileMenuOpen;
         setIsMobileMenuOpen(newState);
         document.body.style.overflow = newState ? 'hidden' : '';
+    };
+
+    const handleLogoClick = (e) => {
+        e.preventDefault();
+
+        // Navigate to homepage
+        navigate('/');
+
+        // Scroll to top after navigation
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 100);
+    };
+
+    const handleMasjidClick = (e) => {
+        e.preventDefault();
+
+        // Navigate to masjid page
+        navigate('/masjid');
+
+        // Scroll to top after navigation
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 100);
     };
 
     // Cleanup effect to ensure scroll is re-enabled when component unmounts
@@ -57,10 +101,6 @@ const Navbar = ({ useDarkLogo = false }) => {
 
                     {/* Desktop Navigation */}
                     <div className="nav-left desktop-nav">
-                        <HashLink smooth to="/#hero" className="nav-link">
-                            Home
-                        </HashLink>
-                        <span className="nav-separator">|</span>
                         <HashLink smooth to="/#about" className="nav-link">
                             About
                         </HashLink>
@@ -68,10 +108,14 @@ const Navbar = ({ useDarkLogo = false }) => {
                         <HashLink smooth to="/#umoor" className="nav-link">
                             12 Umoor
                         </HashLink>
+                        <span className="nav-separator">|</span>
+                        <Link smooth to="/masjid" className="nav-link" onClick={handleMasjidClick}>
+                            Masjid
+                        </Link>
                     </div>
 
                     <div className="nav-center">
-                        <Link to="/" className="nav-logo">
+                        <Link to="/" className="nav-logo" onClick={handleLogoClick}>
                             <div className="nav-logo">
                                 <img
                                     src={`${process.env.PUBLIC_URL}/images/${useDarkLogo ? 'Dark-Logo.png' : 'jamaat-logo.png'}`}
@@ -88,8 +132,8 @@ const Navbar = ({ useDarkLogo = false }) => {
                     </div>
 
                     <div className="nav-right desktop-nav">
-                        <Link to="/masjid" className="nav-link">
-                            Masjid
+                        <Link to="/reflections/all" className="nav-link">
+                            Blog
                         </Link>
                         <span className="nav-separator">|</span>
                         <div className="nav-link dropdown">
@@ -126,10 +170,6 @@ const Navbar = ({ useDarkLogo = false }) => {
             {/* Mobile Menu Overlay */}
             <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
                 <div className="mobile-menu-links">
-                    <HashLink smooth to="/#hero" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
-                        Home
-                    </HashLink>
-                    <div className="mobile-link-divider"></div>
                     <HashLink smooth to="/#about" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                         About
                     </HashLink>
@@ -138,8 +178,12 @@ const Navbar = ({ useDarkLogo = false }) => {
                         12 Umoor
                     </HashLink>
                     <div className="mobile-link-divider"></div>
-                    <Link to="/masjid" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link smooth to="/masjid" className="mobile-nav-link" onClick={(e) => { handleMasjidClick(e); setIsMobileMenuOpen(false); }}>
                         Masjid
+                    </Link>
+                    <div className="mobile-link-divider"></div>
+                    <Link to="/reflections/all" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                        Blog
                     </Link>
                     <div className="mobile-link-divider"></div>
                     <div className="mobile-nav-section">
