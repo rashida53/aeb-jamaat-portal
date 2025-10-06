@@ -186,6 +186,10 @@ const Navbar = ({ useDarkLogo = false }) => {
                         Blog
                     </Link>
                     <div className="mobile-link-divider"></div>
+                    <HashLink smooth to="/#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                        Contact
+                    </HashLink>
+                    <div className="mobile-link-divider"></div>
                     <div className="mobile-nav-section">
                         <div
                             className={`mobile-nav-section-title ${isResourcesExpanded ? 'expanded' : ''}`}
@@ -209,15 +213,12 @@ const Navbar = ({ useDarkLogo = false }) => {
                             <a href="https://tinyurl.com/markaz-maintenance-request" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                                 Maintenance/Nazafat Request
                             </a>
-                            <a href="https://us14.campaign-archive.com/home/?u=b6ab8f303315d93cd2a01a661&id=f6d73734f9" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+                            <a href="https://us14.campaign-archive.com/home/?u=b6ab8f303315d93cd2a01a661&id=f6d73734f9" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" style={{ paddingBottom: '130px' }} onClick={() => setIsMobileMenuOpen(false)}>
                                 Newsletters
                             </a>
                         </div>
                     </div>
-                    <div className="mobile-link-divider"></div>
-                    <HashLink smooth to="/#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
-                        Contact
-                    </HashLink>
+
                 </div>
             </div>
         </>
