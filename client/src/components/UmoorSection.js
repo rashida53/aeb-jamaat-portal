@@ -25,6 +25,20 @@ const UmoorSection = () => {
 
                 const content = {};
                 const tabsList = [];
+                const umoorOrder = [
+                    'deeniyah',
+                    'talimiyah',
+                    'marafiq-burhaniyah',
+                    'maliyah',
+                    'mawarid-bashariyah',
+                    'dakheliyah',
+                    'kharejiyah',
+                    'qaza',
+                    'fmb',
+                    'iqtesadiyah',
+                    'amlaak',
+                    'sehhat'
+                ];
 
                 response.items.forEach(item => {
                     const umoorId = item.fields.umoorName.toLowerCase().replace(/\s+/g, '-');
@@ -34,14 +48,19 @@ const UmoorSection = () => {
                         lead: item.fields.umoorLeadName,
                         contact: item.fields.umoorLeadContact || '',
                         website: item.fields.umoorWebsite || '',
-                        image: item.fields.umoorImage?.fields?.file?.url || ''
+                        image: item.fields.umoorImage?.fields?.file?.url || '',
+                        order: umoorOrder.indexOf(umoorId)
                     };
 
                     tabsList.push({
                         id: umoorId,
-                        label: item.fields.umoorFullName
+                        label: item.fields.umoorFullName,
+                        order: umoorOrder.indexOf(umoorId)
                     });
                 });
+
+                // Sort tabsList based on the predefined order
+                tabsList.sort((a, b) => a.order - b.order);
 
                 setUmoorContent(content);
                 setTabs(tabsList);
