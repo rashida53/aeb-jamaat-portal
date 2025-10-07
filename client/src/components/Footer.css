@@ -8,7 +8,6 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     gap: 40px;
 }
 
@@ -32,13 +31,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-end;
 }
 
-.footer-spacer {
-    flex-grow: 1;
-}
+
 
 .footer-section-title {
     color: white;
