@@ -20,34 +20,18 @@ const TimelineSection = () => {
             order: '-fields.date'  // Assuming you want newest first
         })
             .then((response) => {
-                console.log('Raw content from Contentful:', response.items[0]?.fields?.content);
+                console.log('Raw content from Contentful:', response);
                 const formattedMilestones = response.items.map(item => {
                     const date = new Date(item.fields.date);
                     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
                     const formattedDate = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
-
-                    // Default image if none from Contentful
-                    const defaultImage = {
-                        src: `${process.env.PUBLIC_URL}/images/MasjidZameen1.jpg`,
-                        alt: "Masjid Zameen View"
-                    };
-
-                    // Try to get image from Contentful if it exists
-                    let images = [defaultImage];
-                    if (item.fields.images && Array.isArray(item.fields.images) && item.fields.images.length > 0) {
-                        const contentfulImage = item.fields.images[0];
-                        images = [{
-                            src: contentfulImage.fields?.file?.url ? `https:${contentfulImage.fields.file.url}` : defaultImage.src,
-                            alt: contentfulImage.fields?.title || contentfulImage.fields?.description || "Milestone Image"
-                        }];
-                    }
 
                     return {
                         date: formattedDate,
                         heading: item.fields.title,
                         content: item.fields.description,
                         detailedContent: item.fields.content?.content?.[0]?.content?.[0]?.value || item.fields.description || '',
-                        images: images,
+                        image: item.fields.image?.fields?.file?.url || '',
                         isHighlighted: false
                     };
                 });

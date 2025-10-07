@@ -7,43 +7,37 @@ const MilestoneModal = ({ milestone, isOpen, onClose }) => {
     return (
         <div className="milestone-modal-overlay" onClick={onClose}>
             <div className="milestone-modal" onClick={(e) => e.stopPropagation()}>
-                {/* Header */}
+
                 <div className="modal-header">
                     <button className="close-button" onClick={onClose}>
                         ×
                     </button>
                 </div>
 
-                {/* Title and Date */}
                 <div className="modal-title-section">
                     <div className="title-date-row">
                         <h2 className="modal-title">{milestone.heading}</h2>
                         <div className="title-separator-vertical"></div>
                         <p className="modal-date">{milestone.date}</p>
                     </div>
-                    {/* <div className="title-separator"></div> */}
                 </div>
 
-                {/* Content */}
                 <div className="modal-content">
-                    {/* Image Section */}
-                    {milestone.images && milestone.images.length > 0 && (
+                    {milestone.image && (
                         <div className="modal-image-container">
                             <img
-                                src={milestone.images[0].src}
-                                alt={milestone.images[0].alt}
+                                src={milestone.image}
+                                alt={milestone.heading}
                                 className="modal-image"
                             />
                         </div>
                     )}
 
-                    {/* Detailed Content */}
                     <div className="modal-text-content">
                         <p className="modal-description">{milestone.detailedContent || milestone.content}</p>
                     </div>
                 </div>
 
-                {/* Footer Decoration */}
                 <div className="modal-footer">
                     <div className="footer-line-circle">
                         <div className="footer-line left-line"></div>

@@ -68,6 +68,20 @@ const ContactSection = () => {
                                         </a>
                                     </p>
                                 </div>
+
+                                <div className="address-item">
+                                    <p className="address-title"><strong>Daarul Imarat</strong></p>
+                                    <p>
+                                        <a
+                                            href="https://maps.app.goo.gl/YNrySyQUgu9a8V5U9"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="address-link"
+                                        >
+                                            16807 Langland Rd, Pflugerville, TX 78660
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
@@ -76,15 +90,19 @@ const ContactSection = () => {
                             <div className="contact-details">
                                 <div className="contact-person">
                                     <p className="person-title"><strong>Aamil Saheb</strong></p>
-                                    <p>Janab Shk. Saifuddin Zakir<br></br>
-                                        650-309-7803<br></br>
-                                        austinamil@alvazarat.org</p>
+                                    <p>
+                                        Janab Shk. Saifuddin Zakir<br></br>
+                                        <a href="tel:+16503097803" className="contact-link">650-309-7803</a><br></br>
+                                        <a href="mailto:austinamil@alvazarat.org" className="contact-link">austinamil@alvazarat.org</a>
+                                    </p>
                                 </div>
 
                                 <div className="contact-person">
                                     <p className="person-title"><strong>Secretary</strong></p>
-                                    <p>Shk. Murtaza bhai Rawat<br></br>
-                                        832-526-8734</p>
+                                    <p>
+                                        Shk. Murtaza bhai Rawat<br></br>
+                                        <a href="tel:+18325268734" className="contact-link">832-526-8734</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>

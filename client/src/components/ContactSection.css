@@ -97,7 +97,7 @@
 
 .contact-subtitle {
     color: #00203D;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     font-family: 'Merriweather', serif;
     margin: 0;
@@ -110,7 +110,7 @@
 .contact-subtitle::after {
     content: '';
     display: block;
-    width: 100px;
+    width: 90px;
     height: 2px;
     background-color: #CE9C01;
     margin-top: 10px;
@@ -189,7 +189,8 @@
     letter-spacing: 0.5px;
 }
 
-.address-link {
+.address-link,
+.contact-link {
     color: #00203D;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -200,7 +201,8 @@
     font-size: 18px;
 }
 
-.address-link::after {
+.address-link::after,
+.contact-link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -213,11 +215,13 @@
     transition: transform 0.3s ease;
 }
 
-.address-link:hover {
+.address-link:hover,
+.contact-link:hover {
     color: #CE9C01;
 }
 
-.address-link:hover::after {
+.address-link:hover::after,
+.contact-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }

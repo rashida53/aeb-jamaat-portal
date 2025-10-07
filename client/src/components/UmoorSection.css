@@ -67,6 +67,7 @@
     width: 100%;
     border-bottom: 1px solid lightgrey;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .side-menu-item:hover {
@@ -158,6 +159,7 @@
     color: #00203D;
     transition: all 0.3s ease;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 
@@ -167,7 +169,7 @@
 }
 
 .accordion-content {
-    padding: 30px 20px;
+    padding: 30px 30px;
     background-color: white;
 }
 
@@ -180,6 +182,8 @@
 }
 
 .umoor-image {
+    width: 65%;
+    margin: auto;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
