@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashLink } from 'react-router-hash-link';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import './Navbar.css';
 
@@ -29,7 +28,7 @@ const Navbar = ({ useDarkLogo = false }) => {
             },
             {
                 root: null,
-                threshold: 0.15, // treat as out of view when almost gone
+                threshold: 0.17, // treat as out of view when almost gone
             }
         );
 
@@ -46,13 +45,13 @@ const Navbar = ({ useDarkLogo = false }) => {
         document.body.style.overflow = newState ? 'hidden' : '';
     };
 
-    const handleNavLinkClick = (e, targetId, topOffset) => {
+    const handleNavLinkClick = (e, targetPage, offSetId) => {
         e.preventDefault();
-        navigate(targetId);
+        navigate(targetPage);
         let offSet;
         setTimeout(() => {
-            if (topOffset != 0) {
-                offSet = document.getElementById(topOffset).offsetTop - 100;
+            if (offSetId != 0) {
+                offSet = document.getElementById(offSetId).offsetTop - 100;
             } else {
                 offSet = 0;
             }
