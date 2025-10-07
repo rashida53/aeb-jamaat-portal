@@ -18,21 +18,18 @@ const Navbar = ({ useDarkLogo = false }) => {
         setIsVisible(true);
 
         if (!heroSection) {
-            // No hero on this page → solid background
             setIsPastHero(true);
             return undefined;
         }
 
-        // Use IntersectionObserver to detect when hero leaves the viewport
-        const observer = new IntersectionObserver(
+        const observer = new IntersectionObserver( //To observe when hero section is out of view for nav bg change
             (entries) => {
                 const entry = entries[0];
-                // When hero is intersecting (visible), keep transparent; when not, make solid
                 setIsPastHero(!entry.isIntersecting);
             },
             {
                 root: null,
-                threshold: 0.01, // treat as out of view when almost gone
+                threshold: 0.15, // treat as out of view when almost gone
             }
         );
 
@@ -49,42 +46,26 @@ const Navbar = ({ useDarkLogo = false }) => {
         document.body.style.overflow = newState ? 'hidden' : '';
     };
 
-    const handleLogoClick = (e) => {
+    const handleNavLinkClick = (e, targetId, topOffset) => {
         e.preventDefault();
-
-        // Navigate to homepage
-        navigate('/');
-
-        // Scroll to top after navigation
+        navigate(targetId);
+        let offSet;
         setTimeout(() => {
+            if (topOffset != 0) {
+                offSet = document.getElementById(topOffset).offsetTop - 100;
+            } else {
+                offSet = 0;
+            }
             window.scrollTo({
-                top: 0,
+                top: offSet,
                 behavior: 'smooth'
             });
-        }, 100);
-    };
-
-    const handleMasjidClick = (e) => {
-        e.preventDefault();
-
-        // Navigate to masjid page
-        navigate('/masjid');
-
-        // Scroll to top after navigation
-        setTimeout(() => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }, 100);
-    };
-
-    // Cleanup effect to ensure scroll is re-enabled when component unmounts
-    useEffect(() => {
-        return () => {
+        }, 120);
+        if (isMobileMenuOpen) {
+            setIsMobileMenuOpen(false);
             document.body.style.overflow = '';
-        };
-    }, []);
+        }
+    };
 
     return (
         <>
@@ -101,21 +82,21 @@ const Navbar = ({ useDarkLogo = false }) => {
 
                     {/* Desktop Navigation */}
                     <div className="nav-left desktop-nav">
-                        <HashLink smooth to="/#about" className="nav-link">
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'about')}>
                             About
-                        </HashLink>
+                        </div>
                         <span className="nav-separator">|</span>
-                        <HashLink smooth to="/#umoor" className="nav-link">
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'umoor')}>
                             12 Umoor
-                        </HashLink>
+                        </div>
                         <span className="nav-separator">|</span>
-                        <Link smooth to="/masjid" className="nav-link" onClick={handleMasjidClick}>
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/masjid', 0)}>
                             Masjid
-                        </Link>
+                        </div>
                     </div>
 
                     <div className="nav-center">
-                        <Link to="/" className="nav-logo" onClick={handleLogoClick}>
+                        <div className="nav-logo" onClick={(e) => handleNavLinkClick(e, '/', 0)}>
                             <div className="nav-logo">
                                 <img
                                     src={`${process.env.PUBLIC_URL}/images/${useDarkLogo ? 'Dark-Logo.png' : 'jamaat-logo.png'}`}
@@ -128,13 +109,13 @@ const Navbar = ({ useDarkLogo = false }) => {
                                     className="logo-image mobile-logo"
                                 />
                             </div>
-                        </Link>
+                        </div>
                     </div>
 
                     <div className="nav-right desktop-nav">
-                        <Link to="/reflections/all" className="nav-link">
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/reflections/all', 0)}>
                             Blog
-                        </Link>
+                        </div>
                         <span className="nav-separator">|</span>
                         <div className="nav-link dropdown">
                             <span>Resources</span>
@@ -160,9 +141,9 @@ const Navbar = ({ useDarkLogo = false }) => {
                             </div>
                         </div>
                         <span className="nav-separator">|</span>
-                        <HashLink smooth to="/#contact" className="nav-link">
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'contact')}>
                             Contact
-                        </HashLink>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -170,25 +151,25 @@ const Navbar = ({ useDarkLogo = false }) => {
             {/* Mobile Menu Overlay */}
             <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
                 <div className="mobile-menu-links">
-                    <HashLink smooth to="/#about" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'about')}>
                         About
-                    </HashLink>
+                    </div>
                     <div className="mobile-link-divider"></div>
-                    <HashLink smooth to="/#umoor" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'umoor')}>
                         12 Umoor
-                    </HashLink>
+                    </div>
                     <div className="mobile-link-divider"></div>
-                    <Link smooth to="/masjid" className="mobile-nav-link" onClick={(e) => { handleMasjidClick(e); setIsMobileMenuOpen(false); }}>
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/masjid', 0)}>
                         Masjid
-                    </Link>
+                    </div>
                     <div className="mobile-link-divider"></div>
-                    <Link to="/reflections/all" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/reflections/all', 0)}>
                         Blog
-                    </Link>
+                    </div>
                     <div className="mobile-link-divider"></div>
-                    <HashLink smooth to="/#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'contact')}>
                         Contact
-                    </HashLink>
+                    </div>
                     <div className="mobile-link-divider"></div>
                     <div className="mobile-nav-section">
                         <div
@@ -218,7 +199,6 @@ const Navbar = ({ useDarkLogo = false }) => {
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </>
