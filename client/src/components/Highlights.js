@@ -39,6 +39,11 @@ const Highlights = () => {
 
     const highlights = [
         {
+            image: `${process.env.PUBLIC_URL}/images/QuranHaflat.jpg`,
+            title: 'Haflat ul Quran',
+            description: 'Quran tilawat program conducted by Madrasah tul Badri on the auspicious occasion of Aqa Maula TUS milaad'
+        },
+        {
             image: `${process.env.PUBLIC_URL}/images/PickleballTournament.jpg`,
             title: 'Pickleball Tournament',
             description: 'Austin jamaat held a pickleball tournament that brought together players of all ages on the court for fun, fitness, and teamwork, upholding our reputation as the pickleball capital of the country'
