@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import MasjidPage from './components/MasjidPage';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
+import TeamPage from './components/TeamPage';
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/masjid" element={<MasjidPage />} />
                     <Route path="/blogs/all" element={<Blog />} />
                     <Route path="/blog/:id" element={<BlogPost />} />
+                    <Route path="/team" element={<TeamPage />} />
                 </Routes>
             </div>
         </Router>

@@ -108,8 +108,8 @@ const MasjidPage = () => {
             <TimelineSection milestones={milestones} />
             <FloorPlans />
             <MasjidGallery />
-            <TeamSection />
             <Reflections />
+            <TeamSection />
             <Footer />
         </div>
     );

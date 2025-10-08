@@ -4,38 +4,38 @@ import './TeamSection.css';
 const TeamSection = () => {
     const teamMembers = [
         {
-            name: "Hamza Karachiwala",
-            role: "FMB Secretary",
+            name: "M Murtaza Hirani",
+            role: "Umoor Amlaak Coordinator",
             profession: "Senior Software Engineer",
             image: `${process.env.PUBLIC_URL}/images/HamzaProfilePic.jpg`
         },
         {
-            name: "Hamza Karachiwala",
-            role: "FMB Secretary",
+            name: "M Murtaza Choilawala",
+            role: "Jamaat Member",
             profession: "Senior Software Engineer",
             image: `${process.env.PUBLIC_URL}/images/HamzaProfilePic.jpg`
         },
         {
-            name: "Hamza Karachiwala",
-            role: "FMB Secretary",
+            name: "M Murtaza Kutianawala",
+            role: "Jamaat Member",
             profession: "Senior Software Engineer",
             image: `${process.env.PUBLIC_URL}/images/HamzaProfilePic.jpg`
         },
         {
-            name: "Hamza Karachiwala",
-            role: "FMB Secretary",
+            name: "Shk Murtaza Rawat",
+            role: "Jamaat Secretary",
             profession: "Senior Software Engineer",
             image: `${process.env.PUBLIC_URL}/images/HamzaProfilePic.jpg`
         },
         {
-            name: "Hamza Karachiwala",
-            role: "FMB Secretary",
+            name: "M Taaha Bhora",
+            role: "Jamaat Treasurer",
             profession: "Senior Software Engineer",
             image: `${process.env.PUBLIC_URL}/images/HamzaProfilePic.jpg`
         },
         {
-            name: "Hamza Karachiwala",
-            role: "FMB Secretary",
+            name: "Dr M Hussain Malbari",
+            role: "Umoor Sehat Coordinator",
             profession: "Senior Software Engineer",
             image: `${process.env.PUBLIC_URL}/images/HamzaProfilePic.jpg`
         }

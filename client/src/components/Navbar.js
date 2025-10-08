@@ -166,6 +166,10 @@ const Navbar = ({ useDarkLogo = false }) => {
                         Blog
                     </div>
                     <div className="mobile-link-divider"></div>
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/team', 0)}>
+                        Team
+                    </div>
+                    <div className="mobile-link-divider"></div>
                     <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'contact')}>
                         Contact
                     </div>

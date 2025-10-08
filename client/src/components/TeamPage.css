@@ -1,6 +1,16 @@
-.team-section {
-    padding: 80px 20px;
-    background-color: #00203D;
+.team-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-page-content {
+    flex: 1;
+    padding: 140px 20px 80px;
+    background-size: auto;
+    background-position: top;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .container {
@@ -9,7 +19,7 @@
     padding: 0 20px;
 }
 
-.team-section-title {
+.team-page-title {
     font-family: 'Merriweather', serif;
     text-align: center;
     color: #CE9C01;
@@ -21,7 +31,7 @@
     position: relative;
 }
 
-.team-section-title::after {
+.team-page-title::after {
     content: '';
     display: block;
     width: 350px;
@@ -30,11 +40,36 @@
     margin: 15px auto 0;
 }
 
+.team-section-container {
+    margin-bottom: 60px;
+}
+
+.team-section-heading {
+    font-family: 'Merriweather', serif;
+    color: #CE9C01;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
 .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-section-container.single-member .team-grid {
+    grid-template-columns: minmax(auto, 600px);
+    justify-content: center;
+}
+
+/* For sections with exactly 2 members */
+.team-section-container:has(.team-grid:has(> :nth-child(2):last-child)) .team-grid {
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -48,6 +83,8 @@
     gap: 35px;
     margin-right: 35px;
     margin-left: 35px;
+    border: 1px solid #eee;
+    border-left: 2px solid #CE9C01;
 }
 
 .member-image-container {
@@ -96,14 +133,18 @@
         gap: 25px;
         padding: 0 20px;
     }
+
+    .team-section-container {
+        padding: 30px;
+    }
 }
 
 @media (max-width: 768px) {
-    .team-section {
+    .team-page-content {
         padding: 60px 15px;
     }
 
-    .team-section-title {
+    .team-page-title {
         font-size: 28px;
         margin-bottom: 40px;
     }
@@ -111,10 +152,12 @@
     .team-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-        max-width: 600px;
+        padding: 0;
     }
 
     .team-member-card {
+        margin-right: 0;
+        margin-left: 0;
         padding: 20px;
     }
 
@@ -134,20 +177,29 @@
     .member-profession {
         font-size: 12px;
     }
+
+    .team-section-container {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .team-section-heading {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 480px) {
-    .team-section-title {
+    .team-page-title {
         font-size: 24px;
     }
 
-    .team-section-title::after {
+    .team-page-title::after {
         width: 200px;
     }
 
     .team-grid {
         gap: 15px;
-        padding: 0 10px;
     }
 
     .team-member-card {
@@ -162,5 +214,15 @@
 
     .member-info {
         padding-right: 10px;
+    }
+
+    .team-section-container {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .team-section-heading {
+        font-size: 18px;
+        margin-bottom: 15px;
     }
 }
