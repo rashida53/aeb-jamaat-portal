@@ -10,9 +10,49 @@ const client = createClient({
     accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN
 });
 
-const AllReflections = () => {
-    const [reflections, setReflections] = useState([]);
+const Blogs = () => {
+    const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [selectedCategory, setSelectedCategory] = useState(() => {
+        return localStorage.getItem('selectedBlogCategory') || 'masjid';
+    });
+    const [categories, setCategories] = useState(new Map([['masjid', 'Masjid']]));
+
+    const handleCategoryChange = (e) => {
+        const newCategory = e.target.value;
+        setSelectedCategory(newCategory);
+        localStorage.setItem('selectedBlogCategory', newCategory);
+    };
+
+    const getUniqueCategories = (posts) => {
+        const uniqueCategories = new Map();
+
+        uniqueCategories.set('all', 'All Categories');
+        posts.forEach(post => {
+            if (post.fields.blogCategory && post.fields.blogCategory.length > 0) {
+                post.fields.blogCategory.forEach(category => {
+                    uniqueCategories.set(
+                        category.fields.internalCategoryName,
+                        category.fields.categoryName
+                    );
+                });
+            }
+        });
+
+        uniqueCategories.set('others', 'Others');
+        return uniqueCategories;
+    };
+
+    // Filter posts based on selected category
+    const filteredBlogs = blogs.filter(post => {
+        if (selectedCategory === 'all') return true;
+        if (selectedCategory === 'others') {
+            return !post.fields.blogCategory || post.fields.blogCategory.length === 0;
+        }
+        return post.fields.blogCategory?.some(
+            category => category.fields.internalCategoryName === selectedCategory
+        );
+    });
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -21,7 +61,8 @@ const AllReflections = () => {
             order: '-fields.publishedDate'
         })
             .then((response) => {
-                setReflections(response.items);
+                setBlogs(response.items);
+                setCategories(getUniqueCategories(response.items));
                 setLoading(false);
             })
             .catch(() => setLoading(false));
@@ -29,7 +70,7 @@ const AllReflections = () => {
 
     return (
 
-        <div className='all-reflections'>
+        <div className='all-blogs'>
             <Navbar useDarkLogo={true} />
             <section
                 className="reflections-section"
@@ -38,12 +79,26 @@ const AllReflections = () => {
                 }}
             >
                 <div className="container">
-                    <h2 className="reflections-section-title">ALL REFLECTIONS</h2>
+                    <h2 className="reflections-section-title">BLOG</h2>
+                    <div className="dropdown-container">
+                        <select
+                            value={selectedCategory}
+                            onChange={handleCategoryChange}
+                            className="category-dropdown"
+                        >
+                            {Array.from(categories.entries()).map(([internalName, displayName]) => (
+                                <option key={internalName} value={internalName}>
+                                    {displayName}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
                     {loading ? (
                         <div>Loading...</div>
                     ) : (
                         <div className="blog-posts">
-                            {reflections.map(post => {
+                            {filteredBlogs.map(post => {
                                 const { title, featuredImage, author, slug } = post.fields;
                                 const imageUrl = featuredImage?.fields?.file?.url;
                                 const authorName = author?.fields?.name || '';
@@ -83,4 +138,4 @@ const AllReflections = () => {
     );
 };
 
-export default AllReflections;
+export default Blogs;

@@ -9,7 +9,7 @@ import MasjidSection from './components/MasjidSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import MasjidPage from './components/MasjidPage';
-import AllReflections from './components/AllReflections';
+import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
                         </>
                     } />
                     <Route path="/masjid" element={<MasjidPage />} />
-                    <Route path="/reflections/all" element={<AllReflections />} />
+                    <Route path="/blogs/all" element={<Blog />} />
                     <Route path="/blog/:id" element={<BlogPost />} />
                 </Routes>
             </div>

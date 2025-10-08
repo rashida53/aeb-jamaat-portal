@@ -59,7 +59,7 @@ const Navbar = ({ useDarkLogo = false }) => {
                 top: offSet,
                 behavior: 'smooth'
             });
-        }, 120);
+        }, 200);
         if (isMobileMenuOpen) {
             setIsMobileMenuOpen(false);
             document.body.style.overflow = '';
@@ -112,7 +112,7 @@ const Navbar = ({ useDarkLogo = false }) => {
                     </div>
 
                     <div className="nav-right desktop-nav">
-                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/reflections/all', 0)}>
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/blogs/all', 0)}>
                             Blog
                         </div>
                         <span className="nav-separator">|</span>
@@ -162,7 +162,7 @@ const Navbar = ({ useDarkLogo = false }) => {
                         Masjid
                     </div>
                     <div className="mobile-link-divider"></div>
-                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/reflections/all', 0)}>
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/blogs/all', 0)}>
                         Blog
                     </div>
                     <div className="mobile-link-divider"></div>
