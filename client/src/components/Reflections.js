@@ -15,16 +15,31 @@ const Reflections = () => {
 
     useEffect(() => {
         client.getEntries({
-            content_type: 'pageBlogPost',
-            'fields.category': 'masjid',
-            order: '-fields.publishedDate',
-            limit: 4
+            content_type: 'componentBlogCategory',
+            'fields.internalCategoryName': 'masjid',
+            limit: 1
         })
+            .then(categoryResponse => {
+                if (categoryResponse.items.length > 0) {
+                    const masjidCategoryId = categoryResponse.items[0].sys.id;
+                    return client.getEntries({
+                        content_type: 'pageBlogPost',
+                        include: 2,
+                        order: '-fields.publishedDate',
+                        limit: 4,
+                        'fields.blogCategory.sys.id': masjidCategoryId
+                    });
+                }
+                return { items: [] };
+            })
             .then((response) => {
                 setReflections(response.items);
                 setLoading(false);
             })
-            .catch(() => setLoading(false));
+            .catch((error) => {
+                console.error('Error fetching posts:', error);
+                setLoading(false);
+            });
     }, []);
 
     return (
@@ -55,7 +70,6 @@ const Reflections = () => {
                                             <h3 className="post-title">{title}</h3>
                                             <p className="post-text">
                                                 {post.fields.content && (() => {
-                                                    // Gather all text from paragraphs and headings
                                                     const blocks = post.fields.content.content.filter(node => node.nodeType === 'paragraph' || node.nodeType.startsWith('heading'));
                                                     const allText = blocks.map(node => node.content.map(child => child.value).join(' ')).join(' ');
                                                     const words = allText.split(/\s+/).filter(Boolean);
@@ -75,7 +89,7 @@ const Reflections = () => {
                     </div>
                 )}
                 <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                    <Link to="/reflections/all" className="view-all-reflections-btn">VIEW ALL REFLECTIONS</Link>
+                    <Link to="/blogs/all" className="view-all-reflections-btn">VIEW ALL REFLECTIONS</Link>
                 </div>
             </div>
         </section>
