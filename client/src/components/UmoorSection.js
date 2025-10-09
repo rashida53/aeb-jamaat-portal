@@ -256,14 +256,15 @@ const UmoorSection = () => {
                                         </div>
 
                                         <div className="contact-info">
-                                            <p><strong>Umoor Lead-</strong> {umoorData.lead}</p>
-                                            {umoorData.contact && <p><strong>Contact-</strong> {umoorData.contact}</p>}
+                                            <p><strong>{umoorData.lead}</strong> </p>
+                                            {umoorData.contact && <p><strong>{umoorData.contact}</strong> </p>}
                                             {umoorData.website && (
                                                 <p>
-                                                    <strong>Umoor Website-</strong>
-                                                    <a href={umoorData.website} target="_blank" rel="noopener noreferrer" className="website-link">
-                                                        Visit Website
-                                                    </a>
+                                                    <strong>
+                                                        <a href={umoorData.website} target="_blank" rel="noopener noreferrer" className="website-link">
+                                                            Umoor Website
+                                                        </a>
+                                                    </strong>
                                                 </p>
                                             )}
                                         </div>

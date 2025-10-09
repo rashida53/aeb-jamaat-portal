@@ -2,6 +2,11 @@
     font-family: 'PT Sans', sans-serif;
 }
 
+.masjid-page .footer {
+    position: relative;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+}
+
 /* Override navbar background for this page */
 .masjid-page .navbar,
 .all-reflections .navbar,

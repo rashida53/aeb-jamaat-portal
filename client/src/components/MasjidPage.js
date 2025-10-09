@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import TimelineSection from './TimelineSection';
 import FloorPlans from './FloorPlans';
 import MasjidGallery from './MasjidGallery';
+import TeamSection from './TeamSection';
 import Reflections from './Reflections';
 import Footer from './Footer';
 import './MasjidPage.css';
@@ -108,6 +109,7 @@ const MasjidPage = () => {
             <FloorPlans />
             <MasjidGallery />
             <Reflections />
+            <TeamSection />
             <Footer />
         </div>
     );
