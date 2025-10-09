@@ -272,6 +272,7 @@
 
 @media (max-width: 480px) {
     .reflections-section {
+        padding: 60px 15px;
         background-attachment: scroll;
     }
 

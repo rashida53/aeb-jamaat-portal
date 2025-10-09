@@ -343,9 +343,13 @@
         padding: 15px;
     }
 
+    .umoor-image {
+        width: 75%;
+    }
+
     .umoor-image img,
     .image-placeholder {
-        height: 200px;
+        height: 250px;
     }
 
     .umoor-text p {
@@ -426,6 +430,10 @@
 
     .website-link {
         padding-left: 2px;
+    }
+
+    .umoor-image {
+        width: 100%;
     }
 
     .umoor-image img,

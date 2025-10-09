@@ -24,7 +24,7 @@ const TeamSection = () => {
         {
             name: "Shk Murtaza bhai Rawat",
             contactNumber: "+18325268734",
-            customImage: null,
+            customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/MurtazaRawatProfilePic.jpg`,
             initials: "MR"
         },
         {

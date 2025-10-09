@@ -17,7 +17,7 @@ const FloorPlans = () => {
                     <h3 className="floor-title">MASJID FIRST FLOOR</h3>
                     <div className="plan-content">
                         <img
-                            src={`${process.env.PUBLIC_URL}/images/Marado-Floor-Plan.png`}
+                            src={`${process.env.PUBLIC_URL}/images/Marado-Floor-Plan.jpeg`}
                             alt="Masjid First Floor Plan"
                             className="floor-plan-image"
                         />

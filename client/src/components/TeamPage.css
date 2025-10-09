@@ -6,7 +6,7 @@
 
 .team-page-content {
     flex: 1;
-    padding: 140px 20px 80px;
+    padding: 180px 20px 80px;
     background-size: auto;
     background-position: top;
     background-repeat: repeat;
@@ -130,6 +130,9 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
     .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
         gap: 25px;
         padding: 0 20px;
     }
@@ -141,7 +144,7 @@
 
 @media (max-width: 768px) {
     .team-page-content {
-        padding: 120px 15px 60px;
+        padding: 160px 15px 60px;
     }
 
     .team-page-title {
@@ -153,6 +156,7 @@
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 0;
+        max-width: 500px;
     }
 
     .team-member-card {
@@ -163,7 +167,7 @@
 
     .member-image-container {
         width: 100px;
-        height: 100px;
+        height: 120px;
     }
 
     .member-name {
@@ -209,7 +213,7 @@
 
     .member-image-container {
         width: 80px;
-        height: 80px;
+        height: 96px;
     }
 
     .member-info {

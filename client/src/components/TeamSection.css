@@ -101,6 +101,8 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
     .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
         gap: 25px;
         padding: 0 20px;
     }
@@ -117,9 +119,7 @@
     }
 
     .team-grid {
-        grid-template-columns: 1fr;
         gap: 20px;
-        max-width: 600px;
     }
 
     .team-member-card {

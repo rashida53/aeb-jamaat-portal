@@ -41,7 +41,7 @@ const TeamPage = () => {
                     name: "Shk. Murtaza bhai Rawat",
                     role: "Secretary",
                     profession: "Principal at Gallagher",
-                    customImage: null,
+                    customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/MurtazaRawatProfilePic.jpg`,
                     initials: "MR"
                 },
                 {
@@ -109,7 +109,7 @@ const TeamPage = () => {
                     name: "M. Hamza bhai Karachiwala",
                     role: "Umoor FMB",
                     profession: "Software Engineer at HubSpot",
-                    customImage: `${process.env.PUBLIC_URL}/images/HamzaProfilePic.jpg`,
+                    customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/HamzaProfilePic.jpg`,
                     initials: "HK"
                 },
                 {

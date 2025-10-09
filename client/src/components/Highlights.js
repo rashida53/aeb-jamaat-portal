@@ -39,32 +39,32 @@ const Highlights = () => {
 
     const highlights = [
         {
-            image: `${process.env.PUBLIC_URL}/images/QuranHaflat.jpg`,
+            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/QuranHaflat.jpg`,
             title: 'Haflat ul Quran',
             description: 'Quran tilawat program conducted by Madrasah tul Badri on the auspicious occasion of Aqa Maula TUS milaad'
         },
         {
-            image: `${process.env.PUBLIC_URL}/images/PickleballTournament.jpg`,
+            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/PickleballTournament.jpg`,
             title: 'Pickleball Tournament',
             description: 'Austin jamaat held a pickleball tournament that brought together players of all ages on the court for fun, fitness, and teamwork, upholding our reputation as the pickleball capital of the country'
         },
         {
-            image: `${process.env.PUBLIC_URL}/images/BbqDinner.jpg`,
+            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/BbqDinner.jpg`,
             title: 'Eid BBQ Dinner',
             description: 'A Shehrullah-must-have where AEB families gather to cook and celebrate Eid with delicious food, laughter, and community spirit.'
         },
         {
-            image: `${process.env.PUBLIC_URL}/images/DonationDrive.jpg`,
+            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/DonationDrive.jpg`,
             title: 'Donation Drive',
             description: 'Regular donation drives organized by Umoor Kharejiyah to collectively give back, supporting local and global causes through generosity and compassion.'
         },
         {
-            image: `${process.env.PUBLIC_URL}/images/BusinessMeetup.jpg`,
+            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/BusinessMeetup.jpg`,
             title: 'Business Meetups',
             description: 'Monthly seminars and meetups organized by Tijarat Rabea committee to help entrepreneurs thrive and provide support to our local community.'
         },
         {
-            image: `${process.env.PUBLIC_URL}/images/Madrasah-SummerCamp.png`,
+            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/Madrasah-SummerCamp.png`,
             title: 'Madrasah Summer Camp',
             description: 'A fun filled week with activities and play designed specially for our young and bright minds.'
         }

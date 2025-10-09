@@ -131,6 +131,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .floor-plans-section {
+        padding: 60px 15px;
         background-attachment: scroll;
     }
 
