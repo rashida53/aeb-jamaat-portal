@@ -24,7 +24,7 @@
 .team-section-title::after {
     content: '';
     display: block;
-    width: 350px;
+    width: 120px;
     height: 2px;
     background-color: #CE9C01;
     margin: 15px auto 0;
@@ -77,6 +77,14 @@
 }
 
 .member-role {
+    color: #CE9C01;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.member-contact-number {
     color: #CE9C01;
     font-size: 16px;
     font-weight: 600;
