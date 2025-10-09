@@ -1,8 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AboutSection.css';
 import Highlights from './Highlights';
 
 const AboutSection = () => {
+    const navigate = useNavigate();
+
+    const handleTeamClick = () => {
+        navigate('/team');
+        // Delay the scroll to ensure navigation completes
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 100);
+    };
     return (
         <section id="about" className="about-section">
             <div className="about-content">
@@ -14,6 +27,9 @@ const AboutSection = () => {
 
                         Austin TX is all about “Keeping it Weird”. In our community, you will find the most weirdly lovable folks - tech enthusiasts turned entrepreneurs, doctors addicted to racket sports, skilled teachers who bake a mean cookie, real estate geniuses with a heart of gold, and many more. The city offers fantastic opportunities for growth, is close to large jamaats but keeps its identity of a close knit community, and always has a few foodies looking for some company to gobble at a new restaurant. Once you move to this Jamaat, you will not want to be a part of another jamaat again!
                     </p>
+                    <div className="about-link-container">
+                        <button onClick={handleTeamClick} className="about-team-link">Meet Our Team</button>
+                    </div>
                 </div>
                 <Highlights />
             </div>

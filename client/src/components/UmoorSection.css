@@ -355,12 +355,12 @@
 
     .contact-info {
         padding: 15px;
-        text-align: left;
+        text-align: center;
     }
 
     .contact-info p {
         font-size: 14px;
-        text-align: left;
+        text-align: center;
     }
 
     .website-link {
@@ -416,12 +416,12 @@
 
     .contact-info {
         padding: 12px;
-        text-align: left;
+        text-align: center;
     }
 
     .contact-info p {
         font-size: 13px;
-        text-align: left;
+        text-align: center;
     }
 
     .website-link {

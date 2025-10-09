@@ -144,7 +144,7 @@ const TeamPage = () => {
                 backgroundImage: `url(${process.env.PUBLIC_URL}/images/islamic-pattern.svg)`
             }}>
                 <div className="container">
-                    <h1 className="team-page-title">MEET THE TEAM</h1>
+                    <h1 className="team-page-title">OUR LEADERSHIP</h1>
                     {teamStructure.map((section, index) => (
                         <div key={index} className={`team-section-container ${section.members.length === 1 ? 'single-member' : ''}`}>
                             <h2 className="team-section-heading">{section.title}</h2>
