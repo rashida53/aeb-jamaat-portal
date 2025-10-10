@@ -11,7 +11,7 @@ const client = createClient({
 });
 
 const MasjidGallery = () => {
-    const [masjidImages, setMasjidImages] = useState([]);
+    const [galleryContent, setGalleryContent] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     // Fallback images in case Contentful fails
@@ -19,71 +19,95 @@ const MasjidGallery = () => {
         {
             id: 1,
             src: `${process.env.PUBLIC_URL}/images/MasjidCarousalFallbackImgs/masjid-carousel-1.jpeg`,
-            alt: 'Anjuman-e-Burhani Markaz - Community gathering and activities'
+            alt: 'Anjuman-e-Burhani Markaz - Community gathering and activities',
+            type: 'image'
         },
         {
             id: 2,
             src: `${process.env.PUBLIC_URL}/images/MasjidCarousalFallbackImgs/masjid-carousel-2.jpeg`,
-            alt: 'Anjuman-e-Burhani Markaz - Prayer hall and religious ceremonies'
+            alt: 'Anjuman-e-Burhani Markaz - Prayer hall and religious ceremonies',
+            type: 'image'
         },
         {
             id: 3,
             src: `${process.env.PUBLIC_URL}/images/MasjidCarousalFallbackImgs/masjid-carousel-3.jpeg`,
-            alt: 'Anjuman-e-Burhani Markaz - Community events and gatherings'
+            alt: 'Anjuman-e-Burhani Markaz - Community events and gatherings',
+            type: 'image'
         },
         {
             id: 4,
             src: `${process.env.PUBLIC_URL}/images/MasjidCarousalFallbackImgs/masjid-carousel-4.jpeg`,
-            alt: 'Anjuman-e-Burhani Markaz - Religious ceremonies and celebrations'
+            alt: 'Anjuman-e-Burhani Markaz - Religious ceremonies and celebrations',
+            type: 'image'
         },
         {
             id: 5,
             src: `${process.env.PUBLIC_URL}/images/MasjidCarousalFallbackImgs/masjid-carousel-5.jpg`,
-            alt: 'Anjuman-e-Burhani Markaz - Community development and progress'
+            alt: 'Anjuman-e-Burhani Markaz - Community development and progress',
+            type: 'image'
         }
     ];
 
     useEffect(() => {
-        const fetchMasjidImages = async () => {
+        const fetchContent = async () => {
             try {
-                console.log('Fetching masjid gallery images from Contentful...');
+                console.log('Fetching content from Contentful...');
 
                 const response = await client.getEntries({
                     content_type: 'masjidUpdate',
-                    limit: 1
+                    include: 2
                 });
+
+                console.log('Contentful response:', response);
 
                 if (response.items.length > 0) {
                     const entry = response.items[0];
-                    console.log('MasjidGallery - Entry fields:', entry.fields);
+                    console.log('Masjid update entry:', entry);
 
-                    // Extract images from the masjidImages field
                     if (entry.fields.masjidImages && entry.fields.masjidImages.length > 0) {
-                        console.log('MasjidGallery - Found masjidImages:', entry.fields.masjidImages);
-                        const images = entry.fields.masjidImages.map((image, index) => ({
-                            id: index + 1,
-                            src: `https:${image.fields.file.url}`,
-                            alt: image.fields.title || image.fields.description || `Masjid Gallery Image ${index + 1}`
-                        }));
-                        console.log('MasjidGallery - Processed images:', images);
-                        setMasjidImages(images);
+                        console.log('Found media items:', entry.fields.masjidImages);
+
+                        const mediaContent = entry.fields.masjidImages.map((item, index) => {
+                            const fileUrl = item.fields.file.url;
+                            const fileType = item.fields.file.contentType;
+
+                            // Check if it's a video or image based on content type
+                            const isVideo = fileType.startsWith('video/');
+
+                            return {
+                                id: `media-${index}`,
+                                src: `https:${fileUrl}`,
+                                alt: item.fields.title || item.fields.description || `Masjid Gallery Item ${index + 1}`,
+                                type: isVideo ? 'video' : 'image'
+                            };
+                        });
+
+                        console.log('Processed media content:', mediaContent);
+
+                        // Sort to ensure video appears first if it exists
+                        const sortedContent = [
+                            ...mediaContent.filter(item => item.type === 'video'),
+                            ...mediaContent.filter(item => item.type === 'image')
+                        ];
+
+                        setGalleryContent(sortedContent);
                     } else {
-                        console.log('MasjidGallery - No masjidImages found, using fallback');
-                        setMasjidImages(fallbackImages);
+                        console.log('No media items found, using fallback images');
+                        setGalleryContent(fallbackImages);
                     }
                 } else {
-                    console.log('MasjidGallery - No masjidUpdate entries found, using fallback');
-                    setMasjidImages(fallbackImages);
+                    console.log('No masjid update entry found, using fallback images');
+                    setGalleryContent(fallbackImages);
                 }
                 setIsLoading(false);
             } catch (error) {
-                console.error('MasjidGallery - Error fetching images:', error);
-                setMasjidImages(fallbackImages);
+                console.error('Error fetching content:', error);
+                setGalleryContent(fallbackImages);
                 setIsLoading(false);
             }
         };
 
-        fetchMasjidImages();
+        fetchContent();
     }, []);
 
     const settings = {
@@ -124,14 +148,25 @@ const MasjidGallery = () => {
 
                 <div className="carousel-container">
                     <Slider {...settings} className="progress-carousel">
-                        {masjidImages.map((image) => (
-                            <div key={image.id} className="carousel-slide">
+                        {galleryContent.map((item) => (
+                            <div key={item.id} className="carousel-slide">
                                 <div className="gallery-image-container">
-                                    <img
-                                        src={image.src}
-                                        alt={image.alt}
-                                        className="carousel-image"
-                                    />
+                                    {item.type === 'video' ? (
+                                        <video
+                                            className="carousel-video"
+                                            controls
+                                            playsInline
+                                            src={item.src}
+                                        >
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    ) : (
+                                        <img
+                                            src={item.src}
+                                            alt={item.alt}
+                                            className="carousel-image"
+                                        />
+                                    )}
                                 </div>
                             </div>
                         ))}
