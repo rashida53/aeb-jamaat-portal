@@ -39,7 +39,7 @@ const Highlights = () => {
 
     const highlights = [
         {
-            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/QuranHaflat.jpg`,
+            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/HaflatUlQuran.jpg`,
             title: 'Haflat ul Quran',
             description: 'Quran tilawat program conducted by Madrasah tul Badri on the auspicious occasion of Aqa Maula TUS milaad'
         },
