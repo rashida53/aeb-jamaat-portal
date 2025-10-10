@@ -54,11 +54,16 @@
     overflow: hidden;
 }
 
-.carousel-image {
+.carousel-image,
+.carousel-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.carousel-video {
+    background: #000;
 }
 
 /* Slick Carousel Custom Styling */
