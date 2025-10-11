@@ -69,7 +69,7 @@ const TeamPage = () => {
                     name: "Dr. M. Hussain bhai Malbari",
                     role: "Umoor Sehat",
                     profession: "Internal Medicine at St. David's",
-                    customImage: `${process.env.PUBLIC_URL}/images/HussainMalbariProfilePic.jpg`,
+                    customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/HussainMalbariProfilePic.jpg`,
                     initials: "HM"
                 }
             ]
