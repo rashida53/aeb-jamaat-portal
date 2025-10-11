@@ -44,6 +44,11 @@ const Highlights = () => {
             description: 'Quran tilawat program conducted by Madrasah tul Badri on the auspicious occasion of Aqa Maula TUS milaad'
         },
         {
+            image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/BunayyatWalk.jpg`,
+            title: `Women's Hike`,
+            description: `Bunaiyyat (Women's group) organized a hike on the occasion of Aqa Maula TUS Milaad.The medical professionals organized a session on breast cancer awareness and the importance of overall fitness in combatting long term ailments`
+        },
+        {
             image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/PickleballTournament.jpg`,
             title: 'Pickleball Tournament',
             description: 'Austin jamaat held a pickleball tournament that brought together players of all ages on the court for fun, fitness, and teamwork, upholding our reputation as the pickleball capital of the country'

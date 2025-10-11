@@ -192,7 +192,7 @@ const UmoorSection = () => {
                             </div>
 
                             <div className="contact-info">
-                                <p><strong>{umoorData.lead}</strong> </p>
+                                <p><strong>Coordinator: {umoorData.lead}</strong> </p>
                                 {umoorData.contact && <p><strong>{umoorData.contact}</strong> </p>}
                                 {umoorData.website && (
                                     <p>
@@ -256,7 +256,7 @@ const UmoorSection = () => {
                                         </div>
 
                                         <div className="contact-info">
-                                            <p><strong>{umoorData.lead}</strong> </p>
+                                            <p><strong>Coordinator: {umoorData.lead}</strong> </p>
                                             {umoorData.contact && <p><strong>{umoorData.contact}</strong> </p>}
                                             {umoorData.website && (
                                                 <p>
