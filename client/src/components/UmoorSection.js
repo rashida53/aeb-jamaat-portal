@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { createClient } from 'contentful';
+import ReactGA from 'react-ga4';
 import './UmoorSection.css';
 
 const client = createClient({
@@ -261,7 +262,19 @@ const UmoorSection = () => {
                                             {umoorData.website && (
                                                 <p>
                                                     <strong>
-                                                        <a href={umoorData.website} target="_blank" rel="noopener noreferrer" className="website-link">
+                                                        <a
+                                                            href={umoorData.website}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="website-link"
+                                                            onClick={() => {
+                                                                ReactGA.event({
+                                                                    category: 'Resources',
+                                                                    action: 'Click',
+                                                                    label: `${umoorData.title} Website`
+                                                                });
+                                                            }}
+                                                        >
                                                             Umoor Website
                                                         </a>
                                                     </strong>

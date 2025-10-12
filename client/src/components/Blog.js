@@ -69,7 +69,6 @@ const Blogs = () => {
     }, []);
 
     return (
-
         <div className='all-blogs'>
             <Navbar useDarkLogo={true} />
             <section
@@ -122,7 +121,9 @@ const Blogs = () => {
                                                 </p>
                                                 <div className="post-bottom">
                                                     <p className="post-author">{authorName}</p>
-                                                    <Link to={`/blog/${post.sys.id}`} className="read-more">READ MORE</Link>
+                                                    <Link to={`/blog/${post.sys.id}`} className="read-more">
+                                                        READ MORE
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>
