@@ -46,7 +46,7 @@ const Highlights = () => {
         {
             image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/BunayyatWalk.jpg`,
             title: `Women's Hike`,
-            description: `Bunaiyyat (Women's group) organized a hike on the occasion of Aqa Maula TUS Milaad.The medical professionals organized a session on breast cancer awareness and the importance of overall fitness in combatting long term ailments`
+            description: `Bunaiyyat (Women's group) organized a hike on the occasion of Aqa Maula TUS Milaad.There was a session on breast cancer awareness and the importance of overall fitness. `
         },
         {
             image: `${process.env.PUBLIC_URL}/images/JamaatHighlightsImgs/PickleballTournament.jpg`,
