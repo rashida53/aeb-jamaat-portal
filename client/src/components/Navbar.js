@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
-import ReactGA from 'react-ga4';
 import './Navbar.css';
 
 const Navbar = ({ useDarkLogo = false }) => {
@@ -22,14 +21,14 @@ const Navbar = ({ useDarkLogo = false }) => {
             return undefined;
         }
 
-        const observer = new IntersectionObserver(
+        const observer = new IntersectionObserver( //To observe when hero section is out of view for nav bg change
             (entries) => {
                 const entry = entries[0];
                 setIsPastHero(!entry.isIntersecting);
             },
             {
                 root: null,
-                threshold: 0.17,
+                threshold: 0.17, // treat as out of view when almost gone
             }
         );
 
@@ -64,15 +63,6 @@ const Navbar = ({ useDarkLogo = false }) => {
         if (isMobileMenuOpen) {
             setIsMobileMenuOpen(false);
             document.body.style.overflow = '';
-        }
-
-        // Track contact section clicks
-        if (offSetId === 'contact') {
-            ReactGA.event({
-                category: 'Navigation',
-                action: 'Click',
-                label: 'Contact Section'
-            });
         }
     };
 
@@ -218,4 +208,4 @@ const Navbar = ({ useDarkLogo = false }) => {
     );
 };
 
-export default Navbar;
+export default Navbar; 
