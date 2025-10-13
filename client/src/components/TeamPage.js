@@ -54,7 +54,7 @@ const TeamPage = () => {
                 {
                     name: "Shk. Mufaddal bhai Amijee",
                     role: "Umoor Deeniyah",
-                    profession: "",
+                    profession: "Hardware Business Owner",
                     customImage: null,
                     initials: "MA"
                 },
@@ -129,7 +129,7 @@ const TeamPage = () => {
                 {
                     name: "M. Aliakbar bhai Amijee",
                     role: "Umoor Dakheliyah",
-                    profession: "Product at Apple",
+                    profession: "Product Manager at Apple",
                     customImage: null,
                     initials: "AA"
                 }
