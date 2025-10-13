@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import ReactGA from 'react-ga4';
+import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
@@ -14,33 +13,10 @@ import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import TeamPage from './components/TeamPage';
 
-ReactGA.initialize('G-P092E7XRF7');
-
-function PageTracker() {
-    const location = useLocation();
-    useEffect(() => {
-        ReactGA.send({
-            hitType: "pageview",
-            page: location.pathname
-        });
-        if (location.pathname === '/' && location.hash) {
-            const section = location.hash.slice(1);
-            if (['blog', 'masjid'].includes(section)) {
-                ReactGA.send({
-                    hitType: "pageview",
-                    page: `/${section}`
-                });
-            }
-        }
-    }, [location]);
-    return null;
-}
-
 function App() {
     return (
         <Router>
             <div className="App">
-                <PageTracker />
                 <Routes>
                     <Route path="/" element={
                         <>
@@ -63,12 +39,4 @@ function App() {
     );
 }
 
-export const trackResourceClick = (resourceName) => {
-    ReactGA.event({
-        category: 'Resources',
-        action: 'Click',
-        label: resourceName
-    });
-};
-
-export default App;
+export default App; 
