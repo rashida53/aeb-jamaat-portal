@@ -1,0 +1,256 @@
+.lightbox-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.lightbox-container {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-image-container {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.lightbox-image:hover {
+    transform: scale(1.02);
+}
+
+.lightbox-counter {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+    padding: 8px 16px;
+}
+
+.lightbox-caption {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    max-width: 80%;
+    padding: 8px 16px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .lightbox-container {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .lightbox-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        padding: 12px;
+    }
+
+    .lightbox-prev {
+        left: 15px;
+    }
+
+    .lightbox-next {
+        right: 15px;
+    }
+
+    .lightbox-image {
+        max-height: 70vh;
+    }
+
+    .lightbox-counter {
+        bottom: 70px;
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .lightbox-caption {
+        bottom: 35px;
+        font-size: 12px;
+        padding: 6px 12px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .lightbox-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-image {
+        max-height: 60vh;
+    }
+
+    .lightbox-counter {
+        bottom: 60px;
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .lightbox-caption {
+        bottom: 30px;
+        font-size: 11px;
+        padding: 4px 10px;
+        max-width: 95%;
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+    .lightbox-nav {
+        background: transparent;
+    }
+
+    .lightbox-close {
+        background: transparent;
+    }
+}
+
+/* Animation for lightbox appearance */
+.lightbox-backdrop {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.lightbox-container {
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

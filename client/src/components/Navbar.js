@@ -137,6 +137,9 @@ const Navbar = ({ useDarkLogo = false }) => {
                                 <a href="https://us14.campaign-archive.com/home/?u=b6ab8f303315d93cd2a01a661&id=f6d73734f9" target="_blank" rel="noopener noreferrer">
                                     Newsletters
                                 </a>
+                                <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/gallery', 0)}>
+                                    Gallery
+                                </div>
                             </div>
                         </div>
                         <span className="nav-separator">|</span>
