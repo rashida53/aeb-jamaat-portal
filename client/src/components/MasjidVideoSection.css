@@ -1,0 +1,64 @@
+.masjid-video-section {
+    width: 100%;
+    background-size: auto;
+    background-position: top;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.masjid-video-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.masjid-video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.loading {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .masjid-video-section {
+        padding: 40px 15px;
+        background-attachment: scroll;
+    }
+
+    .video-wrapper {
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .masjid-video-section {
+        padding: 30px 10px;
+        background-attachment: scroll;
+    }
+}
+

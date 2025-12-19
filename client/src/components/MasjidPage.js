@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import MasjidVideoSection from './MasjidVideoSection';
 import TimelineSection from './TimelineSection';
 import FloorPlans from './FloorPlans';
 import MasjidGallery from './MasjidGallery';
@@ -18,6 +19,7 @@ const MasjidPage = () => {
                     <h1 className="banner-title">PENDING FINAL SITE PLAN SUBMISSION TO CITY OF PFLUGERVILLE</h1>
                 </div>
             </div>
+            <MasjidVideoSection />
             <TimelineSection />
             <FloorPlans />
             <MasjidGallery />
