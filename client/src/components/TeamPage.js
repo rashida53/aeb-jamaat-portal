@@ -130,7 +130,7 @@ const TeamPage = () => {
                     name: "M. Aliakbar bhai Amijee",
                     role: "Umoor Dakheliyah",
                     profession: "Product Manager at Apple",
-                    customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/AliAkbarAmijee.jpeg`,
+                    customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/AliakbarAmijee.jpeg`,
                     initials: "AA"
                 }
             ]
