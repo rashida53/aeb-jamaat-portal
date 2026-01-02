@@ -55,7 +55,7 @@ const TeamPage = () => {
                     name: "Shk. Mufaddal bhai Amijee",
                     role: "Umoor Deeniyah",
                     profession: "Hardware Business Owner",
-                    customImage: null,
+                    customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/SMA.jpeg`,
                     initials: "MA"
                 },
                 {
@@ -95,7 +95,7 @@ const TeamPage = () => {
                     name: "M. Murtaza bhai Kutianawala",
                     role: "Umoor Maaliyah",
                     profession: "Senior Analyst at Equinor",
-                    customImage: null,
+                    customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/MurtazaKutianawala.jpeg`,
                     initials: "MK"
                 },
                 {
@@ -130,7 +130,7 @@ const TeamPage = () => {
                     name: "M. Aliakbar bhai Amijee",
                     role: "Umoor Dakheliyah",
                     profession: "Product Manager at Apple",
-                    customImage: null,
+                    customImage: `${process.env.PUBLIC_URL}/images/TeamProfileImgs/AliAkbarAmijee.jpeg`,
                     initials: "AA"
                 }
             ]
