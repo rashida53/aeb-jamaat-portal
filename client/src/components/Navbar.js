@@ -85,8 +85,8 @@ const Navbar = ({ useDarkLogo = false }) => {
                             About
                         </div>
                         <span className="nav-separator">|</span>
-                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'umoor')}>
-                            12 Umoor
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/pickle', 0)}>
+                            Pickleball '26
                         </div>
                         <span className="nav-separator">|</span>
                         <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/masjid', 0)}>
@@ -154,8 +154,8 @@ const Navbar = ({ useDarkLogo = false }) => {
                         About
                     </div>
                     <div className="mobile-link-divider"></div>
-                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/', 'umoor')}>
-                        12 Umoor
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/pickle', 0)}>
+                        Pickleball '26
                     </div>
                     <div className="mobile-link-divider"></div>
                     <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/masjid', 0)}>

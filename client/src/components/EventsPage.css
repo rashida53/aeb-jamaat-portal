@@ -1,0 +1,398 @@
+.events-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.events-page-content {
+    flex: 1;
+    padding: 180px 20px 80px;
+    background-size: auto;
+    background-position: top;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.events-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.events-page-title {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    color: #CE9C01;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.events-page-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
+/* Highlights Section - Blue Background */
+.highlights-section {
+    background-color: #00203D;
+    padding: 70px 0;
+}
+
+.highlights-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.highlights-title {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.highlights-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
+/* Victory Section - Islamic Pattern Background */
+.victory-section {
+    padding: 70px 0;
+    background-size: auto;
+    background-position: top;
+    background-repeat: repeat;
+}
+
+.victory-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.victory-title {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    color: #CE9C01;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.victory-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
+/* Pickleball Carousel Styles */
+.pickle-carousel-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.pickle-carousel {
+    margin-bottom: 30px;
+}
+
+.pickle-carousel-slide {
+    padding: 0 10px;
+}
+
+.pickle-image-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pickle-carousel-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Carousel Navigation Arrows */
+.pickle-carousel .slick-prev,
+.pickle-carousel .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+}
+
+.pickle-carousel .slick-prev {
+    left: -50px;
+}
+
+.pickle-carousel .slick-next {
+    right: -50px;
+}
+
+.pickle-carousel .slick-prev:before,
+.pickle-carousel .slick-next:before {
+    font-size: 40px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.pickle-carousel .slick-prev:hover:before,
+.pickle-carousel .slick-next:hover:before {
+    color: #CE9C01;
+    opacity: 1;
+}
+
+/* Carousel Dots */
+.pickle-carousel .slick-dots {
+    bottom: -35px;
+}
+
+.pickle-carousel .slick-dots li button:before {
+    color: #ffffff;
+    opacity: 0.5;
+    font-size: 10px;
+}
+
+.pickle-carousel .slick-dots li.slick-active button:before {
+    color: #CE9C01;
+    opacity: 1;
+}
+
+/* Racket Sports Links Section */
+.racket-sports-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.racket-sport-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: white;
+    padding: 20px 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.racket-sport-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #00203D;
+    border-color: #00203D;
+}
+
+.link-icon {
+    font-size: 28px;
+}
+
+.link-text {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #00203D;
+}
+
+.racket-sport-link:hover .link-text {
+    color: #ffffff;
+}
+
+.zeffy-embed-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #eee;
+    border-top: 3px solid #CE9C01;
+}
+
+.zeffy-embed-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 900px;
+}
+
+.zeffy-iframe {
+    position: absolute;
+    border: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pickle-carousel .slick-prev {
+        left: -30px;
+    }
+
+    .pickle-carousel .slick-next {
+        right: -30px;
+    }
+
+    .pickle-image-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-page-content {
+        padding: 160px 15px 60px;
+    }
+
+    .events-page-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .events-container {
+        padding: 0 15px;
+    }
+
+    .highlights-section,
+    .victory-section {
+        padding: 50px 0;
+    }
+
+    .highlights-title,
+    .victory-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .pickle-carousel-container {
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    .pickle-carousel-container {
+        padding: 0 10px;
+    }
+
+    .pickle-image-container {
+        height: 300px;
+    }
+
+    .pickle-carousel .slick-prev,
+    .pickle-carousel .slick-next {
+        display: none !important;
+    }
+
+    .zeffy-embed-wrapper {
+        height: 800px;
+    }
+
+    .racket-sports-links {
+        gap: 20px;
+    }
+
+    .racket-sport-link {
+        padding: 16px 25px;
+    }
+
+    .link-icon {
+        font-size: 24px;
+    }
+
+    .link-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-page-title {
+        font-size: 24px;
+    }
+
+    .events-page-title::after {
+        width: 120px;
+    }
+
+    .highlights-section,
+    .victory-section {
+        padding: 40px 0;
+    }
+
+    .highlights-title,
+    .victory-title {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .highlights-title::after,
+    .victory-title::after {
+        width: 120px;
+    }
+
+    .pickle-image-container {
+        height: 200px;
+    }
+
+    .pickle-carousel .slick-dots {
+        bottom: -30px;
+    }
+
+    .zeffy-embed-wrapper {
+        height: 700px;
+    }
+
+    .racket-sports-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .racket-sport-link {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    .link-icon {
+        font-size: 22px;
+    }
+
+    .link-text {
+        font-size: 15px;
+    }
+}
