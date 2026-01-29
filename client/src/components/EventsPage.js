@@ -11,7 +11,7 @@ const EventsPage = () => {
     // Images from last year's tournament
     const carouselImages = Array.from({ length: 12 }, (_, i) => ({
         id: i + 1,
-        src: `${process.env.PUBLIC_URL}/images/PickleballCarouselImgs/pickle-${i + 1}.jpg`,
+        src: `${process.env.PUBLIC_URL}/images/PickleballCarouselImgs/pickle-${i + 1}.JPG`,
         alt: `Pickleball Tournament 2025 - Photo ${i + 1}`
     }));
 
