@@ -317,6 +317,14 @@
         display: none !important;
     }
 
+    .pickle-carousel .slick-dots li {
+        margin: 0 2px;
+    }
+
+    .pickle-carousel .slick-dots li button:before {
+        font-size: 8px;
+    }
+
     .zeffy-embed-wrapper {
         height: 800px;
     }
@@ -369,6 +377,14 @@
 
     .pickle-carousel .slick-dots {
         bottom: -30px;
+    }
+
+    .pickle-carousel .slick-dots li {
+        margin: 0 1px;
+    }
+
+    .pickle-carousel .slick-dots li button:before {
+        font-size: 6px;
     }
 
     .zeffy-embed-wrapper {
