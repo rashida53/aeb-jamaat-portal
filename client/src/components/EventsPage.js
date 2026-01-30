@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -8,6 +8,8 @@ import Footer from './Footer';
 import './EventsPage.css';
 
 const EventsPage = () => {
+    const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+
     // Images from last year's tournament
     const carouselImages = Array.from({ length: 12 }, (_, i) => ({
         id: i + 1,
@@ -43,6 +45,55 @@ const EventsPage = () => {
             }}>
                 <div className="events-container">
                     <h1 className="events-page-title">PICKLEBALL TOURNAMENT 2026</h1>
+
+                    <div className="event-banner">
+                        <img
+                            src={`${process.env.PUBLIC_URL}/images/PickleballCarouselImgs/pickle-header.JPG`}
+                            alt="Pickleball Tournament 2026 Banner"
+                            className="event-banner-image"
+                        />
+                    </div>
+
+                    <div className="event-description">
+                        <p>Anjuman-e-Burhani's Umoor Sehat Sports Group and Mumineen Racquet Sports Association (MRSA) are excited to host the 2nd Annual Austin Pickleball Tournament! This tournament will serve as the South Region's annual MRSA tournament and commemorates the 80th Gregorian Birthday of Aqa Maula (TUS) occurring later this year. We will be using a beautiful, brand new, indoor facility with up to 8 courts for an amazing experience for all players.</p>
+                    </div>
+
+                    <button className="details-button" onClick={() => setIsDetailsOpen(true)}>
+                        <span>Details</span>
+                        <span className="popup-icon">⬈</span>
+                    </button>
+
+                    {/* Details Popup Modal */}
+                    {isDetailsOpen && (
+                        <div className="details-modal-overlay" onClick={() => setIsDetailsOpen(false)}>
+                            <div className="details-modal" onClick={(e) => e.stopPropagation()}>
+                                <button className="modal-close" onClick={() => setIsDetailsOpen(false)}>×</button>
+                                <h2 className="modal-title">Tournament Details</h2>
+                                <div className="modal-content">
+                                    <p><strong>Dates:</strong> 11 & 12 April, 2026 (Start time of 2pm on 11 April)</p>
+                                    <p><strong>Location:</strong> 1900 E Howard Ln STE I & E, Pflugerville, TX 78660</p>
+                                    <p><strong>Open to:</strong> Men, Women, and Youth 8 years+ across all USA/Canada Jamaats</p>
+                                    <p><strong>Events:</strong> Doubles and Singles both being offered</p>
+                                    
+                                    <h3>Registration Fees:</h3>
+                                    <ul>
+                                        <li><strong>Adults:</strong> $72 for doubles | $15 additional for singles</li>
+                                        <li><strong>Youth (8-14 years):</strong> $35 for doubles | $11 additional for singles</li>
+                                    </ul>
+                                    <p className="partner-note">Players without a partner preference will be able to select one closer to the tournament from the player pool.</p>
+                                    
+                                    <h3>Sponsorship Tiers:</h3>
+                                    <p className="sponsor-intro">Consider your business or family sponsoring our tournament:</p>
+                                    <ul>
+                                        <li><strong>Niyaaz Sponsor:</strong> $786</li>
+                                        <li><strong>Court Sponsor:</strong> $553</li>
+                                        <li><strong>Snacks Sponsor:</strong> $253</li>
+                                        <li><strong>Prize Sponsor:</strong> $153</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
                     <div className="zeffy-embed-container">
                         <div className="zeffy-embed-wrapper">

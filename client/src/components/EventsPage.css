@@ -40,6 +40,170 @@
     margin: 15px auto 0;
 }
 
+/* Event Banner */
+.event-banner {
+    width: 50%;
+    margin: 0 auto 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Event Description */
+.event-description {
+    margin-bottom: 30px;
+    padding: 15px 0;
+}
+
+.event-description p {
+    font-family: 'Merriweather', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #00203D;
+    font-weight: 700;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Details Button */
+.details-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 30px;
+    padding: 12px 30px;
+    background-color: #CE9C01;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.details-button:hover {
+    background-color: #00203D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.popup-icon {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Details Modal */
+.details-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 32, 61, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.details-modal {
+    background-color: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #00203D;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #CE9C01;
+}
+
+.modal-title {
+    font-family: 'Merriweather', serif;
+    color: #00203D;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 30px 30px 20px;
+    margin: 0;
+    border-bottom: 2px solid #CE9C01;
+}
+
+.modal-content {
+    padding: 25px 30px 30px;
+}
+
+.modal-content p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    color: #00203D;
+    margin: 0 0 12px;
+    line-height: 1.6;
+}
+
+.modal-content h3 {
+    font-family: 'Merriweather', serif;
+    color: #CE9C01;
+    font-size: 18px;
+    margin: 25px 0 15px;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-content li {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    color: #00203D;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-content li:last-child {
+    border-bottom: none;
+}
+
+.partner-note {
+    margin-top: 15px;
+    font-size: 12px;
+    font-style: italic;
+    color: #666;
+}
+
+.sponsor-intro {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
 /* Highlights Section - Blue Background */
 .highlights-section {
     background-color: #00203D;
@@ -288,6 +452,15 @@
         padding: 0 15px;
     }
 
+    .event-banner {
+        width: 70%;
+    }
+
+    .event-description p {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
     .highlights-section,
     .victory-section {
         padding: 50px 0;
@@ -353,6 +526,14 @@
 
     .events-page-title::after {
         width: 120px;
+    }
+
+    .event-banner {
+        width: 85%;
+    }
+
+    .event-description p {
+        font-size: 14px;
     }
 
     .highlights-section,
