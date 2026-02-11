@@ -4,13 +4,50 @@
     flex-direction: column;
 }
 
-.expo-page-content {
-    flex: 1;
-    padding: 180px 20px 80px;
+/* Hero Section with Video Background */
+.expo-hero-section {
+    padding: 180px 20px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    display: none;
+}
+
+.expo-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Section with Islamic Pattern */
+.expo-form-section {
+    padding: 60px 20px 80px;
     background-size: auto;
     background-position: top;
     background-repeat: repeat;
-    background-attachment: fixed;
 }
 
 .expo-container {
@@ -103,7 +140,7 @@
 }
 
 /* Details Modal */
-.expo-page .details-modal-overlay {
+.details-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -117,7 +154,8 @@
     padding: 20px;
 }
 
-.expo-page .details-modal {
+.expo-page .details-modal,
+.details-modal {
     background-color: white;
     border-radius: 12px;
     max-width: 600px;
@@ -128,7 +166,8 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-.expo-page .modal-close {
+.expo-page .modal-close,
+.modal-close {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -141,11 +180,13 @@
     transition: color 0.3s ease;
 }
 
-.expo-page .modal-close:hover {
+.expo-page .modal-close:hover,
+.modal-close:hover {
     color: #CE9C01;
 }
 
-.expo-page .modal-title {
+.expo-page .modal-title,
+.modal-title {
     font-family: 'Merriweather', serif;
     color: #00203D;
     font-size: 28px;
@@ -155,11 +196,13 @@
     border-bottom: 2px solid #CE9C01;
 }
 
-.expo-page .modal-content {
+.expo-page .modal-content,
+.modal-content {
     padding: 25px 30px 30px;
 }
 
-.expo-page .modal-content p {
+.expo-page .modal-content p,
+.modal-content p {
     font-family: 'PT Sans', sans-serif;
     font-size: 16px;
     color: #00203D;
@@ -167,20 +210,23 @@
     line-height: 1.6;
 }
 
-.expo-page .modal-content h3 {
+.expo-page .modal-content h3,
+.modal-content h3 {
     font-family: 'Merriweather', serif;
     color: #CE9C01;
     font-size: 18px;
     margin: 25px 0 15px;
 }
 
-.expo-page .modal-content ul {
+.expo-page .modal-content ul,
+.modal-content ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.expo-page .modal-content li {
+.expo-page .modal-content li,
+.modal-content li {
     font-family: 'PT Sans', sans-serif;
     font-size: 16px;
     color: #00203D;
@@ -188,7 +234,8 @@
     border-bottom: 1px solid #eee;
 }
 
-.expo-page .modal-content li:last-child {
+.expo-page .modal-content li:last-child,
+.modal-content li:last-child {
     border-bottom: none;
 }
 
@@ -220,8 +267,16 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .expo-page-content {
-        padding: 160px 15px 60px;
+    .expo-hero-section {
+        padding: 160px 15px 50px;
+    }
+
+    .background-video {
+        object-fit: cover;
+    }
+
+    .expo-form-section {
+        padding: 50px 15px 60px;
     }
 
     .expo-page-title {
@@ -229,6 +284,7 @@
         margin-bottom: 25px;
     }
 
+    .expo-hero-content,
     .expo-container {
         padding: 0 15px;
     }
@@ -248,6 +304,14 @@
 }
 
 @media (max-width: 480px) {
+    .expo-hero-section {
+        padding: 140px 15px 40px;
+    }
+
+    .expo-form-section {
+        padding: 40px 15px 50px;
+    }
+
     .expo-page-title {
         font-size: 24px;
     }
