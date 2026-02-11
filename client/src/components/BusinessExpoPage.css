@@ -1,0 +1,270 @@
+.expo-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.expo-page-content {
+    flex: 1;
+    padding: 180px 20px 80px;
+    background-size: auto;
+    background-position: top;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.expo-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.expo-page-title {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    color: #CE9C01;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.expo-page-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
+/* Expo Banner */
+.expo-banner {
+    width: 50%;
+    margin: 0 auto 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.expo-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Expo Description */
+.expo-description {
+    margin-bottom: 30px;
+    padding: 15px 0;
+}
+
+.expo-description p {
+    font-family: 'Merriweather', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #00203D;
+    font-weight: 700;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Details Button */
+.expo-page .details-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 30px;
+    padding: 12px 30px;
+    background-color: #CE9C01;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.expo-page .details-button:hover {
+    background-color: #00203D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.expo-page .popup-icon {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Details Modal */
+.expo-page .details-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 32, 61, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.expo-page .details-modal {
+    background-color: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.expo-page .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #00203D;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.expo-page .modal-close:hover {
+    color: #CE9C01;
+}
+
+.expo-page .modal-title {
+    font-family: 'Merriweather', serif;
+    color: #00203D;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 30px 30px 20px;
+    margin: 0;
+    border-bottom: 2px solid #CE9C01;
+}
+
+.expo-page .modal-content {
+    padding: 25px 30px 30px;
+}
+
+.expo-page .modal-content p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    color: #00203D;
+    margin: 0 0 12px;
+    line-height: 1.6;
+}
+
+.expo-page .modal-content h3 {
+    font-family: 'Merriweather', serif;
+    color: #CE9C01;
+    font-size: 18px;
+    margin: 25px 0 15px;
+}
+
+.expo-page .modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.expo-page .modal-content li {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    color: #00203D;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.expo-page .modal-content li:last-child {
+    border-bottom: none;
+}
+
+/* Google Form Container */
+.google-form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #eee;
+    border-top: 3px solid #CE9C01;
+}
+
+.google-form-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 1800px;
+}
+
+.google-form-iframe {
+    position: absolute;
+    border: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .expo-page-content {
+        padding: 160px 15px 60px;
+    }
+
+    .expo-page-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .expo-container {
+        padding: 0 15px;
+    }
+
+    .expo-banner {
+        width: 70%;
+    }
+
+    .expo-description p {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .google-form-wrapper {
+        height: 1600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .expo-page-title {
+        font-size: 24px;
+    }
+
+    .expo-page-title::after {
+        width: 120px;
+    }
+
+    .expo-banner {
+        width: 85%;
+    }
+
+    .expo-description p {
+        font-size: 14px;
+    }
+
+    .google-form-wrapper {
+        height: 1500px;
+    }
+}

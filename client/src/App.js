@@ -13,6 +13,7 @@ import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import TeamPage from './components/TeamPage';
 import EventsPage from './components/EventsPage';
+import BusinessExpoPage from './components/BusinessExpoPage';
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/blog/:id" element={<BlogPost />} />
                     <Route path="/team" element={<TeamPage />} />
                     <Route path="/pickleball2026" element={<EventsPage />} />
+                    <Route path="/businessexpo" element={<BusinessExpoPage />} />
                 </Routes>
             </div>
         </Router>
