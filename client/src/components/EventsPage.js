@@ -58,6 +58,15 @@ const EventsPage = () => {
                         <p>Anjuman-e-Burhani's Umoor Sehat Sports Group and Mumineen Racquet Sports Association (MRSA) are excited to host the 2nd Annual Austin Pickleball Tournament! This tournament will serve as the South Region's annual MRSA tournament and commemorates the 80th Gregorian Birthday of Aqa Maula (TUS) occurring later this year. We will be using a beautiful, brand new, indoor facility with up to 8 courts for an amazing experience for all players.</p>
                     </div>
 
+                    <div className="registration-closed-banner">
+                        <span className="registration-closed-icon">⚠</span>
+                        <div className="registration-closed-text">
+                            <strong>REGISTRATION IS NOW CLOSED.</strong>
+                            <span> TO INQUIRE REGARDING LATE REGISTRATION, PLEASE MESSAGE HUSSAIN BHAI MALBARI VIA WHATSAPP AT 512-696-7268</span>
+                        </div>
+                        <span className="registration-closed-icon">⚠</span>
+                    </div>
+
                     <button className="details-button" onClick={() => setIsDetailsOpen(true)}>
                         <span>Details</span>
                         <span className="popup-icon">⬈</span>
