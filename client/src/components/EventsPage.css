@@ -71,6 +71,33 @@
     text-align: justify;
 }
 
+/* Registration Closed Banner */
+.registration-closed-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #b91c1c;
+    color: #fff;
+    border: 2px solid #7f1d1d;
+    border-radius: 8px;
+    padding: 16px 22px;
+    margin: 0 auto 28px;
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    line-height: 1.6;
+    box-shadow: 0 4px 18px rgba(185, 28, 28, 0.35);
+}
+
+.registration-closed-text {
+    flex: 1;
+    text-align: center;
+}
+
+.registration-closed-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
 /* Details Button */
 .details-button {
     display: flex;
