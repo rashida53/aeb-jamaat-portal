@@ -14,6 +14,7 @@ import BlogPost from './components/BlogPost';
 import TeamPage from './components/TeamPage';
 import EventsPage from './components/EventsPage';
 import BusinessExpoPage from './components/BusinessExpoPage';
+import SummerCampPage from './components/SummerCampPage';
 
 function App() {
     return (
@@ -37,6 +38,7 @@ function App() {
                     <Route path="/team" element={<TeamPage />} />
                     <Route path="/pickleball2026" element={<EventsPage />} />
                     <Route path="/businessexpo" element={<BusinessExpoPage />} />
+                    <Route path="/summercamp" element={<SummerCampPage />} />
                 </Routes>
             </div>
         </Router>

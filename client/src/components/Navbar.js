@@ -85,8 +85,8 @@ const Navbar = ({ useDarkLogo = false }) => {
                             About
                         </div>
                         <span className="nav-separator">|</span>
-                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/pickleball2026', 0)}>
-                            Pickleball '26
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/summercamp', 0)}>
+                            Summer Camp '26
                         </div>
                         <span className="nav-separator">|</span>
                         <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/masjid', 0)}>
