@@ -89,20 +89,26 @@ const SummerCampPage = () => {
                                 <div className="modal-content">
                                     <p><strong>Dates:</strong> Aug 3rd to Aug 7th, 2026</p>
                                     <p><strong>Location:</strong> Markaz</p>
-                                    <p><strong>Open to:</strong> Campers aged 5-13 years old and Counselors aged 14 and up</p>
+                                    <p><strong>Open to:</strong> Campers aged 5 (must have completed kindergarten)-13 years old and Counselors aged 14 and up</p>
+                                    <p><i>Farzando must attend with topi/dupatta.</i></p>
 
                                     <h3>Registration Fees:</h3>
+                                    <p><i>Includes activities, daily lunch and snacks</i></p>
                                     <ul>
                                         <li><strong>Camper:</strong> $200</li>
                                         <li><strong>Counselor:</strong> $150</li>
                                     </ul>
-
-                                    <h3>Activities in camp will:</h3>
+                                    <h3>Activities:</h3>
                                     <ul>
                                         <li>Emphasize Deen through Quran e Majeed and Lisan ud dawat</li>
                                         <li>Focus on leadership and team-building skills</li>
                                         <li>Include a field trip for all ages </li>
                                     </ul>
+                                    <h3>Volunteer for the Camp!</h3>
+                                    <p>Reach out to Sarah behn Rawat (631-805-5554), Rashida behn Karachiwala (614-680-2128), or Zainab behn Bhora (512-400-5370) if you would like to volunteer or have any questions about the camp.
+
+                                        Inshallah together we can make this an enjoyable experience for our kids and attain the Khushi of Aqa Moula TUS! Ameen!
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +119,7 @@ const SummerCampPage = () => {
                             <iframe
                                 title='Registration form powered by Zeffy'
                                 className="zeffy-iframe"
-                                src='https://www.zeffy.com/embed/ticketing/anjuman-e-burhani-summer-camp--2026'
+                                src='https://www.zeffy.com/embed/ticketing/anjuman-e-burhani-summer-camp--2026-2'
                                 allowpaymentrequest="true"
                                 allowtransparency="true"
                             />
