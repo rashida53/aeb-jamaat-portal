@@ -119,8 +119,8 @@ const Navbar = ({ useDarkLogo = false }) => {
                         <div className="nav-link dropdown">
                             <span>Resources</span>
                             <div className="dropdown-content">
-                                <a href="https://tinyurl.com/niyaaz-calendar-1447" target="_blank" rel="noopener noreferrer">
-                                    1447H Niyaaz Calendar
+                                <a href="#/niyaaz-calendar" onClick={(e) => { e.preventDefault(); navigate('/niyaaz-calendar'); }}>
+                                    Niyaaz Calendar
                                 </a>
                                 <a href="https://fmb.austinjamaat.org/miqaats" target="_blank" rel="noopener noreferrer">
                                     Miqaat RSVP
@@ -182,8 +182,8 @@ const Navbar = ({ useDarkLogo = false }) => {
                             Resources <span className="expand-icon">{isResourcesExpanded ? <RiArrowDropUpLine color="#ce9c01" size={38} /> : <RiArrowDropDownLine color="#ce9c01" size={38} />}</span>
                         </div>
                         <div className={`mobile-nav-section-content ${isResourcesExpanded ? 'expanded' : ''}`}>
-                            <a href="https://tinyurl.com/niyaaz-calendar-1447" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
-                                1447H Niyaaz Calendar
+                            <a href="#/niyaaz-calendar" className="mobile-nav-link" onClick={(e) => { e.preventDefault(); navigate('/niyaaz-calendar'); setIsMobileMenuOpen(false); }}>
+                                Niyaaz Calendar
                             </a>
                             <a href="https://fmb.austinjamaat.org/miqaats" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                                 Miqaat RSVP

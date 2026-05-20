@@ -1,0 +1,569 @@
+/* ── Page layout ── */
+.nc-page {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    background-size: auto;
+    background-position: top;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+/* ── Hero banner ── */
+.nc-hero {
+    padding: 140px 24px 60px;
+    text-align: center;
+}
+
+.nc-hero-title {
+    color: #CE9C01;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.nc-hero-title::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
+/* ── Content wrapper ── */
+.nc-content {
+    padding: 48px 24px 80px;
+}
+
+/* ── Grid ── */
+.nc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ── Card container (perspective) ── */
+.nc-card-container {
+    perspective: 1200px;
+    height: 340px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ── Card (3-D flip) ── */
+.nc-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.55s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    border-radius: 12px;
+}
+
+.nc-card--flipped {
+    transform: rotateY(180deg);
+}
+
+/* ── Shared face styles ── */
+.nc-card-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Front face ── */
+.nc-card-front {
+    background: #00203D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 24px 20px;
+    gap: 16px;
+}
+
+.nc-card-front-number {
+    color: #CE9C01;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+
+.nc-card-front-members {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nc-card-front-members li {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.98rem;
+    text-align: center;
+    line-height: 1.35;
+    padding: 5px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Merriweather', serif;
+}
+
+.nc-card-front-members li:last-child {
+    border-bottom: none;
+}
+
+.nc-card-front-hint {
+    color: rgba(206, 156, 1, 0.6);
+    font-size: 0.72rem;
+    letter-spacing: 0.3px;
+    text-align: center;
+    margin-top: auto;
+    font-family: 'Merriweather', serif;
+}
+
+/* ── Back face ── */
+.nc-card-back {
+    background: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nc-card-back-inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* ── Back sections ── */
+.nc-card-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 18px 10px;
+    overflow-y: auto;
+}
+
+.nc-card-section + .nc-card-section {
+    border-top: none;
+}
+
+.nc-card-section-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    color: #CE9C01;
+    font-family: 'Merriweather', serif;
+    display: block;
+    width: fit-content;
+    border-bottom: 2px solid #CE9C01;
+}
+
+.nc-card-section-title--shehrullah {
+    color: #CE9C01;
+    border-color: #CE9C01;
+}
+
+.nc-card-section-title--outside {
+    color: #CE9C01;
+    border-color: #CE9C01;
+}
+
+/* ── Date lists ── */
+.nc-card-dates {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nc-card-dates li {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.nc-date-night {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #00203D;
+    font-family: 'Merriweather', serif;
+}
+
+.nc-date-miqaat {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.3;
+    font-family: 'Merriweather', serif;
+}
+
+.nc-date-hijri {
+    font-size: 0.95rem;
+    color: #777;
+    font-family: 'Merriweather', serif;
+}
+
+.nc-date-value {
+    font-size: 0.95rem;
+    color: #555;
+    font-family: 'Merriweather', serif;
+}
+
+/* ── Instructions button ── */
+.nc-instructions-btn {
+    padding: 10px 0;
+    background: none;
+    border: none;
+    color: #CE9C01;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0.2px;
+    transition: color 0.2s;
+    font-family: 'Merriweather', serif;
+    flex-shrink: 0;
+}
+
+.nc-instructions-btn:hover {
+    color: #a07800;
+}
+
+/* ── Instructions modal ── */
+.nc-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(3px);
+}
+
+.nc-modal {
+    background: #fff;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+}
+
+.nc-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.nc-modal-close:hover {
+    color: #333;
+}
+
+.nc-modal-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #CE9C01;
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 24px 48px 16px 28px;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.nc-modal-body {
+    overflow-y: auto;
+    padding: 4px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ── Accordion ── */
+.nc-accordion-item {
+    border-bottom: 1px solid #eee;
+}
+
+.nc-accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 14px 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00203D;
+    font-family: 'Merriweather', serif;
+    text-align: left;
+    transition: color 0.2s;
+}
+
+.nc-accordion-header--open {
+    color: #CE9C01;
+}
+
+.nc-accordion-icon {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #CE9C01;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.nc-checklist-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nc-checklist-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 12px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border-left: 3px solid #00203D;
+    font-size: 0.84rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.nc-checklist-item--clickable {
+    cursor: pointer;
+}
+
+.nc-checklist-item--clickable:hover {
+    background: #f0f0f0;
+}
+
+.nc-checklist-item--open {
+    border-left-color: #CE9C01;
+}
+
+.nc-checklist-item-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.nc-checklist-item-arrow {
+    font-size: 0.6rem;
+    color: #CE9C01;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.nc-checklist-item-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
+    animation: nc-slide-down 0.2s ease;
+}
+
+@keyframes nc-slide-down {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.nc-checklist-link {
+    color: #00203D;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.nc-checklist-link--inline {
+    font-size: inherit;
+}
+
+.nc-checklist-contact {
+    font-size: 0.78rem;
+    color: #777;
+}
+
+/* ── Contributions (wide) card ── */
+.nc-card-container--wide {
+    height: 340px;
+}
+
+.nc-card-front-members--grid {
+    display: flex !important;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1;
+    width: 100%;
+}
+
+.nc-card-front--wide {
+    overflow: hidden;
+    justify-content: flex-start;
+    padding-bottom: 36px;
+}
+
+.nc-card-front--centered {
+    justify-content: flex-start;
+}
+
+.nc-card-front-centered-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nc-card-back--centered {
+    justify-content: center;
+}
+
+.nc-card-section--centered {
+    flex: none !important;
+    text-align: center;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.nc-card-dates--centered li {
+    align-items: center;
+}
+
+.nc-instructions-btn--abs {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+}
+
+.nc-card-back--wide {
+    overflow: hidden;
+}
+
+.nc-card-back-inner--wide {
+    flex-direction: row;
+    gap: 0;
+}
+
+.nc-card-section--wide {
+    padding: 18px 24px 14px;
+    overflow-y: auto;
+}
+
+.nc-card-section--wide + .nc-card-section--wide {
+    border: none;
+}
+
+.nc-card-dates--grid {
+    display: flex !important;
+    flex-direction: column;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .nc-hero {
+        padding: 120px 20px 48px;
+    }
+
+    .nc-hero-title {
+        font-size: 28px;
+    }
+
+    .nc-content {
+        padding: 36px 16px 60px;
+    }
+
+    .nc-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .nc-card-container {
+        height: 300px;
+    }
+
+    .nc-card-container--wide {
+        height: 340px;
+    }
+
+    .nc-card-back-inner--wide {
+        flex-direction: column !important;
+    }
+
+    .nc-card-section--wide + .nc-card-section--wide {
+        border-left: none;
+        border-top: 1px solid #eee;
+    }
+
+    .nc-card-dates--grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .nc-modal {
+        max-height: 90vh;
+    }
+
+    .nc-modal-body {
+        padding: 16px 20px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nc-hero-title {
+        font-size: 24px;
+    }
+}

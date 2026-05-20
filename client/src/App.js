@@ -15,6 +15,7 @@ import TeamPage from './components/TeamPage';
 import EventsPage from './components/EventsPage';
 import BusinessExpoPage from './components/BusinessExpoPage';
 import SummerCampPage from './components/SummerCampPage';
+import NiyaazCalendarPage from './components/NiyaazCalendarPage';
 
 function App() {
     return (
@@ -39,6 +40,7 @@ function App() {
                     <Route path="/pickleball2026" element={<EventsPage />} />
                     <Route path="/businessexpo" element={<BusinessExpoPage />} />
                     <Route path="/summercamp" element={<SummerCampPage />} />
+                    <Route path="/niyaaz-calendar" element={<NiyaazCalendarPage />} />
                 </Routes>
             </div>
         </Router>
