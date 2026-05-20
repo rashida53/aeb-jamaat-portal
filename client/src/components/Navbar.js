@@ -125,6 +125,9 @@ const Navbar = ({ useDarkLogo = false }) => {
                                 <a href="https://fmb.austinjamaat.org/miqaats" target="_blank" rel="noopener noreferrer">
                                     Miqaat RSVP
                                 </a>
+                                <a href="https://clearance.austinjamaat.org" target="_blank" rel="noopener noreferrer">
+                                    Jamaat Clearance
+                                </a>
                                 <a href="https://tinyurl.com/relay-request" target="_blank" rel="noopener noreferrer">
                                     Relay Request Form
                                 </a>
@@ -187,6 +190,9 @@ const Navbar = ({ useDarkLogo = false }) => {
                             </a>
                             <a href="https://fmb.austinjamaat.org/miqaats" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                                 Miqaat RSVP
+                            </a>
+                            <a href="https://clearance.austinjamaat.org" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+                                Jamaat Clearance
                             </a>
                             <a href="https://tinyurl.com/relay-request" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                                 Relay Request Form

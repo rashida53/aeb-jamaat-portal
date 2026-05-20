@@ -55,6 +55,7 @@
     height: 340px;
     cursor: pointer;
     outline: none;
+    touch-action: pan-y;
 }
 
 /* ── Card (3-D flip) ── */
