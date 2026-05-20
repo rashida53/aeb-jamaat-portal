@@ -8,7 +8,7 @@ const TeamPage = () => {
         {
             members: [
                 {
-                    name: "Shk Saifuddin bhai Zakir",
+                    name: "Shk. Saifuddin bhai Zakir",
                     role: "Janab Aamil Saheb",
                     profession: "",
                     customImage: null,
@@ -26,7 +26,7 @@ const TeamPage = () => {
                     initials: "KZ"
                 },
                 {
-                    name: "M. Huzefa bhai Hotelwala",
+                    name: "Shk. Huzefa bhai Hotelwala",
                     role: "Head Moallim Saheb",
                     profession: "",
                     customImage: null,
