@@ -154,7 +154,7 @@ const groups = [
         members: [
             'Shakir, M. Mustafa bhai & Munira behn',
             'Karachiwala, M. Hamza bhai & Rashida behn',
-            'Hitawala, Taher bhai',
+            'Hitawala, Taher bhai & Arva behn',
             'Munis, Uzair bhai & Omaima behn',
         ],
         shehrullah: [
@@ -610,7 +610,7 @@ function ContributionsCard({ onInstructions }) {
             <div className={`nc-card ${isFlipped ? 'nc-card--flipped' : ''}`}>
                 {/* Front */}
                 <div className="nc-card-face nc-card-front nc-card-front--wide">
-                    <div className="nc-card-front-number">Contributions</div>
+                    <div className="nc-card-front-number">Group 15</div>
                     <ul
                         className="nc-card-front-members nc-card-front-members--grid"
                         onClick={(e) => e.stopPropagation()}
@@ -683,8 +683,8 @@ export default function NiyaazCalendarPage() {
                             onInstructions={() => setShowInstructions(true)}
                         />
                     ))}
-                    <UTStudentsCard onInstructions={() => setShowInstructions(true)} />
                     <ContributionsCard onInstructions={() => setShowInstructions(true)} />
+                    <UTStudentsCard onInstructions={() => setShowInstructions(true)} />
                 </div>
             </div>
 
