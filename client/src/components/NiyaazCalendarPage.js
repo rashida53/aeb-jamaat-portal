@@ -322,7 +322,7 @@ const checklistSections = [
                 text: 'When laying safras, place a disposable safra on top of the reusable ones to keep them clean.',
             },
             {
-                text: 'Do salaam to Amil Saheb, Head Moallim Saheb, bhabhisaab, and Bairo before jaman. First salaam, then dhulao hands using the chilamchi lotas.',
+                text: 'After Janaabs thaal is seated, please do salaam first to Aamil Saheb and Head Moallim Janaab. On the bairao side please do salaam to Bhabhi saheb and Bairo of Janaab Head Moallim.',
                 contact: 'Shk. Murtaza Rawat — (832) 526-8734',
             },
             {
@@ -334,7 +334,7 @@ const checklistSections = [
         phase: 'During Jaman',
         items: [
             {
-                text: 'Opt for smaller serving sizes to prevent food wastage. Austin has no Dana Committee — hosts and mumineen must cooperate.',
+                text: 'Opt for smaller serving sizes so food can be easily completed in the thaal.',
                 contact: 'M Imran Madraswala — (469) 212-3416',
             },
             {
