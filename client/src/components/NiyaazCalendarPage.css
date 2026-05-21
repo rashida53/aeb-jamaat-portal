@@ -157,12 +157,14 @@
 
 /* ── Back sections ── */
 .nc-card-section {
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 14px 18px 10px;
-    overflow-y: auto;
+}
+
+.nc-card-section + .nc-card-section {
+    padding-top: 2.4em;
 }
 
 .nc-card-section + .nc-card-section {
@@ -505,6 +507,7 @@
 }
 
 .nc-card-section--wide {
+    flex: 1;
     padding: 18px 24px 14px;
     overflow-y: auto;
 }
