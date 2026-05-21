@@ -482,16 +482,23 @@ function InstructionsModal({ onClose }) {
 }
 
 function GroupCard({ group, isFlipped, onFlip, onInstructions }) {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleFlip = () => {
+        setIsActive(true);
+        onFlip();
+    };
+
     return (
         <div
             className="nc-card-container"
-            onClick={onFlip}
+            onClick={handleFlip}
             role="button"
             tabIndex={0}
             aria-label={`Group ${group.id}`}
-            onKeyDown={(e) => e.key === 'Enter' && onFlip()}
+            onKeyDown={(e) => e.key === 'Enter' && handleFlip()}
         >
-            <div className={`nc-card ${isFlipped ? 'nc-card--flipped' : ''}`}>
+            <div className={`nc-card ${isActive ? 'nc-card--active' : ''} ${isFlipped ? 'nc-card--flipped' : ''}`}>
                 {/* Front */}
                 <div className="nc-card-face nc-card-front">
                     <div className="nc-card-front-number">Group {group.id}</div>
@@ -550,17 +557,20 @@ function GroupCard({ group, isFlipped, onFlip, onInstructions }) {
 
 function UTStudentsCard({ onInstructions }) {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+
+    const handleFlip = () => { setIsActive(true); setIsFlipped((f) => !f); };
 
     return (
         <div
             className="nc-card-container"
-            onClick={() => setIsFlipped((f) => !f)}
+            onClick={handleFlip}
             role="button"
             tabIndex={0}
             aria-label="UT Students"
-            onKeyDown={(e) => e.key === 'Enter' && setIsFlipped((f) => !f)}
+            onKeyDown={(e) => e.key === 'Enter' && handleFlip()}
         >
-            <div className={`nc-card ${isFlipped ? 'nc-card--flipped' : ''}`}>
+            <div className={`nc-card ${isActive ? 'nc-card--active' : ''} ${isFlipped ? 'nc-card--flipped' : ''}`}>
                 {/* Front */}
                 <div className="nc-card-face nc-card-front nc-card-front--centered">
                     <div className="nc-card-front-centered-body">
@@ -597,17 +607,20 @@ function UTStudentsCard({ onInstructions }) {
 
 function ContributionsCard({ onInstructions }) {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+
+    const handleFlip = () => { setIsActive(true); setIsFlipped((f) => !f); };
 
     return (
         <div
             className="nc-card-container nc-card-container--wide"
-            onClick={() => setIsFlipped((f) => !f)}
+            onClick={handleFlip}
             role="button"
             tabIndex={0}
             aria-label="Contributions"
-            onKeyDown={(e) => e.key === 'Enter' && setIsFlipped((f) => !f)}
+            onKeyDown={(e) => e.key === 'Enter' && handleFlip()}
         >
-            <div className={`nc-card ${isFlipped ? 'nc-card--flipped' : ''}`}>
+            <div className={`nc-card ${isActive ? 'nc-card--active' : ''} ${isFlipped ? 'nc-card--flipped' : ''}`}>
                 {/* Front */}
                 <div className="nc-card-face nc-card-front nc-card-front--wide">
                     <div className="nc-card-front-number">Group 15</div>
