@@ -280,11 +280,11 @@ const checklistSections = [
                 contact: 'M Taha Bhora — (682) 365-3910',
             },
             {
-                text: 'Take Raza from Janab Amil Saheb in person. Give izan to Janaab, his family, Head Moallim Saheb, and Waali Mulla Saheb.',
+                text: 'Take Raza from Janab Amil Saheb in person. Araz Izan to Aamil Saheb, Head Moallim Janaab, and Waali Mulla Saheb and their families.',
                 contact: 'Janab Amil Saheb — (650) 309-7803',
             },
             {
-                text: 'Check if a menu has been suggested by Vazaarat.',
+                text: 'Check if a menu has been sent from Alvazaarat tus Saifiyah.',
                 contact: 'M Hamza Karachiwala — (614) 377-6967',
             },
             {
@@ -481,24 +481,59 @@ function InstructionsModal({ onClose }) {
     );
 }
 
-function GroupCard({ group, isFlipped, onFlip, onInstructions }) {
-    const [isActive, setIsActive] = useState(false);
+function parseDate(str) {
+    // "Tuesday, Feb 9, 2027" → Date
+    return new Date(str.replace(/^[A-Za-z]+,\s*/, ''));
+}
 
-    const handleFlip = () => {
-        setIsActive(true);
-        onFlip();
-    };
+function GroupCard({ group, isFlipped, onFlip, onInstructions }) {
+    const earliestShehrullah = Math.min(...group.shehrullah.map((s) => parseDate(s.date).getTime()));
+    const earliestOutside = Math.min(...group.outsideShehrullah.map((o) => parseDate(o.date).getTime()));
+    const outsideFirst = earliestOutside < earliestShehrullah;
+
+    const shehrullahSection = (
+        <section className="nc-card-section" key="shehrullah">
+            <h4 className="nc-card-section-title nc-card-section-title--shehrullah">
+                Shehrullah
+            </h4>
+            <ul className="nc-card-dates">
+                {group.shehrullah.map((s, i) => (
+                    <li key={i}>
+                        <span className="nc-date-night">{s.night}</span>
+                        <span className="nc-date-value">{s.date}</span>
+                    </li>
+                ))}
+            </ul>
+        </section>
+    );
+
+    const outsideSection = (
+        <section className="nc-card-section" key="outside">
+            <h4 className="nc-card-section-title nc-card-section-title--outside">
+                Miqaat
+            </h4>
+            <ul className="nc-card-dates">
+                {group.outsideShehrullah.map((o, i) => (
+                    <li key={i}>
+                        <span className="nc-date-miqaat">{o.miqaat}</span>
+                        <span className="nc-date-hijri">{o.hijri}</span>
+                        <span className="nc-date-value">{o.date}</span>
+                    </li>
+                ))}
+            </ul>
+        </section>
+    );
 
     return (
         <div
             className="nc-card-container"
-            onClick={handleFlip}
+            onClick={onFlip}
             role="button"
             tabIndex={0}
             aria-label={`Group ${group.id}`}
-            onKeyDown={(e) => e.key === 'Enter' && handleFlip()}
+            onKeyDown={(e) => e.key === 'Enter' && onFlip()}
         >
-            <div className={`nc-card ${isActive ? 'nc-card--active' : ''} ${isFlipped ? 'nc-card--flipped' : ''}`}>
+            <div className={`nc-card ${isFlipped ? 'nc-card--flipped' : ''}`}>
                 {/* Front */}
                 <div className="nc-card-face nc-card-front">
                     <div className="nc-card-front-number">Group {group.id}</div>
@@ -513,34 +548,8 @@ function GroupCard({ group, isFlipped, onFlip, onInstructions }) {
                 {/* Back */}
                 <div className="nc-card-face nc-card-back">
                     <div className="nc-card-back-inner">
-                        <section className="nc-card-section">
-                            <h4 className="nc-card-section-title nc-card-section-title--shehrullah">
-                                Shehrullah Niyaaz
-                            </h4>
-                            <ul className="nc-card-dates">
-                                {group.shehrullah.map((s, i) => (
-                                    <li key={i}>
-                                        <span className="nc-date-night">{s.night}</span>
-                                        <span className="nc-date-value">{s.date}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </section>
-
-                        <section className="nc-card-section">
-                            <h4 className="nc-card-section-title nc-card-section-title--outside">
-                                Outside Shehrullah
-                            </h4>
-                            <ul className="nc-card-dates">
-                                {group.outsideShehrullah.map((o, i) => (
-                                    <li key={i}>
-                                        <span className="nc-date-miqaat">{o.miqaat}</span>
-                                        <span className="nc-date-hijri">{o.hijri}</span>
-                                        <span className="nc-date-value">{o.date}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </section>
+                        {outsideFirst ? outsideSection : shehrullahSection}
+                        {outsideFirst ? shehrullahSection : outsideSection}
                     </div>
 
                     <button
@@ -557,9 +566,8 @@ function GroupCard({ group, isFlipped, onFlip, onInstructions }) {
 
 function UTStudentsCard({ onInstructions }) {
     const [isFlipped, setIsFlipped] = useState(false);
-    const [isActive, setIsActive] = useState(false);
 
-    const handleFlip = () => { setIsActive(true); setIsFlipped((f) => !f); };
+    const handleFlip = () => setIsFlipped((f) => !f);
 
     return (
         <div
@@ -570,7 +578,7 @@ function UTStudentsCard({ onInstructions }) {
             aria-label="UT Students"
             onKeyDown={(e) => e.key === 'Enter' && handleFlip()}
         >
-            <div className={`nc-card ${isActive ? 'nc-card--active' : ''} ${isFlipped ? 'nc-card--flipped' : ''}`}>
+            <div className={`nc-card ${isFlipped ? 'nc-card--flipped' : ''}`}>
                 {/* Front */}
                 <div className="nc-card-face nc-card-front nc-card-front--centered">
                     <div className="nc-card-front-centered-body">
@@ -583,7 +591,7 @@ function UTStudentsCard({ onInstructions }) {
                 <div className="nc-card-face nc-card-back nc-card-back--centered">
                     <section className="nc-card-section nc-card-section--centered">
                         <h4 className="nc-card-section-title nc-card-section-title--shehrullah">
-                            Shehrullah Niyaaz
+                            Shehrullah
                         </h4>
                         <ul className="nc-card-dates nc-card-dates--centered">
                             <li>
@@ -607,9 +615,8 @@ function UTStudentsCard({ onInstructions }) {
 
 function ContributionsCard({ onInstructions }) {
     const [isFlipped, setIsFlipped] = useState(false);
-    const [isActive, setIsActive] = useState(false);
 
-    const handleFlip = () => { setIsActive(true); setIsFlipped((f) => !f); };
+    const handleFlip = () => setIsFlipped((f) => !f);
 
     return (
         <div
@@ -620,7 +627,7 @@ function ContributionsCard({ onInstructions }) {
             aria-label="Contributions"
             onKeyDown={(e) => e.key === 'Enter' && handleFlip()}
         >
-            <div className={`nc-card ${isActive ? 'nc-card--active' : ''} ${isFlipped ? 'nc-card--flipped' : ''}`}>
+            <div className={`nc-card ${isFlipped ? 'nc-card--flipped' : ''}`}>
                 {/* Front */}
                 <div className="nc-card-face nc-card-front nc-card-front--wide">
                     <div className="nc-card-front-number">Group 15</div>

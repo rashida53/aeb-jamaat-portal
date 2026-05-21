@@ -9,7 +9,7 @@
 
 /* ── Hero banner ── */
 .nc-hero {
-    padding: 140px 24px 60px;
+    padding: 220px 24px 60px;
     text-align: center;
 }
 
@@ -48,30 +48,21 @@
     margin: 0 auto;
 }
 
-/* ── Card container (perspective) ── */
+/* ── Card container ── */
 .nc-card-container {
-    perspective: 1200px;
     height: 340px;
     cursor: pointer;
     outline: none;
-    touch-action: pan-y;
 }
 
-/* ── Card (3-D flip) ── */
+/* ── Card (sliding door) ── */
 .nc-card {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.55s cubic-bezier(0.45, 0.05, 0.55, 0.95);
     border-radius: 12px;
-}
-
-.nc-card--active {
-    transform-style: preserve-3d;
-}
-
-.nc-card--active.nc-card--flipped {
-    transform: rotateY(180deg);
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* ── Shared face styles ── */
@@ -80,17 +71,20 @@
     inset: 0;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
 }
 
-.nc-card--active .nc-card-face {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+.nc-card-front {
+    z-index: 2;
+    transition: transform 0.45s cubic-bezier(0.5, 0, 0.3, 1);
 }
 
-/* Hide back face until card is activated to avoid GPU layers */
-.nc-card:not(.nc-card--active) .nc-card-back {
-    visibility: hidden;
+.nc-card-back {
+    z-index: 1;
+}
+
+.nc-card--flipped .nc-card-front {
+    transform: translateX(-100%);
+    pointer-events: none;
 }
 
 /* ── Front face ── */
@@ -149,7 +143,6 @@
 /* ── Back face ── */
 .nc-card-back {
     background: #fff;
-    transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -389,6 +382,7 @@
     line-height: 1.5;
     text-align: left;
     transition: background 0.2s;
+    font-family: 'Merriweather', serif;
 }
 
 .nc-checklist-item--clickable {
@@ -527,7 +521,7 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .nc-hero {
-        padding: 100px 20px 32px;
+        padding: 160px 20px 32px;
     }
 
     .nc-hero-title {
