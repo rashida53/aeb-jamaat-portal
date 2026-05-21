@@ -39,10 +39,17 @@ const Navbar = ({ useDarkLogo = false }) => {
         };
     }, []);
 
+    // Keep body scroll-lock in sync with the mobile menu, and always release it
+    // when the navbar unmounts (e.g., on route change) so the next page can scroll.
+    useEffect(() => {
+        document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMobileMenuOpen]);
+
     const toggleMobileMenu = () => {
-        const newState = !isMobileMenuOpen;
-        setIsMobileMenuOpen(newState);
-        document.body.style.overflow = newState ? 'hidden' : '';
+        setIsMobileMenuOpen((prev) => !prev);
     };
 
     const handleNavLinkClick = (e, targetPage, offSetId) => {
@@ -62,7 +69,6 @@ const Navbar = ({ useDarkLogo = false }) => {
         }, 200);
         if (isMobileMenuOpen) {
             setIsMobileMenuOpen(false);
-            document.body.style.overflow = '';
         }
     };
 
