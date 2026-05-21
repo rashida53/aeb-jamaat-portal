@@ -548,6 +548,10 @@
         height: 340px;
     }
 
+    .nc-card-section + .nc-card-section {
+        padding-top: 0;
+    }
+
     .nc-card-back-inner--wide {
         flex-direction: column !important;
     }
