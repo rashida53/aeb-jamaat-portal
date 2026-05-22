@@ -123,22 +123,16 @@
 
 .blog-heading-1,
 .blog-heading-2,
-.blog-heading-3 {
+.blog-heading-3,
+.blog-heading-4,
+.blog-heading-5,
+.blog-heading-6 {
     color: #00203D;
-    font-family: 'Merriweather', serif;
-    margin: 30px 0 20px;
-}
-
-.blog-heading-1 {
-    font-size: 2.5rem;
-}
-
-.blog-heading-2 {
-    font-size: 2rem;
-}
-
-.blog-heading-3 {
-    font-size: 1.75rem;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.8;
+    margin: 0 0 0.5rem;
 }
 
 .blog-list {
