@@ -21,10 +21,32 @@
     gap: 40px;
 }
 
+/* Relay title */
+.ashara-relay-title {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #CE9C01;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 40px 0 0 0;
+}
+
+.ashara-relay-title::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin: 15px auto 0;
+}
+
 /* Flag */
 .ashara-flag {
     width: 440px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .ashara-flag-img {

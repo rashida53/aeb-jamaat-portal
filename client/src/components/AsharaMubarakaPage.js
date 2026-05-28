@@ -18,6 +18,8 @@ const AsharaMubarakaPage = () => {
             >
                 <div className="ashara-container">
 
+                    <h1 className="ashara-relay-title">Ashara Mubaraka Relay Center</h1>
+
                     <div className="ashara-flag">
                         <img
                             src={`${process.env.PUBLIC_URL}/images/ashara-banner.png`}
