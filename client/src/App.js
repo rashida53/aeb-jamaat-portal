@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useNavigate, useNavigationType } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
@@ -16,23 +16,38 @@ import EventsPage from './components/EventsPage';
 import BusinessExpoPage from './components/BusinessExpoPage';
 import SummerCampPage from './components/SummerCampPage';
 import NiyaazCalendarPage from './components/NiyaazCalendarPage';
+import AsharaMubarakaPage from './components/AsharaMubarakaPage';
+
+function HomePage() {
+    const navigate = useNavigate();
+    const navType = useNavigationType();
+
+    useEffect(() => {
+        if (navType === 'POP') {
+            navigate('/asharamubaraka', { replace: true });
+        }
+    }, [navigate, navType]);
+
+    return (
+        <>
+            <Navbar />
+            <HeroSection />
+            <AboutSection />
+            <UmoorSection />
+            <MasjidSection />
+            <ContactSection />
+            <Footer />
+        </>
+    );
+}
 
 function App() {
     return (
         <Router>
             <div className="App">
                 <Routes>
-                    <Route path="/" element={
-                        <>
-                            <Navbar />
-                            <HeroSection />
-                            <AboutSection />
-                            <UmoorSection />
-                            <MasjidSection />
-                            <ContactSection />
-                            <Footer />
-                        </>
-                    } />
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/asharamubaraka" element={<AsharaMubarakaPage />} />
                     <Route path="/masjid" element={<MasjidPage />} />
                     <Route path="/blogs/all" element={<Blog />} />
                     <Route path="/blog/:id" element={<BlogPost />} />
@@ -47,4 +62,4 @@ function App() {
     );
 }
 
-export default App; 
+export default App;

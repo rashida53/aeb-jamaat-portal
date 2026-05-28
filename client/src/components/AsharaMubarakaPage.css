@@ -1,0 +1,279 @@
+.ashara-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.ashara-content {
+    flex: 1;
+    padding: 100px 20px 80px;
+    display: flex;
+    justify-content: center;
+    background-attachment: fixed;
+}
+
+.ashara-container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Flag */
+.ashara-flag {
+    width: 440px;
+    margin-top: 40px;
+}
+
+.ashara-flag-img {
+    width: 100%;
+    display: block;
+}
+
+.ashara-flag-placeholder {
+    display: none;
+    width: 100%;
+    height: 300px;
+    background-color: #00203D;
+    border: 4px solid #CE9C01;
+    align-items: center;
+    justify-content: center;
+    color: #CE9C01;
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* Title */
+.ashara-title {
+    font-family: 'Merriweather', serif;
+    font-size: 64px;
+    font-weight: bold;
+    color: #CE9C01;
+    letter-spacing: 6px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Description card */
+.ashara-card {
+    background-color: #1B3A2D;
+    padding: 40px 48px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 780px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ashara-description {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #CE9C01;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.ashara-description-second {
+    padding-top: 0;
+}
+
+/* Info grid */
+.ashara-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    background-color: white;
+    padding: 48px 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Section headings */
+.ashara-section-title {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #00203D;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+}
+
+.ashara-title-line {
+    width: 60px;
+    height: 2px;
+    background-color: #CE9C01;
+    margin-bottom: 20px;
+}
+
+/* Map */
+.ashara-map-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.ashara-map-wrapper {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    margin-bottom: 14px;
+    border: 1px solid #e0e0e0;
+}
+
+.ashara-map {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.ashara-address-link {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    color: #00203D;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.ashara-address-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #CE9C01;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.ashara-address-link:hover {
+    color: #CE9C01;
+}
+
+.ashara-address-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Contact */
+.ashara-contact-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.ashara-contact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 28px;
+}
+
+.ashara-contact-group:last-child {
+    margin-bottom: 0;
+}
+
+.ashara-contact-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00203D;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.ashara-contact-name {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    color: #00203D;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.ashara-contact-link {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    color: #00203D;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.ashara-contact-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #CE9C01;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.ashara-contact-link:hover {
+    color: #CE9C01;
+}
+
+.ashara-contact-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ashara-content {
+        padding: 80px 16px 60px;
+        background-attachment: scroll;
+    }
+
+    .ashara-title {
+        font-size: 44px;
+    }
+
+    .ashara-card {
+        padding: 32px 24px;
+    }
+
+    .ashara-description {
+        font-size: 18px;
+    }
+
+    .ashara-info-grid {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ashara-title {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .ashara-flag {
+        width: 320px;
+    }
+
+    .ashara-flag-placeholder {
+        height: 220px;
+        font-size: 22px;
+    }
+
+    .ashara-description {
+        font-size: 16px;
+    }
+}

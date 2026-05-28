@@ -58,7 +58,8 @@ const Navbar = ({ useDarkLogo = false }) => {
         let offSet;
         setTimeout(() => {
             if (offSetId != 0) {
-                offSet = document.getElementById(offSetId).offsetTop - 100;
+                const el = document.getElementById(offSetId);
+                offSet = el ? el.offsetTop - 100 : 0;
             } else {
                 offSet = 0;
             }
@@ -91,8 +92,8 @@ const Navbar = ({ useDarkLogo = false }) => {
                             About
                         </div>
                         <span className="nav-separator">|</span>
-                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/summercamp', 0)}>
-                            Summer Camp '26
+                        <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/asharamubaraka', 0)}>
+                            Ashara Mubaraka 1448
                         </div>
                         <span className="nav-separator">|</span>
                         <div className="nav-link" onClick={(e) => handleNavLinkClick(e, '/masjid', 0)}>
@@ -163,8 +164,8 @@ const Navbar = ({ useDarkLogo = false }) => {
                         About
                     </div>
                     <div className="mobile-link-divider"></div>
-                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/summercamp', 0)}>
-                        Summer Camp '26
+                    <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/asharamubaraka', 0)}>
+                        Ashara Mubaraka 1448
                     </div>
                     <div className="mobile-link-divider"></div>
                     <div className="mobile-nav-link" onClick={(e) => handleNavLinkClick(e, '/masjid', 0)}>
