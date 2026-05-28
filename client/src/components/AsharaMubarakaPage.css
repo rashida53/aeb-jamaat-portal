@@ -125,13 +125,14 @@
     color: #00203D;
     letter-spacing: 1px;
     margin: 0 0 10px 0;
+    text-align: center;
 }
 
 .ashara-title-line {
     width: 60px;
     height: 2px;
     background-color: #CE9C01;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
 }
 
 /* Map */
