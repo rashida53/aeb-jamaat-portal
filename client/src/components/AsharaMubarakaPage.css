@@ -255,6 +255,174 @@
     transform-origin: bottom left;
 }
 
+/* Travel module */
+.ashara-travel {
+    width: 100%;
+    background-color: white;
+    padding: 48px 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.ashara-travel-title {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #CE9C01;
+    letter-spacing: 1px;
+    margin: 0 0 32px 0;
+}
+
+.ashara-travel-tabs {
+    display: inline-flex;
+    background-color: rgba(0, 32, 61, 0.06);
+    border-radius: 999px;
+    padding: 6px;
+    margin-bottom: 32px;
+    gap: 4px;
+    max-width: 100%;
+}
+
+.ashara-travel-tab {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #00203D;
+    background: transparent;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.ashara-travel-tab:hover:not(.is-active) {
+    background-color: rgba(0, 32, 61, 0.08);
+}
+
+.ashara-travel-tab.is-active {
+    background-color: #00203D;
+    color: #CE9C01;
+}
+
+.ashara-travel-panel {
+    background-color: white;
+    border: 1px solid rgba(0, 32, 61, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    padding: 40px 48px;
+    text-align: left;
+    border-radius: 4px;
+}
+
+.ashara-travel-panel-heading {
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #CE9C01;
+    letter-spacing: 0.5px;
+    margin: 0 0 24px 0;
+}
+
+.ashara-travel-section + .ashara-travel-section {
+    margin-top: 28px;
+}
+
+.ashara-travel-subheading {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #CE9C01;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px 0;
+}
+
+.ashara-travel-list {
+    list-style: disc;
+    padding-left: 24px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ashara-travel-list-item {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
+    color: #00203D;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
+
+.ashara-travel-list-item strong {
+    font-weight: bold;
+}
+
+.ashara-travel-link {
+    color: #CE9C01;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.ashara-travel-link:hover {
+    opacity: 0.75;
+}
+
+/* Countdown */
+.ashara-countdown {
+    width: 100%;
+    background-color: white;
+    padding: 48px 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.ashara-countdown-title {
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #00203D;
+    letter-spacing: 1px;
+    margin: 0 0 32px 0;
+}
+
+.ashara-countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ashara-countdown-item {
+    background-color: #00203D;
+    padding: 28px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ashara-countdown-value {
+    font-family: 'Merriweather', serif;
+    font-size: 56px;
+    font-weight: bold;
+    color: #CE9C01;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.ashara-countdown-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #CE9C01;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .ashara-content {
@@ -278,6 +446,76 @@
         grid-template-columns: 1fr;
         padding: 32px 24px;
         gap: 32px;
+    }
+
+    .ashara-travel {
+        padding: 32px 20px;
+    }
+
+    .ashara-travel-title {
+        font-size: 28px;
+    }
+
+    .ashara-travel-tabs {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 4px;
+        padding: 6px;
+        border-radius: 24px;
+    }
+
+    .ashara-travel-tab {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 15px;
+        letter-spacing: 0.3px;
+    }
+
+    .ashara-travel-panel {
+        padding: 28px 20px;
+    }
+
+    .ashara-travel-panel-heading {
+        font-size: 24px;
+    }
+
+    .ashara-travel-subheading {
+        font-size: 20px;
+    }
+
+    .ashara-travel-list {
+        padding-left: 20px;
+        gap: 14px;
+    }
+
+    .ashara-travel-list-item {
+        font-size: 15px;
+    }
+
+    .ashara-countdown {
+        padding: 32px 20px;
+    }
+
+    .ashara-countdown-title {
+        font-size: 22px;
+    }
+
+    .ashara-countdown-grid {
+        gap: 12px;
+    }
+
+    .ashara-countdown-item {
+        padding: 20px 8px;
+    }
+
+    .ashara-countdown-value {
+        font-size: 40px;
+    }
+
+    .ashara-countdown-label {
+        font-size: 11px;
+        letter-spacing: 2px;
     }
 }
 
