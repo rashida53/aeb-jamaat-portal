@@ -16,7 +16,7 @@ const MasjidPage = () => {
             <Navbar useDarkLogo={true} />
             <div className="masjid-banner">
                 <div className="banner-content">
-                    <h1 className="banner-title">PENDING FINAL SITE PLAN SUBMISSION TO CITY OF PFLUGERVILLE</h1>
+                    <h1 className="banner-title">GENERAL CONTRACTOR BIDS & INTERVIEWS, CITY PERMIT IN PROCESS.</h1>
                 </div>
             </div>
             <MasjidVideoSection />
