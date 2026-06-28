@@ -269,6 +269,21 @@ const niyaazCommitteeMiqaats = [
     { miqaat: 'Eid ul Fitr', hijri: 'Shawwal 1st', date: 'Monday, Mar 8, 2027' },
 ];
 
+const dareesMembers = [
+    'Sk. Mufaddal Amijee', 'M. Ammar Jamali', 'M. Murtaza Hirani', 'M. Mustafa Shakir',
+];
+
+const dareesMiqaats = [
+    { miqaat: 'Moharram ul Haraam 16mi', date: 'Tuesday, June 30, 2026' },
+    { miqaat: 'Safar ul Muzaffar 16mi', date: 'Thursday, July 30, 2026' },
+    { miqaat: 'Rabi ul Aakhar 16mi', date: 'Saturday, September 26, 2026' },
+    { miqaat: 'Jamad il Ula 16mi', date: 'Sunday, October 25, 2026' },
+    { miqaat: 'Jamad il Akhar 16mi', date: 'Tuesday, November 24, 2026' },
+    { miqaat: 'Shawwal ul Mukarram 16mi', date: 'Tuesday, March 23, 2027' },
+    { miqaat: 'Zilqad 16mi', date: 'Wednesday, April 21, 2027' },
+    { miqaat: 'Zilhaj 16mi', date: 'Friday, May 21, 2027' },
+];
+
 const checklistSections = [
     {
         phase: 'Pre Miqaat',
@@ -673,6 +688,65 @@ function ContributionsCard({ onInstructions }) {
     );
 }
 
+function DareesCard({ onInstructions }) {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleFlip = () => setIsFlipped((f) => !f);
+
+    return (
+        <div
+            className="nc-card-container nc-card-container--wide"
+            onClick={handleFlip}
+            role="button"
+            tabIndex={0}
+            aria-label="16mi Darees"
+            onKeyDown={(e) => e.key === 'Enter' && handleFlip()}
+        >
+            <div className={`nc-card ${isFlipped ? 'nc-card--flipped' : ''}`}>
+                {/* Front */}
+                <div className="nc-card-face nc-card-front nc-card-front--wide">
+                    <div className="nc-card-front-number">16mi Darees</div>
+                    <ul
+                        className="nc-card-front-members nc-card-front-members--grid"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {dareesMembers.map((m, i) => (
+                            <li key={i}>{m}</li>
+                        ))}
+                    </ul>
+                    <div className="nc-card-front-hint">Tap</div>
+                </div>
+
+                {/* Back */}
+                <div className="nc-card-face nc-card-back nc-card-back--wide">
+                    <div className="nc-card-back-inner nc-card-back-inner--wide">
+                        <section className="nc-card-section nc-card-section--wide">
+                            <h4 className="nc-card-section-title nc-card-section-title--outside">
+                                Miqaats
+                            </h4>
+                            <ul className="nc-card-dates nc-card-dates--grid">
+                                {dareesMiqaats.map((o, i) => (
+                                    <li key={i}>
+                                        <span className="nc-date-miqaat">{o.miqaat}</span>
+                                        <span className="nc-date-value">{o.date}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    </div>
+
+                    <button
+                        className="nc-instructions-btn"
+                        onClick={(e) => { e.stopPropagation(); onInstructions(); }}
+                    >
+                        Checklist
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export default function NiyaazCalendarPage() {
     const [flippedCard, setFlippedCard] = useState(null);
     const [showInstructions, setShowInstructions] = useState(false);
@@ -704,6 +778,7 @@ export default function NiyaazCalendarPage() {
                         />
                     ))}
                     <ContributionsCard onInstructions={() => setShowInstructions(true)} />
+                    <DareesCard onInstructions={() => setShowInstructions(true)} />
                     <UTStudentsCard onInstructions={() => setShowInstructions(true)} />
                 </div>
             </div>
